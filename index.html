@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <!-- ============================================================
-       IGLESIA Belén — index.html
+       IGLESIA CRISTIANA BELÉN — index.html
        Desarrollado con HTML5, CSS3 y JavaScript puro (Vanilla JS)
        Sin frameworks externos. Listo para producción (HTTPS).
        ============================================================ -->
@@ -12,7 +12,7 @@
 
   <!-- SEO Básico -->
   <title>Iglesia Belén | Fe · Esperanza · Comunidad</title>
-  <meta name="description" content="Iglesia Belén — una comunidad de fe en el corazón de México. Únete a nosotros cada domingo. Eventos, pastores, tienda y recursos." />
+  <meta name="description" content="Iglesia Belén — una comunidad de Fe en el corazón de México. Únete a nosotros cada domingo. Eventos, pastores, tienda y recursos." />
   <meta name="keywords" content="iglesia cristiana, iglesia México, fe, esperanza, comunidad cristiana, Belén, culto, servicios" />
   <meta name="author" content="Iglesia Belén" />
   <meta name="robots" content="index, follow" />
@@ -432,47 +432,11 @@
       background: linear-gradient(to bottom, rgba(255,255,255,.5), transparent);
     }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
-
-    /* ============================================================
-       STATS BAR
-       ============================================================ */
-    #stats-bar {
-      background: var(--gold);
-      padding: 0;
-      overflow: hidden;
-    }
-    .stats-inner {
-      display: flex;
-      justify-content: space-around;
-    }
-    .stat-item {
-      text-align: center;
-      padding: 28px 20px;
-      flex: 1;
-      border-right: 1px solid rgba(10,22,40,.1);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-num {
-      font-family: var(--ff-display);
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(10,22,40,.65);
-      margin-top: 4px;
-    }
-
     /* ============================================================
        SOBRE LA IGLESIA
        ============================================================ */
     #about {
-      padding: 100px 0;
+      padding: 25px 0;
       background: var(--white);
     }
     .about-grid {
@@ -547,7 +511,7 @@
        PASTORES
        ============================================================ */
     #pastores {
-      padding: 100px 0;
+      padding: 25px 0;
       background: var(--navy);
       position: relative;
       overflow: hidden;
@@ -626,7 +590,7 @@
        SERVICIOS / HORARIOS
        ============================================================ */
     #servicios {
-      padding: 100px 0;
+      padding: 25px 0;
       background: var(--off-white);
     }
     .servicios-grid {
@@ -670,7 +634,7 @@
        EVENTOS
        ============================================================ */
     #eventos {
-      padding: 100px 0;
+      padding: 25px 0;
       background: var(--white);
     }
     .eventos-grid {
@@ -736,7 +700,7 @@
        BLOG / ARTÍCULOS
        ============================================================ */
     #blog {
-      padding: 100px 0;
+      padding: 25px 0;
       background: var(--off-white);
     }
     .blog-grid {
@@ -855,7 +819,7 @@
        TIENDA / ECOMMERCE
        ============================================================ */
     #tienda {
-      padding: 100px 0;
+      padding: 25px 0;
       background: var(--white);
     }
     .shop-grid {
@@ -1003,7 +967,7 @@
        DONATIVOS
        ============================================================ */
     #donativos {
-      padding: 100px 0;
+      padding: 25px 0;
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
       position: relative;
       overflow: hidden;
@@ -1059,7 +1023,7 @@
        DESCARGAS
        ============================================================ */
     #descargas {
-      padding: 100px 0;
+      padding: 25px 0;
       background: var(--white);
     }
     .downloads-grid {
@@ -1106,7 +1070,7 @@
        UBICACIÓN
        ============================================================ */
     #ubicacion {
-      padding: 100px 0;
+      padding: 25px 0;
       background: var(--off-white);
     }
     .ubicacion-grid {
@@ -1186,7 +1150,7 @@
     #footer {
       background: var(--navy);
       color: rgba(255,255,255,.7);
-      padding: 72px 0 0;
+      padding: 25px 0 0;
     }
     .footer-grid {
       display: grid;
@@ -1360,7 +1324,6 @@
     <a href="#ubicacion">📍 Ubicación</a>
     <a href="#donativos">💛 Donativos</a>
   </div>
-
   <!-- ============================================================
        HERO PRINCIPAL CON SLIDER
        ============================================================ -->
@@ -1370,7 +1333,7 @@
 
         <!-- Slide 1 -->
         <div class="slide active" data-index="0">
-          <div class="slide-bg" style="background-image:linear-gradient(160deg,#0A1628 0%,#1A3560 40%,#0F2040 100%)"></div>
+          <div class="slide-bg" style="background-image:url('img/Slider1.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <span class="slide-tag">✦ Bienvenidos</span>
@@ -1385,7 +1348,7 @@
 
         <!-- Slide 2 -->
         <div class="slide" data-index="1">
-          <div class="slide-bg" style="background-image:linear-gradient(135deg,#1A0A28 0%,#0F2040 50%,#0A2818 100%)"></div>
+          <div class="slide-bg" style="background-image:url('img/Slider2.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <span class="slide-tag">📅 Próximo evento</span>
@@ -1400,7 +1363,7 @@
 
         <!-- Slide 3 -->
         <div class="slide" data-index="2">
-          <div class="slide-bg" style="background-image:url('img/Slider3.png')"></div>
+          <div class="slide-bg" style="background-image:url('img/Slider3.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <span class="slide-tag">🙏 Únete hoy</span>
@@ -1415,7 +1378,7 @@
 
         <!-- Slide 4 -->
         <div class="slide" data-index="3">
-          <div class="slide-bg" style="background-image:url('img/Merch.png')"></div>
+          <div class="slide-bg" style="background-image:url('img/Merch.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <span class="slide-tag">🛍️ Tienda ministerial</span>
@@ -1437,33 +1400,6 @@
       <div class="scroll-indicator">Scroll</div>
     </div>
   </section>
-
-  <!-- ============================================================
-       STATS BAR
-       ============================================================ -->
-  <div id="stats-bar" aria-label="Cifras de la iglesia">
-    <div class="container">
-      <div class="stats-inner">
-        <div class="stat-item reveal delay-1">
-          <div class="stat-num" data-target="2500">0</div>
-          <div class="stat-label">Familias</div>
-        </div>
-        <div class="stat-item reveal delay-2">
-          <div class="stat-num" data-target="18">0</div>
-          <div class="stat-label">Años sirviendo</div>
-        </div>
-        <div class="stat-item reveal delay-3">
-          <div class="stat-num" data-target="45">0</div>
-          <div class="stat-label">Ministerios</div>
-        </div>
-        <div class="stat-item reveal delay-4">
-          <div class="stat-num" data-target="12">0</div>
-          <div class="stat-label">Sedes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- ============================================================
        SOBRE LA IGLESIA
        ============================================================ -->
@@ -1472,7 +1408,7 @@
       <div class="about-grid">
         <div class="about-visual reveal-left">
           <div class="about-img-main">
-            <div class="img-placeholder">⛪</div>
+            <img src="img/iglesia2.webp" alt="Iglesia Belén">
           </div>
           <div class="about-badge">
             <small>Fundada en</small>
@@ -1574,7 +1510,7 @@
 
         <div class="pastor-card reveal delay-1">
           <div class="pastor-photo">
-            <img src="img/PastorJGCS.png" alt="Pastor">
+            <img src="img/PastorJGCS.webp" alt="Pastor">
           </div>
           <div class="pastor-info">
             <div class="pastor-name">Pastor Gerardo Cruz S</div>
@@ -1587,31 +1523,15 @@
             </div>
           </div>
         </div>
-
-        <div class="pastor-card reveal delay-2">
-          <div class="pastor-photo">
-            <div class="ph">👩‍💼</div>
-          </div>
-          <div class="pastor-info">
-            <div class="pastor-name">Pastora Ana Mendoza</div>
-            <div class="pastor-role">Co-Pastora & Mujer</div>
-            <div class="pastor-desc">Apasionada por equipar y liberar a la mujer en su propósito divino. Lidera el ministerio femenino más grande del estado.</div>
-            <div class="pastor-social">
-              <a href="#" aria-label="Facebook">𝐟</a>
-              <a href="#" aria-label="Instagram">📸</a>
-              <a href="#" aria-label="YouTube">▶</a>
-            </div>
-          </div>
-        </div>
-
+        
         <div class="pastor-card reveal delay-3">
           <div class="pastor-photo">
-            <div class="ph">🎵</div>
+            <img src="img/alabanza2.webp" alt="adoracion">
           </div>
           <div class="pastor-info">
-            <div class="pastor-name">Pbro. David Torres</div>
-            <div class="pastor-role">Director de Alabanza</div>
-            <div class="pastor-desc">Compositor y líder de adoración con más de 15 años llevando congregaciones a la presencia de Dios con música original y poderosa.</div>
+            <div class="pastor-name">Leticia Cruz</div>
+            <div class="pastor-role">Alabanza&Adoracion</div>
+            <div class="pastor-desc">líder de adoración lleva a la congregacion a la presencia de Dios con música original y poderosa.</div>
             <div class="pastor-social">
               <a href="#" aria-label="Facebook">𝐟</a>
               <a href="#" aria-label="Instagram">📸</a>
@@ -1619,15 +1539,15 @@
             </div>
           </div>
         </div>
-
-        <div class="pastor-card reveal delay-4">
+        
+        <div class="pastor-card reveal delay-5">
           <div class="pastor-photo">
-            <div class="ph">📚</div>
+            <img src="img/adoracion.webp" alt="adoracion">
           </div>
           <div class="pastor-info">
-            <div class="pastor-name">Pbro. Roberto Sánchez</div>
-            <div class="pastor-role">Pastor de Discipulado</div>
-            <div class="pastor-desc">Teólogo con maestría en Biblia, lidera todos los procesos de formación espiritual, escuela bíblica y grupos de crecimiento.</div>
+            <div class="pastor-name">Damaris Cruz</div>
+            <div class="pastor-role">Alabanza&Adoracion</div>
+            <div class="pastor-desc">líder de alabanza lleva a la congregacion a la presencia de Dios con música original y poderosa.</div>
             <div class="pastor-social">
               <a href="#" aria-label="Facebook">𝐟</a>
               <a href="#" aria-label="Instagram">📸</a>
@@ -1635,7 +1555,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1955,7 +1874,7 @@
             <div class="u-icon">📍</div>
             <div class="u-text">
               <strong>Dirección</strong>
-              <span>Av. Insurgentes Sur 1234, Col. Del Valle,<br>Ciudad de México, CP 03100</span>
+              <span>Av. Praxedis Guerrero 7, Col. Palmas San Isidro,<br>Torreón, Coahuila. CP 27110</span>
             </div>
           </div>
           <div class="ubicacion-detail reveal delay-2">
@@ -1969,18 +1888,18 @@
             <div class="u-icon">📞</div>
             <div class="u-text">
               <strong>Teléfono</strong>
-              <span>+52 55 1234 5678</span>
+              <span>+52 87 1797 5096</span>
             </div>
           </div>
           <div class="ubicacion-detail reveal delay-4">
             <div class="u-icon">✉️</div>
             <div class="u-text">
               <strong>Correo</strong>
-              <span>hola@iglesiavidanueva.com</span>
+              <span>hola@beleniglesia.com</span>
             </div>
           </div>
           <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="https://maps.google.com?q=Insurgentes+Sur+1234+CDMX" target="_blank" rel="noopener" class="btn btn-gold">
+            <a href="https://maps.app.goo.gl/CRzkRXvoWRT4RJLu9" target="_blank" rel="noopener" class="btn btn-gold">
               🗺️ Cómo llegar
             </a>
             <a href="https://wa.me/528717975096" target="_blank" rel="noopener" class="btn btn-outline-navy">
@@ -1990,10 +1909,10 @@
         </div>
 
         <div class="map-wrapper reveal-right">
-          <!-- Mapa de Google Maps embebido (centrado en CDMX como ejemplo) -->
+          <!-- Mapa de Google Maps embebido (centrado) -->
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.2395066660604!2d-99.17250562387938!3d19.389980081896396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6048b851cd%3A0xa8b0a6f38f00b04f!2sInsurgentes%20Sur%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1699000000000!5m2!1ses-419!2smx"
-            loading="lazy"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.9074314774707!2d-103.43581132309541!3d25.574746316302157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fda3b102a4033%3A0xa93eae13e809ca10!2sAv%20Praxedis%20Guerrero%2C%20Torre%C3%B3n%2C%20Coah.!5e0!3m2!1ses-419!2smx!4v1775194793168!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" 
+            loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
             title="Ubicación Iglesia Belén">
           </iframe>
@@ -2055,8 +1974,8 @@
         <div class="footer-col">
           <h4>Contacto</h4>
           <ul>
-            <li><a href="tel:+5215512345678">📞 +52 55 1234 5678</a></li>
-            <li><a href="mailto:hola@beleniglesia.com">✉️ hola@iglesiavidanueva.com</a></li>
+            <li><a href="tel:+5215512345678">📞 +52 8717975096</a></li>
+            <li><a href="mailto:hola@beleniglesia.com">✉️ hola@beleniglesia.com</a></li>
             <li><a href="#ubicacion">📍 Praxedis 7, Palmas San Isidro TRC, COAH.</a></li>
             <li><a href="https://wa.me/528717975096" target="_blank">💬 WhatsApp</a></li>
           </ul>
