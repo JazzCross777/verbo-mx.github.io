@@ -719,6 +719,7 @@
       height: 200px;
       overflow: hidden;
     }
+    .blog-image { width: 100%;  height: 200px;  object-fit: cover;  border-radius: 10px;}  
     .blog-img .img-placeholder { height: 100%; }
     .blog-body { padding: 24px; }
     .blog-meta { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
@@ -2121,7 +2122,7 @@
       grid.innerHTML = ARTICLES.map(a => `
         <article class="blog-card reveal" onclick="abrirArticulo(${a.id})" role="button" tabindex="0" aria-label="Leer: ${a.title}">
           <div class="blog-img">
-            <div class="img-placeholder" style="background:${a.color};height:100%;font-size:3.5rem">${a.icon}</div>
+            <img src="${a.image}" alt="${a.title}" class="blog-image">
           </div>
           <div class="blog-body">
             <div class="blog-meta">
