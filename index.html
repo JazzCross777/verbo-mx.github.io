@@ -2053,7 +2053,7 @@
         title: 'Cómo construir un hogar sobre roca',
         excerpt: 'Principios bíblicos para edificar una familia sólida en tiempos donde todo a nuestro alrededor parece derrumbarse.',
         color: 'linear-gradient(135deg,#281A0A,#403020)',
-        icon: '🏠',
+        image: 'img/art2.webp',
         content: `<p>El Señor Jesús habló de dos constructores: uno que edificó sobre arena y otro sobre roca. La diferencia no estaba en el diseño de las casas, sino en el <strong>cimiento sobre el cual fueron construidas</strong>.</p>
         <blockquote>"Todo el que oye estas palabras mías y las pone en práctica es como un hombre prudente que construyó su casa sobre la roca." — Mateo 7:24</blockquote>
         <p>En el contexto familiar, esa roca son los valores del Reino: el amor incondicional, el perdón continuo, la comunicación honesta y la oración compartida.</p>
@@ -2066,7 +2066,7 @@
         title: '7 formas de orar más efectivamente',
         excerpt: 'La oración es la respiración del espíritu. Descubre estrategias prácticas para tener una vida de oración más profunda y poderosa.',
         color: 'linear-gradient(135deg,#201808,#402810)',
-        icon: '🙏',
+        image: 'img/art6.webp',
         content: `<p>Muchas personas dicen "no sé cómo orar" o "mis oraciones parecen rebotar en el techo." Si te identificas con esto, estas siete prácticas pueden transformar tu vida de oración.</p>
         <blockquote>"Oren sin cesar." — 1 Tesalonicenses 5:17</blockquote>
         <p><strong>1. Ora en voz alta.</strong> Hay algo poderoso en escuchar tu propia voz de fe. <strong>2. Escribe tus oraciones.</strong> Un diario de oración te ayuda a ver las respuestas. <strong>3. Ora las Escrituras.</strong> Devuelve a Dios sus propias promesas. <strong>4. Ayuna periódicamente.</strong> El ayuno afila tu sensibilidad espiritual.</p>
@@ -2149,7 +2149,7 @@
       const a = ARTICLES.find(x => x.id === id);
       if (!a) return;
       document.getElementById('modal-header-img').innerHTML =
-        `<div class="img-placeholder" style="background:${a.color};height:100%;font-size:5rem">${a.icon}</div>`;
+        `<img src="${a.image}" alt="${a.title}" class="modal-img">`;
       document.getElementById('modal-body').innerHTML = `
         <h2>${a.title}</h2>
         <div class="modal-meta">
