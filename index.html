@@ -2448,20 +2448,27 @@
        DESCARGAS — Renderizado
        ============================================================ */
     function renderDownloads() {
-  const typeClass = { pdf:'pdf', doc:'doc', xls:'xls', img:'img' };
-  document.getElementById('downloads-grid').innerHTML = DOWNLOADS.map((d, i) => `
-    <a href="${d.link}" download 
-       class="download-item reveal delay-${(i%5)+1}" 
-       aria-label="Descargar ${d.name}">
-      <div class="download-icon ${typeClass[d.type]}">${d.icon}</div>
-      <div class="download-info">
-        <h4>${d.name}</h4>
-        <small>${d.size} · Actualizado ${d.date}</small>
-      </div>
-      <div class="download-btn">⬇</div>
-    </a>
-  `).join('');
-}  
+      const typeClass = { pdf:'pdf', doc:'doc', xls:'xls', img:'img' };
+      document.getElementById('downloads-grid').innerHTML = DOWNLOADS.map((d, i) => `
+        <div class="download-item reveal delay-${(i%5)+1}" onclick="simularDescarga('${d.name}')" role="button" tabindex="0" aria-label="Descargar ${d.name}">
+          <div class="download-icon ${typeClass[d.type]}">${d.icon}</div>
+          <div class="download-info">
+            <h4>${d.name}</h4>
+            <small>${d.size} · Actualizado ${d.date}</small>
+          </div>
+          <div class="download-btn" aria-hidden="true">⬇</div>
+        </div>
+      `).join('');
+
+      document.querySelectorAll('.download-item').forEach(el => {
+        el.addEventListener('keypress', e => { if(e.key==='Enter') el.click(); });
+      });
+    } 
+        function simularDescarga(nombre) {
+      showToast(`⬇️ Descargando "${nombre}"...`);
+      // En producción aquí iría el href real del PDF
+    }
+    
     /* ============================================================
        SLIDER AUTOMÁTICO
        ============================================================ */
