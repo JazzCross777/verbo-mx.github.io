@@ -20,6 +20,28 @@
   <meta property="og:description" content="Una comunidad de fe, esperanza y amor. Únete a nosotros." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.beleniglesia.com" />
+  <meta property="og:image" content="https://www.beleniglesia.com/img/iglesia2.webp" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Iglesia Belén | Fe · Esperanza · Comunidad" />
+  <meta name="twitter:description" content="Una comunidad de fe, esperanza y amor. Únete a nosotros cada domingo." />
+  <meta name="twitter:image" content="https://www.beleniglesia.com/img/iglesia2.webp" />
+  <meta name="theme-color" content="#0A1628" />
+  <link rel="canonical" href="https://www.beleniglesia.com/" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Church",
+    "name": "Iglesia Belén",
+    "url": "https://www.beleniglesia.com/",
+    "image": "https://www.beleniglesia.com/img/iglesia2.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "MX"
+    }
+  }
+  </script>
   <!-- Fuentes de Google (las únicas dependencias externas, CDN seguro) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -156,6 +178,38 @@
       background: var(--navy);
       color: var(--white);
     }
+    .funnel-hidden { display: none !important; }
+    .social-proof, .first-visit, .radio-digital, .final-cta { padding: 96px 0; }
+    .social-proof { background: var(--off-white); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid rgba(10,22,40,.08);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .testimonial-card p { line-height: 1.7; color: var(--text-mid); margin-bottom: 12px; }
+    .testimonial-card strong { color: var(--navy); }
+    .first-visit { background: linear-gradient(180deg, #fff, #f7f6f2); }
+    .first-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:24px; }
+    .first-steps, .visit-card {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid rgba(10,22,40,.08);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .first-steps li { margin-bottom: 14px; color: var(--text-mid); line-height: 1.65; }
+    .radio-digital { background: var(--navy); }
+    .radio-digital .section-title, .radio-digital p { color: var(--white); }
+    .final-cta { background: linear-gradient(135deg, var(--navy), var(--navy-light)); text-align: center; }
+    .final-cta .section-title, .final-cta p { color: var(--white); margin-left:auto; margin-right:auto; }
 
     /* Reveal on scroll */
     .reveal {
@@ -259,64 +313,53 @@
       color: #ffd700;
       font-weight: 600;
     }
-    .nav-radio:hover {
-      color: #fff;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px; height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: var(--transition);
-    }
-    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-    /* Mobile Nav */
+
     #mobile-menu {
-      display: none;
       position: fixed;
-      top: var(--navbar-h); left: 0; right: 0;
+      top: var(--navbar-h);
+      left: 0;
+      right: 0;
       background: rgba(10,22,40,.98);
-      backdrop-filter: blur(16px);
-      z-index: 999;
-      padding: 16px 24px 24px;
-      flex-direction: column;
-      gap: 4px;
-      border-top: 1px solid rgba(201,168,76,.2);
-      animation: slideDown .3s ease;
-    }
-    #mobile-menu.open { display: flex; }
-    @keyframes slideDown { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
-    #mobile-menu a {
-      padding: 12px 16px;
-      color: rgba(255,255,255,.85);
-      font-size: .95rem;
-      font-weight: 600;
-      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      transform: translateY(-120%);
       transition: var(--transition);
+      z-index: 999;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    #mobile-menu a:hover { background: rgba(201,168,76,.12); color: var(--gold-light); }
+    #mobile-menu.open { transform: translateY(0); }
+    #mobile-menu a {
+      color: rgba(255,255,255,.9);
+      padding: 10px 8px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+    #mobile-menu a:hover { background: rgba(255,255,255,.08); color: var(--gold-light); }
 
     /* ============================================================
-       HERO & SLIDER
+       HERO / SLIDER
        ============================================================ */
     #hero {
       position: relative;
       height: 100vh;
-      min-height: 640px;
+      min-height: 740px;
       overflow: hidden;
       background: var(--navy);
     }
     .slider-track {
       display: flex;
+      width: 500%;
       height: 100%;
-      transition: transform .9s cubic-bezier(.77,0,.175,1);
+      transition: transform .95s cubic-bezier(.4,0,.2,1);
     }
     .slide {
-      min-width: 100%;
-      height: 100%;
       position: relative;
+      width: 20%;
+      height: 100%;
+      flex-shrink: 0;
       overflow: hidden;
     }
     .slide-bg {
@@ -324,14 +367,14 @@
       inset: 0;
       background-size: cover;
       background-position: center;
-      transform: scale(1.06);
+      transform: scale(1.08);
       transition: transform 8s ease;
     }
     .slide.active .slide-bg { transform: scale(1); }
     .slide-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(10,22,40,.82) 0%, rgba(10,22,40,.45) 60%, rgba(10,22,40,.65) 100%);
+      background: linear-gradient(120deg, rgba(10,22,40,.78) 0%, rgba(10,22,40,.58) 45%, rgba(10,22,40,.88) 100%);
     }
     .slide-content {
       position: relative;
@@ -340,30 +383,30 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: var(--navbar-h) 0 60px;
+      padding-top: 52px;
+      color: var(--white);
+      max-width: 760px;
     }
     .slide-tag {
       display: inline-block;
-      background: rgba(201,168,76,.2);
-      color: var(--gold-light);
-      border: 1px solid rgba(201,168,76,.4);
-      padding: 5px 14px;
+      align-self: flex-start;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.24);
+      color: var(--gold-pale);
+      padding: 8px 14px;
       border-radius: 50px;
       font-size: .72rem;
+      letter-spacing: .12em;
       font-weight: 700;
-      letter-spacing: .16em;
+      margin-bottom: 18px;
       text-transform: uppercase;
-      margin-bottom: 20px;
-      width: fit-content;
     }
     .slide-title {
       font-family: var(--ff-display);
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      font-weight: 900;
-      color: var(--white);
+      font-size: clamp(2.4rem, 5.4vw, 4.6rem);
       line-height: 1.06;
-      max-width: 700px;
       margin-bottom: 20px;
+      font-weight: 900;
     }
     .slide-title em { color: var(--gold-light); font-style: normal; }
     .slide-desc {
@@ -374,6 +417,21 @@
       margin-bottom: 36px;
     }
     .slide-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-proof{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+    .hero-proof div{
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(10,22,40,.35);
+      backdrop-filter:blur(6px);
+      border-radius:12px;
+      padding:10px 12px;
+    }
+    .hero-proof strong{display:block;color:var(--gold-pale);font-size:.9rem}
+    .hero-proof span{font-size:.72rem;color:rgba(255,255,255,.8)}
     /* Slider dots */
     .slider-dots {
       position: absolute;
@@ -391,849 +449,965 @@
       cursor: pointer;
       transition: var(--transition);
     }
-    .dot.active { background: var(--gold); width: 28px; border-radius: 4px; }
-    /* Slider arrows */
+    .dot.active {
+      width: 24px; border-radius: 20px;
+      background: var(--gold);
+    }
     .slider-arrow {
       position: absolute;
       top: 50%; transform: translateY(-50%);
       z-index: 10;
-      width: 48px; height: 48px;
+      width: 46px; height: 46px;
       border-radius: 50%;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.2);
-      color: white;
-      font-size: 1.2rem;
+      border: 1px solid rgba(255,255,255,.35);
+      color: var(--white);
+      font-size: 1.4rem;
       display: flex; align-items: center; justify-content: center;
+      background: rgba(10,22,40,.35);
       transition: var(--transition);
-      backdrop-filter: blur(8px);
     }
     .slider-arrow:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
     .arrow-left  { left: 24px; }
     .arrow-right { right: 24px; }
-    /* Scroll indicator */
     .scroll-indicator {
       position: absolute;
-      bottom: 36px; right: 36px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: rgba(255,255,255,.5);
-      font-size: .65rem;
-      letter-spacing: .15em;
+      bottom: 20px;
+      right: 24px;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      color: rgba(255,255,255,.56);
       text-transform: uppercase;
-      animation: bounce 2.5s infinite;
+      writing-mode: vertical-rl;
+      display: flex; align-items: center; gap: 8px;
     }
     .scroll-indicator::after {
-      content: '';
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, rgba(255,255,255,.5), transparent);
+      content:'';
+      width: 2px; height: 52px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      margin-top: 8px;
+      animation: scrollPulse 2s ease infinite;
     }
-    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+    @keyframes scrollPulse {
+      0%,100% { opacity:.4; transform: scaleY(.85); }
+      50% { opacity:1; transform: scaleY(1); }
+    }
+
     /* ============================================================
-       SOBRE LA IGLESIA
+       ABOUT
        ============================================================ */
-    #about {
-      padding: 25px 0;
-      background: var(--white);
-    }
+    #about { padding: 110px 0; background: var(--off-white); }
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 72px;
       align-items: center;
     }
     .about-visual {
       position: relative;
     }
     .about-img-main {
-      width: 100%;
-      height: 420px;
-      border-radius: var(--radius-lg);
+      border-radius: 24px;
       overflow: hidden;
+      box-shadow: var(--shadow-lg);
       position: relative;
+      isolation: isolate;
     }
-    .about-img-main img,
-    .about-img-main .img-placeholder {
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
-    .img-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      font-size: 5rem;
-      color: rgba(201,168,76,.3);
+    .about-img-main::after {
+      content:'';
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent 40%, rgba(10,22,40,.45) 100%);
+      z-index:1;
     }
     .about-badge {
       position: absolute;
-      bottom: -20px; right: -20px;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 20px 28px;
-      border-radius: var(--radius-md);
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      font-weight: 900;
+      bottom: -24px;
+      right: 24px;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      padding: 16px 18px;
+      min-width: 120px;
       text-align: center;
-      box-shadow: var(--shadow-gold);
-      line-height: 1.2;
+      font-weight: 800;
+      color: var(--navy);
     }
-    .about-badge small { display: block; font-size: .7rem; font-family: var(--ff-body); letter-spacing: .1em; text-transform: uppercase; }
+    .about-badge small { display:block; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-500); margin-bottom:4px; }
     .about-cards {
+      margin-top: 26px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 36px;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
     }
     .about-card {
-      background: var(--off-white);
-      border-radius: var(--radius-md);
-      padding: 24px 20px;
-      border-left: 3px solid var(--gold);
+      background: var(--white);
+      border-radius: 14px;
+      padding: 16px 15px;
+      border: 1px solid rgba(10,22,40,.06);
       transition: var(--transition);
+      box-shadow: var(--shadow-sm);
     }
-    .about-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
-    .about-card-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .about-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .about-card-icon {
+      width: 32px; height: 32px;
+      border-radius: 9px;
+      background: var(--gray-100);
+      display: flex; align-items:center; justify-content:center;
+      font-size: 1rem;
+      margin-bottom: 9px;
+    }
     .about-card h4 {
-      font-family: var(--ff-display);
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: .9rem;
       color: var(--navy);
       margin-bottom: 6px;
+      font-weight: 800;
     }
-    .about-card p { font-size: .82rem; color: var(--gray-500); line-height: 1.6; }
+    .about-card p {
+      font-size: .82rem;
+      color: var(--gray-700);
+      line-height: 1.55;
+    }
 
     /* ============================================================
-       PASTORES
+       STATS STRIP
        ============================================================ */
-    #pastores {
-      padding: 25px 0;
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
+    #stats {
+      background: var(--white);
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
     }
-    #pastores::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,.06) 0%, transparent 70%);
-      pointer-events: none;
+    .stats-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
     }
-    .pastores-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 28px;
-    }
-    .pastor-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(201,168,76,.15);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
+    .stat-item {
+      flex: 1;
       text-align: center;
-      transition: var(--transition);
-      cursor: default;
+      padding: 30px 16px;
+      border-right: 1px solid var(--gray-100);
     }
-    .pastor-card:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,.07);
-      border-color: rgba(201,168,76,.4);
-      box-shadow: 0 20px 48px rgba(0,0,0,.4);
-    }
-    .pastor-photo {
-      height: 240px;
-      overflow: hidden;
-      background: linear-gradient(160deg, var(--navy-light), var(--navy-mid));
-      position: relative;
-    }
-    .pastor-photo img { width:100%; height:100%; object-fit:cover; }
-    .pastor-photo .ph {
-      width:100%; height:100%;
-      display:flex; align-items:center; justify-content:center;
-      font-size:5rem; color:rgba(201,168,76,.25);
-    }
-    .pastor-info { padding: 24px 20px; }
-    .pastor-name {
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      display:block;
       font-family: var(--ff-display);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 4px;
+      font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+      color: var(--navy);
+      font-weight: 900;
     }
-    .pastor-role {
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .14em;
+    .stat-label {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      color: var(--gray-500);
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
+      font-weight: 700;
+      margin-top: 6px;
     }
-    .pastor-desc { font-size: .83rem; color: rgba(255,255,255,.6); line-height: 1.6; }
-    .pastor-social { display:flex; justify-content:center; gap:10px; margin-top:16px; }
-    .pastor-social a {
-      width:32px; height:32px;
-      border-radius:50%;
-      background:rgba(255,255,255,.08);
-      display:flex; align-items:center; justify-content:center;
-      font-size:.8rem;
-      color:rgba(255,255,255,.6);
-      transition:var(--transition);
-    }
-    .pastor-social a:hover { background:var(--gold); color:var(--navy); }
 
     /* ============================================================
-       SERVICIOS / HORARIOS
+       SERVICIOS
        ============================================================ */
-    #servicios {
-      padding: 25px 0;
-      background: var(--off-white);
-    }
+    #servicios { padding: 110px 0 96px; background: var(--white); }
     .servicios-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 18px;
     }
     .servicio-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 32px 24px;
+      background: linear-gradient(160deg, #fff 0%, #fbfaf8 100%);
+      border: 1px solid var(--gray-100);
+      border-radius: 16px;
+      padding: 24px 18px;
       text-align: center;
-      box-shadow: var(--shadow-sm);
       transition: var(--transition);
-      border-top: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+    .servicio-card::before {
+      content:'';
+      position:absolute;
+      top:0; left:0; right:0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
     }
     .servicio-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-md);
-      border-top-color: var(--gold);
+      border-color: rgba(201,168,76,.35);
     }
-    .servicio-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .servicio-card:hover::before { transform: scaleX(1); }
+    .servicio-icon {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
     .servicio-day {
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .18em;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 6px;
     }
     .servicio-name {
       font-family: var(--ff-display);
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.16rem;
       color: var(--navy);
+      font-weight: 700;
+      line-height: 1.25;
       margin-bottom: 8px;
     }
-    .servicio-time { font-size: .85rem; color: var(--gray-500); font-weight: 600; }
+    .servicio-time {
+      font-size: .85rem;
+      color: var(--gray-700);
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       PASTORES
+       ============================================================ */
+    #pastores {
+      padding: 110px 0;
+      background: linear-gradient(130deg, var(--navy) 0%, var(--navy-mid) 45%, #1D355F 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    #pastores::before {
+      content:'';
+      position:absolute; inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(201,168,76,.18), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(201,168,76,.14), transparent 38%);
+      pointer-events:none;
+    }
+    .pastores-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+    }
+    .pastor-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: var(--transition);
+      backdrop-filter: blur(7px);
+    }
+    .pastor-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 34px rgba(0,0,0,.35);
+      border-color: rgba(228,199,107,.55);
+    }
+    .pastor-photo {
+      height: 260px;
+      overflow: hidden;
+      position: relative;
+    }
+    .pastor-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .8s ease;
+    }
+    .pastor-card:hover .pastor-photo img { transform: scale(1.08); }
+    .pastor-info { padding: 18px 18px 20px; }
+    .pastor-name {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      margin-bottom: 3px;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+    .pastor-role {
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.68);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .pastor-desc {
+      font-size: .88rem;
+      color: rgba(255,255,255,.82);
+      line-height: 1.62;
+      margin-bottom: 14px;
+    }
+    .pastor-social { display: flex; gap: 8px; }
+    .pastor-social a {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display:flex; align-items:center; justify-content:center;
+      border: 1px solid rgba(255,255,255,.26);
+      color: var(--white);
+      font-size: .75rem;
+      transition: var(--transition);
+    }
+    .pastor-social a:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
 
     /* ============================================================
        EVENTOS
        ============================================================ */
-    #eventos {
-      padding: 25px 0;
-      background: var(--white);
-    }
+    #eventos { padding: 110px 0; background: var(--off-white); }
     .eventos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
     }
     .evento-card {
-      border-radius: var(--radius-lg);
+      background: var(--white);
+      border-radius: 16px;
       overflow: hidden;
+      border: 1px solid var(--gray-100);
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
-      background: var(--white);
-      border: 1px solid var(--gray-100);
-      cursor: pointer;
+      display:flex;
+      flex-direction:column;
     }
     .evento-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(201,168,76,.35);
     }
     .evento-img {
-      height: 200px;
       position: relative;
-      overflow: hidden;
+      height: 180px;
+      background: linear-gradient(130deg, #c8d2e6, #f2ede0);
     }
-    .evento-img .img-placeholder { height: 100%; }
+    .evento-img .img-placeholder {
+      width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:2rem;
+      color:#fff;
+      font-weight:700;
+    }
     .evento-date-badge {
-      position: absolute;
-      top: 16px; left: 16px;
+      position:absolute;
+      top:12px; left:12px;
       background: var(--gold);
       color: var(--navy);
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
-      font-weight: 800;
-      font-size: .8rem;
-      line-height: 1.2;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(201,168,76,.4);
+      border-radius: 10px;
+      min-width:56px;
+      text-align:center;
+      padding:8px 8px;
+      font-weight:800;
+      font-size:.75rem;
+      box-shadow: var(--shadow-sm);
+      line-height:1.05;
     }
-    .evento-date-badge span { display:block; font-size:1.4rem; font-family:var(--ff-display); }
-    .evento-body { padding: 22px 22px 20px; }
+    .evento-date-badge span { display:block; font-size:1.05rem; }
+    .evento-body { padding: 18px; flex:1; display:flex; flex-direction:column; }
     .evento-category {
       font-size: .68rem;
-      font-weight: 700;
       letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 6px;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
     .evento-title {
       font-family: var(--ff-display);
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.26rem;
       color: var(--navy);
-      margin-bottom: 8px;
-      line-height: 1.3;
+      margin-bottom: 10px;
+      line-height: 1.25;
     }
-    .evento-desc { font-size: .83rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 16px; }
-    .evento-meta { display:flex; align-items:center; gap:12px; font-size:.77rem; color:var(--gray-500); flex-wrap:wrap; }
-    .evento-meta span { display:flex; align-items:center; gap:4px; }
+    .evento-desc {
+      font-size: .88rem;
+      color: var(--gray-700);
+      line-height: 1.62;
+      margin-bottom: 14px;
+      flex:1;
+    }
+    .evento-meta {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      font-size:.76rem;
+      color:var(--gray-500);
+      font-weight:600;
+    }
 
     /* ============================================================
-       BLOG / ARTÍCULOS
+       BLOG
        ============================================================ */
-    #blog {
-      padding: 25px 0;
-      background: var(--off-white);
-    }
+    #blog { padding: 110px 0; background: var(--white); }
     .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 28px;
+      display:grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 20px;
     }
     .blog-card {
       background: var(--white);
-      border-radius: var(--radius-lg);
+      border-radius: 16px;
       overflow: hidden;
+      border:1px solid var(--gray-100);
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
-      cursor: pointer;
+      cursor:pointer;
+      display:flex;
+      flex-direction:column;
     }
     .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-    .blog-img {
-      height: 200px;
-      overflow: hidden;
+    .blog-image {
+      width:100%; height: 190px;
+      object-fit: cover;
     }
-    .blog-image { width: 100%;  height: 200px;  object-fit: cover;  border-radius: 10px;}  
-    .blog-img .img-placeholder { height: 100%; }
-    .blog-body { padding: 24px; }
-    .blog-meta { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
-    .blog-tag {
-      font-size:.67rem;
-      font-weight:700;
+    .blog-body { padding: 18px; flex:1; display:flex; flex-direction:column; }
+    .blog-meta {
+      font-size:.68rem;
       letter-spacing:.12em;
       text-transform:uppercase;
-      background:var(--gold-pale);
-      color:var(--navy);
-      padding:3px 10px;
-      border-radius:50px;
-    }
-    .blog-date { font-size:.75rem; color:var(--gray-500); }
-    .blog-title {
-      font-family:var(--ff-display);
-      font-size:1.15rem;
-      font-weight:700;
-      color:var(--navy);
-      margin-bottom:8px;
-      line-height:1.3;
-    }
-    .blog-excerpt { font-size:.83rem; color:var(--gray-500); line-height:1.6; margin-bottom:16px; }
-    .blog-read {
-      font-size:.8rem;
-      font-weight:700;
       color:var(--gold);
-      letter-spacing:.05em;
-      transition:var(--transition);
-      display:flex;
-      align-items:center;
-      gap:5px;
+      font-weight:700;
+      margin-bottom:8px;
     }
-    .blog-card:hover .blog-read { gap:10px; }
-
-    /* Article Modal */
-    #article-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 40px 16px;
-      overflow-y: auto;
-    }
-    #article-modal.open { display: flex; }
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(10,22,40,.8);
-      backdrop-filter: blur(6px);
-    }
-    .modal-box {
-      position: relative;
-      background: var(--white);
-      border-radius: var(--radius-xl);
-      max-width: 720px;
-      width: 100%;
-      overflow: hidden;
-      z-index: 1;
-      animation: modalIn .4s cubic-bezier(.4,0,.2,1);
-    }
-    @keyframes modalIn { from{opacity:0;transform:scale(.93) translateY(20px)} to{opacity:1;transform:scale(1) translateY(0)} }
-    .modal-header-img { height: 280px; overflow:hidden; position:relative; }
-    .modal-header-img .img-placeholder { height:100%; }
-    .modal-close {
-      position: absolute;
-      top: 16px; right: 16px;
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: rgba(0,0,0,.4);
-      color: white;
-      font-size: 1rem;
-      display: flex; align-items:center; justify-content:center;
-      z-index: 2;
-      transition: var(--transition);
-    }
-    .modal-close:hover { background: rgba(0,0,0,.7); }
-    .modal-body { padding: 32px 40px 40px; }
-    .modal-body h2 { font-family:var(--ff-display); font-size:1.8rem; font-weight:900; color:var(--navy); margin-bottom:8px; line-height:1.2; }
-    .modal-body .modal-meta { font-size:.78rem; color:var(--gray-500); margin-bottom:20px; display:flex; gap:10px; flex-wrap:wrap; }
-    .modal-body p { font-size:.95rem; color:var(--text-mid); line-height:1.8; margin-bottom:14px; }
-    .modal-body blockquote {
-      border-left:3px solid var(--gold);
-      padding:12px 20px;
-      background:var(--gold-pale);
-      border-radius:0 var(--radius-sm) var(--radius-sm) 0;
-      font-family:var(--ff-display);
-      font-style:italic;
+    .blog-title {
+      font-family: var(--ff-display);
+      font-size:1.2rem;
       color:var(--navy);
-      margin:20px 0;
+      line-height:1.25;
+      margin-bottom:10px;
+    }
+    .blog-excerpt {
+      font-size:.88rem;
+      color:var(--gray-700);
+      line-height:1.65;
+      margin-bottom:14px;
+      flex:1;
+    }
+    .blog-read {
+      font-size:.78rem;
+      color:var(--navy);
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
     /* ============================================================
-       TIENDA / ECOMMERCE
+       SHOP
        ============================================================ */
-    #tienda {
-      padding: 25px 0;
-      background: var(--white);
-    }
+    #tienda { padding: 110px 0; background: var(--off-white); }
     .shop-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 24px;
+      display:grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 20px;
     }
     .product-card {
-      border-radius: var(--radius-lg);
+      background: var(--white);
+      border-radius: 16px;
       overflow: hidden;
+      border:1px solid var(--gray-100);
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
-      background: var(--white);
-      border: 1px solid var(--gray-100);
+      display:flex; flex-direction:column;
     }
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
     .product-img {
-      height: 220px;
-      overflow: hidden;
-      position: relative;
+      width:100%; height: 210px;
+      object-fit: cover;
     }
-    .product-img .img-placeholder { height:100%; }
-    .product-badge {
-      position:absolute; top:12px; left:12px;
-      background:var(--gold); color:var(--navy);
-      font-size:.62rem; font-weight:800; letter-spacing:.1em;
-      text-transform:uppercase; padding:3px 9px; border-radius:50px;
+    .product-body { padding: 18px; display:flex; flex-direction:column; flex:1; }
+    .product-name {
+      font-family: var(--ff-display);
+      color: var(--navy);
+      font-size:1.2rem;
+      margin-bottom: 8px;
+      line-height:1.25;
     }
-    .product-body { padding: 18px; }
-    .product-category { font-size:.67rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
-    .product-name { font-family:var(--ff-display); font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:6px; }
-    .product-desc { font-size:.78rem; color:var(--gray-500); line-height:1.5; margin-bottom:12px; }
-    .product-footer { display:flex; align-items:center; justify-content:space-between; }
-    .product-price { font-size:1.2rem; font-weight:800; color:var(--navy); font-family:var(--ff-display); }
-    .product-price small { font-size:.7rem; color:var(--gray-500); font-family:var(--ff-body); font-weight:400; }
-    .btn-add-cart {
-      background: var(--navy);
-      color: var(--white);
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-size: .75rem;
-      font-weight: 700;
-      transition: var(--transition);
-      display: flex; align-items:center; gap:5px;
+    .product-desc {
+      font-size:.86rem;
+      color: var(--gray-700);
+      line-height:1.6;
+      margin-bottom: 14px;
+      flex:1;
     }
-    .btn-add-cart:hover { background: var(--gold); color: var(--navy); }
-    /* Cart button */
-    #cart-btn {
-      position: fixed;
-      bottom: 100px; right: 24px;
-      background: var(--navy);
-      color: var(--white);
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      display: flex; align-items:center; justify-content:center;
-      font-size: 1.2rem;
-      box-shadow: var(--shadow-md);
-      z-index: 900;
-      transition: var(--transition);
-    }
-    #cart-btn:hover { background: var(--navy-light); transform: scale(1.08); }
-    .cart-badge {
-      position:absolute; top:-4px; right:-4px;
-      background:var(--gold); color:var(--navy);
-      width:20px; height:20px;
-      border-radius:50%;
-      font-size:.65rem; font-weight:800;
-      display:flex; align-items:center; justify-content:center;
-    }
-    /* Cart Drawer */
-    #cart-drawer {
-      position: fixed;
-      top: 0; right: -420px;
-      width: 420px; max-width: 100vw;
-      height: 100vh;
-      background: var(--white);
-      z-index: 1500;
-      box-shadow: -8px 0 40px rgba(0,0,0,.2);
-      transition: right .4s cubic-bezier(.4,0,.2,1);
-      display: flex;
-      flex-direction: column;
-    }
-    #cart-drawer.open { right: 0; }
-    .drawer-overlay {
-      position:fixed; inset:0;
-      background:rgba(10,22,40,.5);
-      z-index:1499;
-      display:none;
-    }
-    .drawer-overlay.open { display:block; }
-    .drawer-header {
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--gray-100);
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .drawer-header h3 { font-family:var(--ff-display); font-size:1.3rem; font-weight:700; color:var(--navy); }
-    .drawer-close { width:32px; height:32px; border-radius:50%; background:var(--gray-100); display:flex; align-items:center; justify-content:center; font-size:.85rem; color:var(--gray-700); transition:var(--transition); }
-    .drawer-close:hover { background:var(--navy); color:white; }
-    .drawer-items { flex:1; overflow-y:auto; padding:16px 24px; }
-    .cart-item {
-      display:flex; gap:14px;
-      padding:14px 0;
-      border-bottom:1px solid var(--gray-100);
+    .product-bottom {
+      display:flex;
+      justify-content:space-between;
       align-items:center;
+      gap: 10px;
     }
-    .cart-item-img {
-      width:60px; height:60px;
-      border-radius:var(--radius-sm);
-      overflow:hidden; flex-shrink:0;
+    .product-price {
+      font-size:1.1rem;
+      font-weight:800;
+      color: var(--navy);
     }
-    .cart-item-img .img-placeholder { height:100%; font-size:1.5rem; }
-    .cart-item-info { flex:1; }
-    .cart-item-name { font-weight:700; font-size:.88rem; color:var(--navy); }
-    .cart-item-price { font-size:.8rem; color:var(--gray-500); margin-top:2px; }
-    .cart-item-qty {
-      display:flex; align-items:center; gap:8px; margin-top:8px;
+    .qty-picker {
+      display:flex; align-items:center;
+      border:1px solid var(--gray-300);
+      border-radius: 40px;
+      overflow:hidden;
     }
-    .qty-btn {
-      width:24px; height:24px;
-      border-radius:50%;
-      background:var(--gray-100);
-      font-size:.9rem; font-weight:700;
+    .qty-picker button {
+      width: 30px; height: 30px;
+      font-weight:700;
+      color: var(--navy);
+      background: var(--gray-100);
+    }
+    .qty-picker span {
+      width: 34px; text-align:center;
+      font-size:.85rem; font-weight:700;
+      color: var(--navy);
+      background:#fff;
+    }
+
+    /* ============================================================
+       CHECKOUT
+       ============================================================ */
+    #checkout { padding: 110px 0; background: var(--white); }
+    .checkout-grid {
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items:start;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display:block;
+      font-size:.78rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color: var(--gray-500);
+      font-weight:700;
+      margin-bottom: 6px;
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      width:100%;
+      border:1px solid var(--gray-300);
+      border-radius: 10px;
+      padding: 12px 13px;
+      font-family: var(--ff-body);
+      font-size: .92rem;
+      color: var(--text-dark);
+      outline:none;
+      transition: var(--transition);
+      background:#fff;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,.15);
+    }
+    .order-summary {
+      background: var(--off-white);
+      border-radius: 16px;
+      padding: 20px;
+      border:1px solid var(--gray-100);
+      position: sticky;
+      top: calc(var(--navbar-h) + 16px);
+    }
+    .order-summary h3 {
+      font-family: var(--ff-display);
+      color: var(--navy);
+      margin-bottom: 14px;
+      font-size:1.3rem;
+    }
+    .order-item {
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      font-size:.86rem;
+      color:var(--gray-700);
+      margin-bottom: 8px;
+    }
+    .order-total {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top:1px dashed var(--gray-300);
+      display:flex;
+      justify-content:space-between;
+      font-weight:800;
       color:var(--navy);
-      display:flex; align-items:center; justify-content:center;
-      transition:var(--transition);
     }
-    .qty-btn:hover { background:var(--gold); }
-    .qty-num { font-size:.88rem; font-weight:700; min-width:20px; text-align:center; }
-    .cart-item-remove { color:var(--gray-500); font-size:.85rem; transition:var(--transition); margin-left:auto; }
-    .cart-item-remove:hover { color:#e53e3e; }
-    .drawer-footer { padding:20px 24px; border-top:1px solid var(--gray-100); }
-    .cart-total { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
-    .cart-total span { font-size:.85rem; color:var(--gray-500); font-weight:600; }
-    .cart-total strong { font-family:var(--ff-display); font-size:1.5rem; color:var(--navy); font-weight:900; }
-    .cart-empty { text-align:center; padding:40px 20px; color:var(--gray-500); }
-    .cart-empty p { margin-top:12px; font-size:.9rem; }
-    /* Checkout form section */
-    #checkout { padding: 100px 0; background: var(--off-white); display:none; }
-    #checkout.visible { display:block; }
 
     /* ============================================================
        DONATIVOS
        ============================================================ */
     #donativos {
-      padding: 25px 0;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    #donativos::before {
-      content: '✝';
-      position: absolute;
-      right: -40px; top: 50%;
-      transform: translateY(-50%);
-      font-size: 28rem;
-      color: rgba(255,255,255,.02);
-      line-height: 1;
-      pointer-events: none;
+      padding: 110px 0;
+      background: linear-gradient(130deg, var(--navy), var(--navy-mid));
+      color: var(--white);
     }
     .donativo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items:center;
     }
-    .donativo-options { display:flex; flex-direction:column; gap:14px; margin-top:32px; }
+    .donativo-options {
+      display:grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
     .donativo-btn {
-      display:flex; align-items:center; gap:14px;
-      padding: 18px 24px;
-      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      color:#fff;
+      border-radius: 12px;
+      padding: 14px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      text-align:left;
       transition: var(--transition);
-      cursor: pointer;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: var(--white);
-      font-family: var(--ff-body);
+      font-size:.9rem;
     }
-    .donativo-btn:hover { background:rgba(201,168,76,.15); border-color:rgba(201,168,76,.4); transform:translateX(6px); }
-    .donativo-btn .d-icon { font-size:1.5rem; flex-shrink:0; }
-    .donativo-btn .d-text { text-align:left; }
-    .donativo-btn .d-text strong { display:block; font-size:.9rem; font-weight:700; }
-    .donativo-btn .d-text small { font-size:.75rem; opacity:.65; }
-    .bank-card {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(201,168,76,.2);
-      border-radius: var(--radius-lg);
-      padding: 32px;
+    .donativo-btn:hover {
+      background: rgba(255,255,255,.14);
+      border-color: rgba(228,199,107,.45);
+      transform: translateY(-2px);
     }
-    .bank-card h4 { font-family:var(--ff-display); color:var(--white); font-size:1.3rem; margin-bottom:20px; }
-    .bank-row { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.06); }
-    .bank-row:last-child { border:none; }
-    .bank-row label { font-size:.78rem; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; }
-    .bank-row span { font-size:.88rem; color:var(--white); font-weight:600; }
-    .donativo-thanks { text-align:center; margin-top:28px; color:rgba(255,255,255,.55); font-size:.88rem; line-height:1.7; }
-    .donativo-thanks strong { color:var(--gold-light); }
+    .d-icon { font-size:1.2rem; flex-shrink:0; }
+    .d-text strong { display:block; font-size:.92rem; }
+    .d-text small { display:block; font-size:.74rem; color:rgba(255,255,255,.72); margin-top:3px; }
+    .donativo-card {
+      background: rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .donativo-card h4 {
+      font-family: var(--ff-display);
+      font-size:1.4rem;
+      margin-bottom: 10px;
+      color:var(--gold-light);
+    }
+    .bank-box {
+      margin-top: 12px;
+      background: rgba(0,0,0,.2);
+      border-radius: 10px;
+      padding: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size:.78rem;
+      line-height:1.6;
+      color: rgba(255,255,255,.86);
+    }
 
     /* ============================================================
        DESCARGAS
        ============================================================ */
-    #descargas {
-      padding: 25px 0;
-      background: var(--white);
-    }
+    #descargas { padding: 110px 0; background: var(--off-white); }
     .downloads-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      display:grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
       gap: 20px;
     }
-    .download-item {
-      display:flex; align-items:center; gap:16px;
-      padding: 20px 22px;
-      background: var(--off-white);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--gray-100);
+    .download-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 20px;
+      border:1px solid var(--gray-100);
+      box-shadow: var(--shadow-sm);
       transition: var(--transition);
-      cursor: pointer;
+      display:flex; flex-direction:column;
     }
-    .download-item:hover { border-color:var(--gold); background:var(--white); box-shadow:var(--shadow-sm); transform:translateY(-3px); }
+    .download-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
     .download-icon {
-      width:48px; height:48px;
-      border-radius: var(--radius-sm);
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      background: var(--gray-100);
       display:flex; align-items:center; justify-content:center;
-      font-size:1.3rem;
-      flex-shrink:0;
+      font-size:1.25rem;
+      margin-bottom: 12px;
     }
-    .download-icon.pdf { background:#FFEEEE; color:#E53E3E; }
-    .download-icon.doc { background:#EEF0FF; color:#3B5BDB; }
-    .download-icon.xls { background:#EEFFEE; color:#2F9E44; }
-    .download-icon.img { background:#FFF9EE; color:#E67700; }
-    .download-info { flex:1; }
-    .download-info h4 { font-weight:700; font-size:.9rem; color:var(--navy); margin-bottom:2px; }
-    .download-info small { font-size:.72rem; color:var(--gray-500); }
-    .download-btn {
-      background:var(--navy); color:white;
-      width:34px; height:34px;
-      border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      font-size:.8rem;
-      transition:var(--transition);
-      flex-shrink:0;
+    .download-title {
+      font-family: var(--ff-display);
+      color: var(--navy);
+      font-size:1.2rem;
+      margin-bottom: 8px;
+      line-height:1.2;
     }
-    .download-item:hover .download-btn { background:var(--gold); color:var(--navy); }
+    .download-desc {
+      font-size:.85rem;
+      color:var(--gray-700);
+      line-height:1.6;
+      margin-bottom: 16px;
+      flex:1;
+    }
 
     /* ============================================================
        UBICACIÓN
        ============================================================ */
-    #ubicacion {
-      padding: 25px 0;
-      background: var(--off-white);
-    }
+    #ubicacion { padding: 110px 0; background: var(--white); }
     .ubicacion-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 48px;
-      align-items: start;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items:stretch;
     }
-    .ubicacion-info { padding-top: 8px; }
-    .ubicacion-detail {
-      display:flex; gap:14px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--gray-100);
-    }
-    .ubicacion-detail:last-child { border:none; }
-    .ubicacion-detail .u-icon {
-      width:40px; height:40px;
-      background:var(--gold-pale);
-      border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      font-size:1rem;
-      flex-shrink:0;
-    }
-    .ubicacion-detail .u-text strong { display:block; font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--navy); }
-    .ubicacion-detail .u-text span { font-size:.88rem; color:var(--gray-500); line-height:1.5; }
-    .map-wrapper {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      height: 380px;
-    }
-    .map-wrapper iframe { width:100%; height:100%; border:none; }
-
-    /* ============================================================
-       CONTACTO / WHATSAPP FLOTANTE
-       ============================================================ */
-    #whatsapp-fab {
-      position: fixed;
-      bottom: 28px; right: 24px;
-      width: 58px; height: 58px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex; align-items:center; justify-content:center;
-      box-shadow: 0 6px 24px rgba(37,211,102,.45);
-      z-index: 901;
-      transition: var(--transition);
-      animation: waPulse 2.5s infinite;
-    }
-    #whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,.6); animation:none; }
-    #whatsapp-fab svg { width:28px; height:28px; fill:white; }
-    @keyframes waPulse {
-      0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45)}
-      50%{box-shadow:0 6px 36px rgba(37,211,102,.7), 0 0 0 8px rgba(37,211,102,.12)}
-    }
-    /* Back to top */
-    #back-top {
-      position: fixed;
-      bottom: 100px; right: 24px;
-      width: 40px; height: 40px;
-      background: var(--gold);
-      color: var(--navy);
-      border-radius: 50%;
-      display: flex; align-items:center; justify-content:center;
-      font-size: .85rem;
-      z-index: 899;
-      opacity: 0;
-      pointer-events: none;
-      transition: var(--transition);
+    .map-wrap {
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid var(--gray-100);
       box-shadow: var(--shadow-sm);
+      min-height: 420px;
     }
-    #back-top.visible { opacity:1; pointer-events:all; }
-    #back-top:hover { transform: translateY(-3px); }
+    .map-wrap iframe {
+      width:100%; height:100%;
+      border:0;
+    }
+    .ubicacion-card {
+      background: var(--off-white);
+      border-radius: 18px;
+      border:1px solid var(--gray-100);
+      padding: 24px;
+      display:flex;
+      flex-direction:column;
+    }
+    .ubicacion-list {
+      margin-top: 12px;
+      display:grid;
+      gap: 11px;
+    }
+    .ubicacion-list li {
+      display:flex;
+      gap:9px;
+      font-size:.9rem;
+      color:var(--gray-700);
+      line-height:1.55;
+    }
+    .ubicacion-actions {
+      margin-top:auto;
+      display:flex; flex-wrap:wrap; gap:10px;
+      padding-top: 18px;
+    }
 
     /* ============================================================
        FOOTER
        ============================================================ */
-    #footer {
-      background: var(--navy);
-      color: rgba(255,255,255,.7);
-      padding: 25px 0 0;
+    footer {
+      background: #070F1D;
+      color: rgba(255,255,255,.85);
+      padding: 70px 0 24px;
+      position: relative;
     }
     .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 52px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      display:grid;
+      grid-template-columns: 1.3fr .9fr .9fr .9fr;
+      gap: 30px;
+      margin-bottom: 38px;
     }
-    .footer-brand .nav-logo { margin-bottom: 16px; }
-    .footer-brand p { font-size:.85rem; line-height:1.7; max-width:240px; }
-    .footer-social { display:flex; gap:10px; margin-top:20px; }
+    .footer-logo {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom: 12px;
+      color:#fff;
+      font-family: var(--ff-display);
+    }
+    .footer-logo .nav-logo-icon { width:34px; height:34px; font-size:1rem; }
+    .footer-col h4 {
+      font-size:.74rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--gold-light);
+      margin-bottom: 12px;
+      font-weight:700;
+    }
+    .footer-col ul { display:grid; gap:8px; }
+    .footer-col a {
+      font-size:.84rem;
+      color:rgba(255,255,255,.72);
+      transition:var(--transition);
+    }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-social { display:flex; gap:8px; margin-top: 12px; }
     .social-btn {
-      width:38px; height:38px;
-      border-radius:50%;
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.12);
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border:1px solid rgba(255,255,255,.2);
       display:flex; align-items:center; justify-content:center;
-      font-size:.85rem;
+      font-size:.78rem;
+      color:#fff;
       transition:var(--transition);
     }
     .social-btn:hover { background:var(--gold); color:var(--navy); border-color:var(--gold); }
-    .footer-col h4 {
-      font-family:var(--ff-display);
-      font-size:1.05rem;
-      font-weight:700;
-      color:var(--white);
-      margin-bottom:18px;
+    .footer-schedule {
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 10px 12px;
     }
-    .footer-col ul { display:flex; flex-direction:column; gap:8px; }
-    .footer-col ul a {
-      font-size:.83rem;
-      transition:var(--transition);
-      display:flex; align-items:center; gap:6px;
+    .schedule-row {
+      display:flex; justify-content:space-between;
+      font-size:.78rem;
+      padding:6px 0;
+      border-bottom:1px dashed rgba(255,255,255,.12);
     }
-    .footer-col ul a::before { content:'›'; color:var(--gold); }
-    .footer-col ul a:hover { color:var(--gold-light); padding-left:4px; }
-    .footer-schedule { display:flex; flex-direction:column; gap:8px; }
-    .schedule-row { display:flex; justify-content:space-between; font-size:.82rem; padding:4px 0; border-bottom:1px solid rgba(255,255,255,.05); }
-    .schedule-row strong { color:var(--white); font-weight:600; }
+    .schedule-row:last-child { border-bottom:none; }
     .footer-bottom {
-      padding: 20px 0;
-      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;
+      border-top:1px solid rgba(255,255,255,.1);
+      padding-top: 14px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+      font-size:.76rem;
+      color:rgba(255,255,255,.55);
     }
-    .footer-bottom p { font-size:.75rem; }
-    .footer-bottom a { color:var(--gold); }
 
     /* ============================================================
-       CHECKOUT SECTION
+       WHATSAPP FAB
        ============================================================ */
-    .checkout-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
+    #whatsapp-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 20px;
+      width: 58px; height:58px;
+      border-radius:50%;
+      z-index: 1100;
+      background: #25D366;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 10px 30px rgba(37,211,102,.4);
+      transition: var(--transition);
     }
-    .form-group { margin-bottom: 18px; }
-    .form-group label { display:block; font-size:.8rem; font-weight:700; color:var(--navy); margin-bottom:6px; letter-spacing:.04em; text-transform:uppercase; }
-    .form-group input, .form-group textarea, .form-group select {
-      width:100%; padding:12px 16px;
-      border:1.5px solid var(--gray-300);
-      border-radius:var(--radius-sm);
-      font-family:var(--ff-body);
-      font-size:.9rem;
-      color:var(--text-dark);
-      background:var(--white);
-      transition:var(--transition);
-      outline:none;
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      border-color:var(--gold);
-      box-shadow:0 0 0 3px rgba(201,168,76,.15);
-    }
-    .order-summary {
-      background:var(--white);
-      border-radius:var(--radius-lg);
-      padding:28px;
-      box-shadow:var(--shadow-sm);
-      border:1px solid var(--gray-100);
-    }
-    .order-summary h3 { font-family:var(--ff-display); font-size:1.2rem; font-weight:700; color:var(--navy); margin-bottom:20px; }
-    .order-item { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--gray-100); font-size:.85rem; }
-    .order-total { display:flex; justify-content:space-between; padding-top:14px; font-family:var(--ff-display); font-size:1.3rem; font-weight:900; color:var(--navy); }
+    #whatsapp-fab:hover { transform: translateY(-3px) scale(1.05); }
+    #whatsapp-fab svg { width:28px; height:28px; fill:#fff; }
 
-    /* Notification toast */
+    /* ============================================================
+       CART DRAWER
+       ============================================================ */
+    #cart-drawer {
+      position: fixed;
+      right: -420px;
+      top: 0;
+      width: 390px;
+      max-width: 100%;
+      height: 100vh;
+      background: #fff;
+      z-index: 1400;
+      box-shadow: -12px 0 34px rgba(0,0,0,.22);
+      transition: var(--transition);
+      display:flex; flex-direction:column;
+    }
+    #cart-drawer.open { right: 0; }
+    .drawer-head {
+      height: var(--navbar-h);
+      border-bottom:1px solid var(--gray-100);
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 0 16px;
+    }
+    .drawer-close {
+      width:36px; height:36px;
+      border-radius:50%;
+      background:var(--gray-100);
+      font-size:1.05rem;
+      color:var(--navy);
+    }
+    .drawer-body {
+      flex:1;
+      overflow:auto;
+      padding: 14px 16px 18px;
+    }
+    .cart-item {
+      display:grid;
+      grid-template-columns: 60px 1fr auto;
+      gap:10px;
+      align-items:center;
+      padding: 10px 0;
+      border-bottom:1px solid var(--gray-100);
+    }
+    .cart-item img {
+      width:60px; height:60px;
+      object-fit:cover; border-radius:8px;
+    }
+    .cart-item h5 {
+      font-size:.88rem; color:var(--navy);
+      margin-bottom:4px;
+    }
+    .cart-item small { color:var(--gray-500); font-size:.75rem; }
+    .cart-item button {
+      color:#c44343; font-size:.78rem; font-weight:700;
+    }
+    .drawer-foot {
+      border-top:1px solid var(--gray-100);
+      padding: 14px 16px;
+      display:grid; gap:10px;
+      background:#fff;
+    }
+    .cart-total {
+      display:flex; justify-content:space-between;
+      font-weight:800; color:var(--navy);
+    }
+
+    /* ============================================================
+       OVERLAY + MODALS
+       ============================================================ */
+    #overlay {
+      position: fixed;
+      inset:0;
+      background: rgba(10,22,40,.55);
+      opacity:0; visibility:hidden;
+      transition: var(--transition);
+      z-index:1300;
+    }
+    #overlay.show { opacity:1; visibility:visible; }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      z-index: 1500;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+    .modal.show { opacity:1; visibility:visible; }
+    .modal-card {
+      width: min(760px, 100%);
+      max-height: 86vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.35);
+      position:relative;
+    }
+    .modal-close {
+      position:absolute;
+      top: 12px; right: 12px;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: rgba(10,22,40,.08);
+      color: var(--navy);
+      font-size: 1rem;
+      z-index:2;
+    }
+    .modal-header-img {
+      width:100%; height: 280px;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+    }
+    .modal-body { padding: 28px 30px 30px; }
+    .modal-body h2 {
+      font-family: var(--ff-display);
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height:1.2;
+      font-size: 2rem;
+    }
+    .modal-body p {
+      color: var(--gray-700);
+      line-height:1.85;
+      margin-bottom: 14px;
+      font-size: .97rem;
+    }
+
+    /* ============================================================
+       TOAST
+       ============================================================ */
     #toast {
       position:fixed; bottom:100px; left:50%; transform:translateX(-50%) translateY(20px);
       background:var(--navy); color:white;
@@ -1252,6 +1426,8 @@
       .about-grid { gap:48px; }
       .donativo-grid { grid-template-columns:1fr; }
       .checkout-grid { grid-template-columns:1fr; }
+      .testimonials-grid { grid-template-columns:1fr; }
+      .first-grid { grid-template-columns:1fr; }
     }
     @media (max-width:768px) {
       :root { --navbar-h:64px; }
@@ -1271,6 +1447,7 @@
       .footer-grid { grid-template-columns:1fr; }
       .stat-item { flex:0 0 100%; }
       .slide-actions { flex-direction:column; }
+      .hero-proof { grid-template-columns:1fr; }
       .btn { width:100%; justify-content:center; }
     }
   </style>
@@ -1295,14 +1472,12 @@
         <!-- Links de escritorio -->
         <ul class="nav-links" id="nav-links">
           <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#prueba-social">Historias</a></li>
+          <li><a href="#primera-vez">Primera vez</a></li>
+          <li><a href="#servicios">Horarios</a></li>
           <li><a href="#eventos">Eventos</a></li>
-          <li><a href="#pastores">Pastores</a></li>
-          <li><a href="#blog">Artículos</a></li>
-          <li><a href="#tienda">Tienda</a></li>
-          <li><a href="#descargas">Descargas</a></li>
-          <li><a href="/radio/" class="nav-radio">Radio</a></li>
-          <li><a href="#ubicacion">Ubicación</a></li>
-          <li><a href="#donativos" class="nav-cta">Donativos</a></li>
+          <li><a href="#radio-digital" class="nav-radio">Radio</a></li>
+          <li><a href="#cta-final" class="nav-cta">Planear visita</a></li>
         </ul>
 
         <!-- Hamburger móvil -->
@@ -1316,13 +1491,12 @@
   <!-- Menú móvil -->
   <div id="mobile-menu" role="menu">
     <a href="#inicio">🏠 Inicio</a>
+    <a href="#prueba-social">💬 Historias</a>
+    <a href="#primera-vez">🧭 Primera vez</a>
+    <a href="#servicios">⏰ Horarios</a>
     <a href="#eventos">📅 Eventos</a>
-    <a href="#pastores">👤 Pastores</a>
-    <a href="#blog">📖 Artículos</a>
-    <a href="#tienda">🛍️ Tienda</a>
-    <a href="#descargas">⬇️ Descargas</a>
-    <a href="#ubicacion">📍 Ubicación</a>
-    <a href="#donativos">💛 Donativos</a>
+    <a href="#radio-digital">📻 Radio</a>
+    <a href="#cta-final">✅ Planear visita</a>
   </div>
   <!-- ============================================================
        HERO PRINCIPAL CON SLIDER
@@ -1336,12 +1510,17 @@
           <div class="slide-bg" style="background-image:url('img/Slider1.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
-            <span class="slide-tag">✦ Bienvenidos</span>
-            <h1 class="slide-title">Encuentra tu <em>propósito</em><br>en Cristo</h1>
-            <p class="slide-desc">Una comunidad de fe viva donde cada persona es amada, valorada y llamada a un destino extraordinario.</p>
+            <span class="slide-tag">BIENVENIDO A CASA</span>
+            <h1 class="slide-title">No llegaste aquí por accidente.<br><em>Dios todavía escribe tu historia.</em></h1>
+            <p class="slide-desc">Una iglesia para personas reales: familias con preguntas, jóvenes con hambre de propósito y corazones listos para comenzar de nuevo.</p>
             <div class="slide-actions">
-              <a href="#servicios" class="btn btn-gold">Ver servicios ↓</a>
-              <a href="#about" class="btn btn-outline-white">Conócenos</a>
+              <a href="#servicios" class="btn btn-gold">Quiero asistir este domingo</a>
+              <a href="https://wa.me/528717975096?text=Hola%2C%20quiero%20asistir%20por%20primera%20vez%20a%20Iglesia%20Bel%C3%A9n" target="_blank" rel="noopener" class="btn btn-outline-white">Hablar con un líder</a>
+            </div>
+            <div class="hero-proof">
+              <div><strong>+17 años</strong><span>sirviendo a familias</span></div>
+              <div><strong>Domingos · 12:00 PM</strong><span>experiencia principal</span></div>
+              <div><strong>Torreón, Coahuila</strong><span>te esperamos en casa</span></div>
             </div>
           </div>
         </div>
@@ -1351,12 +1530,12 @@
           <div class="slide-bg" style="background-image:url('img/Slider2.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
-            <span class="slide-tag">📅 Próximo evento</span>
-            <h1 class="slide-title">Conferencia<br><em>Belén 2026</em></h1>
-            <p class="slide-desc">Tres días de encuentro, adoración y transformación. Del 20 al 22 de Septiembre. No te quedes fuera.</p>
+            <span class="slide-tag">PRÓXIMO ENCUENTRO</span>
+            <h2 class="slide-title">Conferencia Aviva 2026:<br><em>tres días que pueden marcar tu año</em></h2>
+            <p class="slide-desc">Adoración intensa, palabra práctica y una comunidad que camina contigo. Del 20 al 22 de septiembre.</p>
             <div class="slide-actions">
-              <a href="#eventos" class="btn btn-gold">Ver detalles ↓</a>
-              <a href="#ubicacion" class="btn btn-outline-white">¿Cómo llegar?</a>
+              <a href="#eventos" class="btn btn-gold">Reservar mi lugar</a>
+              <a href="#ubicacion" class="btn btn-outline-white">Ver ubicación</a>
             </div>
           </div>
         </div>
@@ -1366,12 +1545,12 @@
           <div class="slide-bg" style="background-image:url('img/Slider3.webp')"></div>
           <div class="slide-overlay"></div>
           <div class="container slide-content">
-            <span class="slide-tag">🙏 Únete hoy</span>
-            <h1 class="slide-title">Cada <em>domingo</em><br>algo nuevo espera</h1>
-            <p class="slide-desc">Servicios a las 12:00 PM. Trae a tu familia y vive una experiencia que cambiará tu semana.</p>
+            <span class="slide-tag">PRIMERA VEZ</span>
+            <h2 class="slide-title">Llega como estás.<br><em>Sal con fe para lo que viene.</em></h2>
+            <p class="slide-desc">Hemos diseñado una experiencia clara para ti: bienvenida, mensaje bíblico aplicable y oración personal.</p>
             <div class="slide-actions">
-              <a href="#servicios" class="btn btn-gold">Ver horarios ↓</a>
-              <a href="#ubicacion" class="btn btn-outline-white">Nuestra dirección</a>
+              <a href="#plan-visita" class="btn btn-gold">Planear mi visita</a>
+              <a href="/radio/" class="btn btn-outline-white">Escuchar radio en vivo</a>
             </div>
           </div>
         </div>
@@ -1382,7 +1561,7 @@
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <span class="slide-tag">🛍️ Tienda ministerial</span>
-            <h1 class="slide-title">Recursos que<br><em>edifican tu fe</em></h1>
+            <h2 class="slide-title">Recursos que<br><em>edifican tu fe</em></h2>
             <p class="slide-desc">Libros, Biblias, ropa y material ministerial para fortalecer tu vida espiritual y la de tu familia.</p>
             <div class="slide-actions">
               <a href="#tienda" class="btn btn-gold">Ver tienda ↓</a>
@@ -1397,7 +1576,7 @@
           <div class="slide-overlay"></div>
           <div class="container slide-content">
             <span class="slide-tag">📻 Radio en Vivo</span>
-            <h1 class="slide-title">Escucha nuestra<br><em>Radio Cristiana 24/7</em></h1>
+            <h2 class="slide-title">Escucha nuestra<br><em>Radio Cristiana 24/7</em></h2>
             <p class="slide-desc">Música de alabanza, prédicas y devocionales en vivo desde Radio Belén.</p>
             <div class="slide-actions">
               <a href="/radio/" class="btn btn-gold">🎧 Escuchar ahora</a>
@@ -1415,10 +1594,47 @@
       <div class="scroll-indicator">Scroll</div>
     </div>
   </section>
+  <section id="prueba-social" class="social-proof" aria-labelledby="prueba-social-title">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">✦ HISTORIAS REALES</span>
+        <h2 class="section-title" id="prueba-social-title">Lo que pasa cuando una persona decide dar el paso</h2>
+        <p class="section-sub">Testimonios recientes de personas que llegaron por primera vez y encontraron dirección, paz y comunidad.</p>
+      </div>
+      <div class="testimonials-grid">
+        <article class="testimonial-card reveal"><p>“Llegué con ansiedad y salí con esperanza. Me escucharon, oraron por mí y hoy no camino sola.”</p><strong>— Andrea, 29 años</strong></article>
+        <article class="testimonial-card reveal delay-1"><p>“Mi familia no asistía a una iglesia desde hace años. En Belén nos sentimos en casa desde el primer domingo.”</p><strong>— Familia R.</strong></article>
+        <article class="testimonial-card reveal delay-2"><p>“Pensé que sería una reunión más, pero el mensaje fue exactamente lo que necesitaba para volver a empezar.”</p><strong>— Carlos, emprendedor</strong></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="primera-vez" class="first-visit" aria-labelledby="primera-vez-title">
+    <div class="container">
+      <div class="first-grid">
+        <div class="first-steps reveal-left">
+          <span class="section-tag">✦ PRIMERA VEZ AQUÍ</span>
+          <h2 class="section-title" id="primera-vez-title">Te explicamos todo en 60 segundos</h2>
+          <ul>
+            <li><strong>Qué esperar:</strong> una bienvenida cálida, música en vivo, mensaje bíblico claro y oración personal.</li>
+            <li><strong>Cómo llegar:</strong> estamos en Praxedis 7, Palmas San Isidro, Torreón. Hay acceso rápido y apoyo al llegar.</li>
+            <li><strong>Qué hacer al llegar:</strong> busca el módulo “Primera Vez”; un anfitrión te acompañará en cada paso.</li>
+          </ul>
+          <a href="https://wa.me/528717975096?text=Hola%2C%20quiero%20planear%20mi%20primera%20visita%20a%20Iglesia%20Bel%C3%A9n" target="_blank" rel="noopener" class="btn btn-gold">Planear mi visita ahora</a>
+        </div>
+        <aside class="visit-card reveal-right">
+          <h3 style="font-family:var(--ff-display);font-size:1.8rem;color:var(--navy);margin-bottom:8px;">Este domingo puede ser tu nuevo inicio</h3>
+          <p style="color:var(--text-mid);line-height:1.7;margin-bottom:16px;">No tienes que tenerlo todo resuelto para venir. Solo da el primer paso y nosotros te ayudamos con el resto.</p>
+          <a href="#ubicacion" class="btn btn-outline-navy" style="margin-bottom:10px;">Ver ubicación</a>
+          <a href="#servicios" class="btn btn-navy">Ver horarios</a>
+        </aside>
+      </div>
+    </div>
+  </section>
   <!-- ============================================================
        SOBRE LA IGLESIA
        ============================================================ -->
-  <section id="about" aria-labelledby="about-title">
+  <section id="about" class="funnel-hidden" aria-labelledby="about-title">
     <div class="container">
       <div class="about-grid">
         <div class="about-visual reveal-left">
@@ -1432,31 +1648,31 @@
         </div>
 
         <div class="reveal-right">
-          <span class="section-tag">✦ Quiénes somos</span>
-          <h2 class="section-title" id="about-title">Una iglesia que<br>cambia vidas</h2>
+          <span class="section-tag">✦ NUESTRA ESENCIA</span>
+          <h2 class="section-title" id="about-title">No somos un evento.<br>Somos una familia en misión.</h2>
           <div class="gold-line"></div>
-          <p class="section-sub">Desde 2007, Iglesia Belén ha sido un lugar de transformación, comunidad y esperanza para miles de familias en México. Creemos en el poder del Evangelio para cambiar corazones y comunidades.</p>
+          <p class="section-sub">Desde 2007 acompañamos procesos reales: matrimonios restaurados, jóvenes con propósito y familias reconciliadas con Dios.</p>
 
           <div class="about-cards">
             <div class="about-card reveal delay-1">
-              <div class="about-card-icon">🎯</div>
-              <h4>Misión</h4>
-              <p>Conectar personas con Dios y entre sí para transformar comunidades con el amor de Cristo.</p>
+              <div class="about-card-icon">🧭</div>
+              <h4>Dirección clara</h4>
+              <p>Cada domingo compartimos una palabra bíblica aplicable a tu semana, tu hogar y tus decisiones.</p>
             </div>
             <div class="about-card reveal delay-2">
-              <div class="about-card-icon">🔭</div>
-              <h4>Visión</h4>
-              <p>Ser la iglesia más relevante de México, alcanzando cada generación con el mensaje de vida.</p>
+              <div class="about-card-icon">🤝</div>
+              <h4>Comunidad real</h4>
+              <p>No caminas solo. Encontrarás personas que oran contigo y te ayudan a dar tu siguiente paso.</p>
             </div>
             <div class="about-card reveal delay-3">
-              <div class="about-card-icon">💛</div>
-              <h4>Valores</h4>
-              <p>Fe, integridad, excelencia, comunidad y servicio son los pilares de todo lo que hacemos.</p>
+              <div class="about-card-icon">🔥</div>
+              <h4>Fe en acción</h4>
+              <p>Servimos nuestra ciudad con excelencia, compasión y una convicción: Jesús transforma vidas hoy.</p>
             </div>
             <div class="about-card reveal delay-4">
-              <div class="about-card-icon">🌱</div>
-              <h4>Crecimiento</h4>
-              <p>Desarrollo espiritual continuo a través de grupos, escuelas y programas de discipulado.</p>
+              <div class="about-card-icon">✅</div>
+              <h4>Siguiente paso</h4>
+              <p id="plan-visita">Si vienes por primera vez, te acompañamos desde tu llegada hasta tu integración.</p>
             </div>
           </div>
         </div>
@@ -1474,6 +1690,7 @@
         <h2 class="section-title" id="servicios-title">Únete a nuestros servicios</h2>
         <div class="gold-line center"></div>
         <p class="section-sub">Tenemos múltiples servicios para que puedas venir cuando mejor te quede. ¡Todos son bienvenidos!</p>
+        <div style="margin-top:16px;"><a href="#ubicacion" class="btn btn-outline-navy">Ver ubicación en 1 clic</a></div>
       </div>
       <div class="servicios-grid">
         <div class="servicio-card reveal delay-2">
@@ -1497,23 +1714,40 @@
         <div class="servicio-card reveal delay-5">
           <div class="servicio-icon">🙏</div>
           <div class="servicio-day">Viernes</div>
-          <div class="servicio-name">Noche de Oración</div>
+          <div class="servicio-name">Oración & Milagros</div>
           <div class="servicio-time">7:00 PM — 8:30 PM</div>
         </div>
-        <div class="servicio-card reveal delay-1">
-          <div class="servicio-icon">👥</div>
-          <div class="servicio-day">Sábado</div>
-          <div class="servicio-name">Grupos Celulares</div>
-          <div class="servicio-time">Horario por grupo</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats" aria-label="Estadísticas del ministerio">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-item reveal delay-1">
+          <span class="stat-num" data-count="17">0</span>
+          <span class="stat-label">Años de ministerio</span>
+        </div>
+        <div class="stat-item reveal delay-2">
+          <span class="stat-num" data-count="1200">0</span>
+          <span class="stat-label">Familias impactadas</span>
+        </div>
+        <div class="stat-item reveal delay-3">
+          <span class="stat-num" data-count="52">0</span>
+          <span class="stat-label">Semanas de servicios</span>
+        </div>
+        <div class="stat-item reveal delay-4">
+          <span class="stat-num" data-count="24">0</span>
+          <span class="stat-label">Horas de radio activa</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       PASTORES Y STAFF
+       PASTORES
        ============================================================ -->
-  <section id="pastores" aria-labelledby="pastores-title">
+  <section id="pastores" class="funnel-hidden" aria-labelledby="pastores-title">
     <div class="container">
       <div class="section-header center">
         <span class="section-tag" style="color:var(--gold-light)">✦ Liderazgo</span>
@@ -1525,7 +1759,7 @@
 
         <div class="pastor-card reveal delay-1">
           <div class="pastor-photo">
-            <img src="img/PastorJGCS.webp" alt="Pastor">
+            <img src="img/PastorJGCS.webp" alt="Pastor" loading="lazy" decoding="async">
           </div>
           <div class="pastor-info">
             <div class="pastor-name">Pastor Gerardo Cruz S</div>
@@ -1541,7 +1775,7 @@
         
         <div class="pastor-card reveal delay-3">
           <div class="pastor-photo">
-            <img src="img/alabanza2.webp" alt="adoracion">
+            <img src="img/alabanza2.webp" alt="adoracion" loading="lazy" decoding="async">
           </div>
           <div class="pastor-info">
             <div class="pastor-name">Leticia Cruz</div>
@@ -1557,7 +1791,7 @@
         
         <div class="pastor-card reveal delay-5">
           <div class="pastor-photo">
-            <img src="img/adoracion.webp" alt="adoracion">
+            <img src="img/adoracion.webp" alt="adoracion" loading="lazy" decoding="async">
           </div>
           <div class="pastor-info">
             <div class="pastor-name">Damaris Cruz</div>
@@ -1594,7 +1828,7 @@
           </div>
           <div class="evento-body">
             <div class="evento-category">Conferencia</div>
-            <h3 class="evento-title">Conferencia Aviva 2025</h3>
+            <h3 class="evento-title">Conferencia Aviva 2026</h3>
             <p class="evento-desc">Tres días de adoración, enseñanza y encuentro con Dios. Conferencistas internacionales y una atmósfera de gloria.</p>
             <div class="evento-meta">
               <span>📅 20-22 Sep</span>
@@ -1642,10 +1876,33 @@
     </div>
   </section>
 
+  <section id="radio-digital" class="radio-digital" aria-labelledby="radio-digital-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" style="color:var(--gold-light)">✦ CONTENIDO DIGITAL</span>
+        <h2 class="section-title light" id="radio-digital-title">Tu fe también se fortalece entre semana</h2>
+        <p class="section-sub light">Escucha Radio Belén 24/7 con música, mensajes y devocionales que te acompañan todos los días.</p>
+        <a href="/radio/" class="btn btn-gold">Entrar a Radio Belén</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta-final" class="final-cta" aria-labelledby="cta-final-title">
+    <div class="container">
+      <span class="section-tag" style="color:var(--gold-light)">✦ DECISIÓN</span>
+      <h2 class="section-title light" id="cta-final-title">Tu próximo domingo puede ser el inicio de una nueva etapa</h2>
+      <p class="section-sub light">Da el paso hoy. Te esperamos con una iglesia lista para caminar contigo.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px;">
+        <a href="https://wa.me/528717975096?text=Hola%2C%20quiero%20planear%20mi%20visita%20a%20Iglesia%20Bel%C3%A9n" target="_blank" rel="noopener" class="btn btn-gold">Sí, quiero planear mi visita</a>
+        <a href="#ubicacion" class="btn btn-outline-white">Ver ubicación</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================================================
        BLOG / ARTÍCULOS
        ============================================================ -->
-  <section id="blog" aria-labelledby="blog-title">
+  <section id="blog" class="funnel-hidden" aria-labelledby="blog-title">
     <div class="container">
       <div class="section-header center">
         <span class="section-tag">✦ Recursos</span>
@@ -1662,7 +1919,7 @@
   <!-- ============================================================
        TIENDA (ECOMMERCE)
        ============================================================ -->
-  <section id="tienda" aria-labelledby="tienda-title">
+  <section id="tienda" class="funnel-hidden" aria-labelledby="tienda-title">
     <div class="container">
       <div class="section-header center">
         <span class="section-tag">✦ Ministerio</span>
@@ -1679,7 +1936,7 @@
   <!-- ============================================================
        CHECKOUT (se muestra al finalizar pedido)
        ============================================================ -->
-  <section id="checkout" aria-labelledby="checkout-title">
+  <section id="checkout" class="funnel-hidden" aria-labelledby="checkout-title">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">✦ Pedido</span>
@@ -1730,7 +1987,7 @@
   <!-- ============================================================
        DONATIVOS
        ============================================================ -->
-  <section id="donativos" aria-labelledby="donativos-title">
+  <section id="donativos" class="funnel-hidden" aria-labelledby="donativos-title">
     <div class="container">
       <div class="donativo-grid">
         <div>
@@ -1759,47 +2016,29 @@
             <button class="donativo-btn reveal delay-3" onclick="abrirWA()">
               <span class="d-icon">📱</span>
               <span class="d-text">
-                <strong>Ofrenda por WhatsApp</strong>
-                <small>Escríbenos y te enviamos los datos</small>
+                <strong>Donar por WhatsApp</strong>
+                <small>Te ayudamos paso a paso</small>
               </span>
               <span>→</span>
             </button>
           </div>
         </div>
 
-        <div class="reveal-right">
-          <div class="bank-card">
-            <h4>💳 Datos Bancarios</h4>
-            <div class="bank-row">
-              <label>Banco</label>
-              <span>BBVA Bancomer</span>
-            </div>
-            <div class="bank-row">
-              <label>Cuenta</label>
-              <span>0123 4567 8901 2345</span>
-            </div>
-            <div class="bank-row">
-              <label>CLABE</label>
-              <span>012 345 678 901 234 56</span>
-            </div>
-            <div class="bank-row">
-              <label>Titular</label>
-              <span>Iglesia Cristiana Belén A.R.</span>
-            </div>
-            <div class="bank-row">
-              <label>Concepto</label>
-              <span>DONATIVO + Tu nombre</span>
-            </div>
-            <div class="bank-row">
-              <label>RFC</label>
-              <span>ICVN070312ABC (deducible de impuestos)</span>
-            </div>
-          </div>
-          <p class="donativo-thanks">
-            <strong>✨ Gracias por tu generosidad.</strong><br>
-            "El que siembra generosamente, también cosechará generosamente." — 2 Corintios 9:6<br><br>
-            Recibirás un comprobante de donativo por correo.
+        <div class="donativo-card reveal-right">
+          <h4>Cuenta para transferencias</h4>
+          <p style="font-size:.9rem;color:rgba(255,255,255,.82);line-height:1.7">
+            Si prefieres donar por transferencia, usa los siguientes datos:
           </p>
+          <div class="bank-box" id="bank-box">
+            Banco: BBVA México<br>
+            Titular: Iglesia Cristiana Belén A.R.<br>
+            CLABE: 012345678901234567<br>
+            Cuenta: 1234567890<br>
+            Referencia: DONATIVO
+          </div>
+          <button class="btn btn-outline-white" style="margin-top:14px" onclick="copiarBanco()">
+            Copiar datos
+          </button>
         </div>
       </div>
     </div>
@@ -1808,16 +2047,16 @@
   <!-- ============================================================
        DESCARGAS
        ============================================================ -->
-  <section id="descargas" aria-labelledby="descargas-title">
+  <section id="descargas" class="funnel-hidden" aria-labelledby="descargas-title">
     <div class="container">
       <div class="section-header center">
-        <span class="section-tag">✦ Recursos gratuitos</span>
+        <span class="section-tag">✦ Recursos PDF</span>
         <h2 class="section-title" id="descargas-title">Centro de descargas</h2>
         <div class="gold-line center"></div>
-        <p class="section-sub">Material espiritual gratuito para tu crecimiento personal, familiar y ministerial.</p>
+        <p class="section-sub">Material gratuito para fortalecer tu caminar con Dios.</p>
       </div>
       <div class="downloads-grid" id="downloads-grid">
-        <!-- Generado por JS -->
+        <!-- JS -->
       </div>
     </div>
   </section>
@@ -1831,55 +2070,35 @@
         <span class="section-tag">✦ Visítanos</span>
         <h2 class="section-title" id="ubicacion-title">¿Cómo llegar?</h2>
         <div class="gold-line"></div>
+        <p class="section-sub">Estamos en una ubicación céntrica y accesible. Te esperamos con los brazos abiertos.</p>
       </div>
+
       <div class="ubicacion-grid">
-        <div class="ubicacion-info">
-          <div class="ubicacion-detail reveal delay-1">
-            <div class="u-icon">📍</div>
-            <div class="u-text">
-              <strong>Dirección</strong>
-              <span>Av. Praxedis Guerrero 7, Col. Palmas San Isidro,<br>Torreón, Coahuila. CP 27110</span>
-            </div>
-          </div>
-          <div class="ubicacion-detail reveal delay-2">
-            <div class="u-icon">⏰</div>
-            <div class="u-text">
-              <strong>Servicios Domingo</strong>
-              <span>12:00 PM</span>
-            </div>
-          </div>
-          <div class="ubicacion-detail reveal delay-3">
-            <div class="u-icon">📞</div>
-            <div class="u-text">
-              <strong>Teléfono</strong>
-              <span>+52 87 1797 5096</span>
-            </div>
-          </div>
-          <div class="ubicacion-detail reveal delay-4">
-            <div class="u-icon">✉️</div>
-            <div class="u-text">
-              <strong>Correo</strong>
-              <span>hola@beleniglesia.com</span>
-            </div>
-          </div>
-          <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="https://maps.app.goo.gl/CRzkRXvoWRT4RJLu9" target="_blank" rel="noopener" class="btn btn-gold">
-              🗺️ Cómo llegar
-            </a>
-            <a href="https://wa.me/528717975096" target="_blank" rel="noopener" class="btn btn-outline-navy">
-              💬 Escribirnos
-            </a>
-          </div>
+        <div class="map-wrap reveal-left">
+          <iframe
+            title="Mapa de ubicación Iglesia Belén"
+            src="https://www.google.com/maps?q=Av.%20Praxedis%20Guerrero%207%2C%20Palmas%20San%20Isidro%2C%20Torre%C3%B3n%2C%20Coahuila&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-        <div class="map-wrapper reveal-right">
-          <!-- Mapa de Google Maps embebido (centrado) -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.9074314774707!2d-103.43581132309541!3d25.574746316302157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fda3b102a4033%3A0xa93eae13e809ca10!2sAv%20Praxedis%20Guerrero%2C%20Torre%C3%B3n%2C%20Coah.!5e0!3m2!1ses-419!2smx!4v1775194793168!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicación Iglesia Belén">
-          </iframe>
+        <div class="ubicacion-card reveal-right">
+          <h3 style="font-family:var(--ff-display);font-size:1.6rem;color:var(--navy);margin-bottom:8px">Iglesia Cristiana Belén</h3>
+          <div class="ubicacion-list">
+            <li><span>📍</span><span>Praxedis 7, Palmas San Isidro, Torreón, Coahuila, México</span></li>
+            <li><span>🕐</span><span>Domingos 12:00 PM · Miércoles 7:00 PM · Viernes 7:00 PM</span></li>
+            <li><span>📞</span><span>+52 871 797 5096</span></li>
+            <li><span>✉️</span><span>hola@beleniglesia.com</span></li>
+          </div>
+
+          <div class="ubicacion-actions">
+            <a href="https://maps.app.goo.gl/CRzkRXvoWRT4RJLu9" target="_blank" rel="noopener" class="btn btn-gold">
+              Abrir en Google Maps
+            </a>
+            <a href="https://wa.me/528717975096" target="_blank" rel="noopener" class="btn btn-outline-navy">
+              Escribir por WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1888,11 +2107,11 @@
   <!-- ============================================================
        FOOTER
        ============================================================ -->
-  <footer id="footer" role="contentinfo">
+  <footer>
     <div class="container">
       <div class="footer-grid">
         <!-- Marca -->
-        <div class="footer-brand">
+        <div class="footer-col">
           <a href="#inicio" class="nav-logo">
             <div class="nav-logo-icon">✝</div>
             <div class="nav-logo-text">
@@ -1905,7 +2124,7 @@
             <a href="#" class="social-btn" aria-label="Facebook">𝐟</a>
             <a href="#" class="social-btn" aria-label="Instagram">📷</a>
             <a href="#" class="social-btn" aria-label="YouTube">▶</a>
-            <a href="https://wa.me/528717975096" class="social-btn" aria-label="WhatsApp" target="_blank">💬</a>
+            <a href="https://wa.me/528717975096" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
           </div>
         </div>
 
@@ -1941,7 +2160,7 @@
             <li><a href="tel:+5215512345678">📞 +52 8717975096</a></li>
             <li><a href="mailto:hola@beleniglesia.com">✉️ hola@beleniglesia.com</a></li>
             <li><a href="#ubicacion">📍 Praxedis 7, Palmas San Isidro TRC, COAH.</a></li>
-            <li><a href="https://wa.me/528717975096" target="_blank">💬 WhatsApp</a></li>
+            <li><a href="https://wa.me/528717975096" target="_blank" rel="noopener">💬 WhatsApp</a></li>
           </ul>
         </div>
       </div>
@@ -1967,633 +2186,469 @@
     </svg>
   </a>
 
-  <!-- Botón regresar arriba -->
-  <button id="back-top" aria-label="Regresar al inicio" onclick="scrollToTop()">↑</button>
-
-  <!-- Botón carrito -->
-  <button id="cart-btn" onclick="abrirCarrito()" aria-label="Ver carrito">
-    🛒
-    <span class="cart-badge" id="cart-badge">0</span>
-  </button>
-
   <!-- ============================================================
-       DRAWER DEL CARRITO
+       CART DRAWER
        ============================================================ -->
-  <div class="drawer-overlay" id="drawer-overlay" onclick="cerrarCarrito()"></div>
-  <div id="cart-drawer" role="dialog" aria-modal="true" aria-label="Carrito de compras">
-    <div class="drawer-header">
+  <aside id="cart-drawer" aria-label="Carrito de compras">
+    <div class="drawer-head">
       <h3>🛒 Tu carrito</h3>
-      <button class="drawer-close" onclick="cerrarCarrito()">✕</button>
+      <button class="drawer-close" onclick="toggleCart(false)" aria-label="Cerrar carrito">✕</button>
     </div>
-    <div class="drawer-items" id="drawer-items">
-      <div class="cart-empty" id="cart-empty">
-        <div style="font-size:3rem">🛒</div>
-        <p>Tu carrito está vacío.<br>Explora nuestra tienda.</p>
-      </div>
+    <div class="drawer-body" id="cart-items">
+      <!-- JS -->
     </div>
-    <div class="drawer-footer">
+    <div class="drawer-foot">
       <div class="cart-total">
-        <span>Total estimado</span>
-        <strong id="cart-total-price">$0.00</strong>
+        <span>Total</span>
+        <strong id="cart-total">$0.00</strong>
       </div>
-      <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="irACheckout()">
-        Finalizar pedido →
-      </button>
+      <button class="btn btn-gold" style="justify-content:center" onclick="irCheckout()">Ir a pagar</button>
+      <button class="btn btn-outline-navy" style="justify-content:center" onclick="toggleCart(false)">Seguir comprando</button>
     </div>
-  </div>
+  </aside>
 
-  <!-- ============================================================
-       MODAL DE ARTÍCULOS
-       ============================================================ -->
-  <div id="article-modal" role="dialog" aria-modal="true" aria-label="Artículo">
-    <div class="modal-backdrop" onclick="cerrarModal()"></div>
-    <div class="modal-box">
-      <div class="modal-header-img" id="modal-header-img"></div>
-      <button class="modal-close" onclick="cerrarModal()">✕</button>
+  <div id="overlay" onclick="closeAllOverlays()"></div>
+
+  <!-- Modal Artículo -->
+  <div class="modal" id="blog-modal" role="dialog" aria-modal="true" aria-label="Detalle del artículo">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeBlogModal()" aria-label="Cerrar">✕</button>
+      <div id="modal-header-img"></div>
       <div class="modal-body" id="modal-body"></div>
     </div>
   </div>
 
-  <!-- Toast de notificación -->
-  <div id="toast" role="alert" aria-live="polite"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
 
-  <!-- ============================================================
-       JAVASCRIPT
-       ============================================================ -->
   <script>
     'use strict';
 
     /* ============================================================
-       DATOS DE LA APLICACIÓN
+       DATOS MOCK — Puedes convertir esto en API/JSON real
        ============================================================ */
-
-    // ── Número de WhatsApp (editar aquí) ──────────────────────
-    const WA_NUMBER = '5215512345678'; // Formato: 52 + código área + número
-
-    // ── Artículos del blog ────────────────────────────────────
     const ARTICLES = [
       {
-        id: 1,
-        tag: 'Devocional',
-        date: '2 Sep 2025',
-        title: 'La fe que mueve montañas',
-        excerpt: 'Descubre cómo una fe genuina puede transformar cada área de tu vida, desde tus relaciones hasta tus finanzas.',
-        color: 'linear-gradient(135deg,#0A1628,#1A3560)',
-        image: 'img/art1.webp',
-        content: `<p>La fe no es simplemente creer que algo puede suceder; es la convicción profunda de que <strong>Dios ya está actuando</strong> en tu situación antes de que puedas verlo con tus ojos naturales.</p>
-        <blockquote>"La fe es la garantía de lo que se espera, la certeza de lo que no se ve." — Hebreos 11:1</blockquote>
-        <p>Jesús dijo que si tenemos fe como un grano de mostaza, podemos decirle a la montaña que se mueva y se moverá. No porque la montaña sea pequeña, sino porque nuestra fe conecta con un Dios infinitamente grande.</p>
-        <p>Hoy te invito a hacer este ejercicio: identifica la "montaña" más grande en tu vida ahora mismo. Puede ser una enfermedad, una deuda, una relación rota o un sueño que parece imposible. Ahora preséntasela a Dios en oración, no con duda, sino con la certeza de que en Sus manos, esa montaña ya está siendo movida.</p>
-        <p>La fe que mueve montañas no es una fe perfecta; es una fe que se mantiene firme incluso cuando no ve resultados inmediatos. Es la fe que dice "aunque no entiendo, confío en Ti."</p>`
+        title: 'Cómo mantener la fe en tiempos difíciles',
+        excerpt: 'Descubre 5 principios bíblicos para permanecer firme cuando todo parece derrumbarse.',
+        content: `La fe no niega la realidad, la interpreta desde el cielo. En momentos de presión, recuerda:
+        1) Dios sigue siendo bueno.
+        2) Su Palabra sigue siendo verdad.
+        3) No estás solo.
+        Toma tiempo para orar, adorar y rodearte de comunidad.`,
+        category: 'Devocional',
+        image: 'img/art1.webp'
       },
       {
-        id: 2,
-        tag: 'Familia',
-        date: '28 Ago 2025',
-        title: 'Cómo construir un hogar sobre roca',
-        excerpt: 'Principios bíblicos para edificar una familia sólida en tiempos donde todo a nuestro alrededor parece derrumbarse.',
-        color: 'linear-gradient(135deg,#281A0A,#403020)',
-        image: 'img/art2.webp',
-        content: `<p>El Señor Jesús habló de dos constructores: uno que edificó sobre arena y otro sobre roca. La diferencia no estaba en el diseño de las casas, sino en el <strong>cimiento sobre el cual fueron construidas</strong>.</p>
-        <blockquote>"Todo el que oye estas palabras mías y las pone en práctica es como un hombre prudente que construyó su casa sobre la roca." — Mateo 7:24</blockquote>
-        <p>En el contexto familiar, esa roca son los valores del Reino: el amor incondicional, el perdón continuo, la comunicación honesta y la oración compartida.</p>
-        <p>Una familia que ora junta, permanece junta. No porque la oración sea una fórmula mágica, sino porque la oración nos recuerda que dependemos de Dios, y esa dependencia produce humildad, y la humildad es el suelo fértil donde crecen las relaciones saludables.</p>`
+        title: 'Familias restauradas por el amor de Cristo',
+        excerpt: 'Historias reales de matrimonios y hogares transformados por el evangelio.',
+        content: `La restauración empieza cuando rendimos el orgullo y abrimos espacio para la gracia.
+        El amor de Cristo sana heridas profundas, reconstruye confianza y enciende esperanza.`,
+        category: 'Testimonio',
+        image: 'img/art2.webp'
       },
       {
-        id: 6,
-        tag: 'Oración',
-        date: '28 Jul 2025',
-        title: '7 formas de orar más efectivamente',
-        excerpt: 'La oración es la respiración del espíritu. Descubre estrategias prácticas para tener una vida de oración más profunda y poderosa.',
-        color: 'linear-gradient(135deg,#201808,#402810)',
-        image: 'img/art6.webp',
-        content: `<p>Muchas personas dicen "no sé cómo orar" o "mis oraciones parecen rebotar en el techo." Si te identificas con esto, estas siete prácticas pueden transformar tu vida de oración.</p>
-        <blockquote>"Oren sin cesar." — 1 Tesalonicenses 5:17</blockquote>
-        <p><strong>1. Ora en voz alta.</strong> Hay algo poderoso en escuchar tu propia voz de fe. <strong>2. Escribe tus oraciones.</strong> Un diario de oración te ayuda a ver las respuestas. <strong>3. Ora las Escrituras.</strong> Devuelve a Dios sus propias promesas. <strong>4. Ayuna periódicamente.</strong> El ayuno afila tu sensibilidad espiritual.</p>
-        <p><strong>5. Ora en el espíritu.</strong> Si tienes el don de lenguas, úsalo. <strong>6. Intercede por otros.</strong> Cuando oras por otros, Dios también te bendice a ti. <strong>7. Crea un altar personal.</strong> Un lugar y hora dedicados transforma la oración de actividad a hábito.</p>`
+        title: '7 hábitos espirituales para crecer cada semana',
+        excerpt: 'Una guía práctica para fortalecer tu vida espiritual en lo cotidiano.',
+        content: `No necesitas complicarlo: oración diaria, lectura bíblica, congregarte, servir y dar.
+        La constancia, más que la intensidad, forma un corazón maduro.`,
+        category: 'Crecimiento',
+        image: 'img/art6.webp'
       }
     ];
 
-    // ── Productos de la tienda ────────────────────────────────
     const PRODUCTS = [
-      { id:2, cat:'Literatura', name:'Biblia de Estudio Belén', desc:'Con comentarios del Pastor Carlos, mapas a color y concordancia completa.', price:650, icon:'📖', color:'linear-gradient(135deg,#2D1A0A,#4A2A0A)', badge:'Bestseller' },
-      { id:4, cat:'Hogar', name:'Taza "Buenos días Señor"', desc:'Cerámica premium 11oz. Impresión permanente. Apta para lavavajillas.', price:180, icon:'☕', color:'linear-gradient(135deg,#0A2018,#1A4030)', badge:null },
-      { id:5, cat:'Literatura', name:'"Destino Extraordinario" — Libro', desc:'El libro más leído de la editorial. 280 páginas de sabiduría transformadora.', price:420, icon:'📚', color:'linear-gradient(135deg,#281A0A,#403020)', badge:'Agotándose' },
-      { id:8, cat:'Hogar', name:'Cuadro "Dios es Amor" 30x40', desc:'Impresión canvas de alta calidad con bastidor de madera. Lista para colgar.', price:380, icon:'🖼️', color:'linear-gradient(135deg,#1A0A2A,#2A1A40)', badge:null },
+      { id:'p1', name:'Biblia de estudio RVR60', desc:'Edición premium con referencias, mapas y concordancia.', price: 899, image:'img/art1.webp' },
+      { id:'p2', name:'Sudadera “Fe y Esperanza”', desc:'Sudadera oficial del ministerio. Tela suave y corte unisex.', price: 650, image:'img/Merch.webp' },
+      { id:'p3', name:'Libro “Renovados”', desc:'Guía práctica para una vida espiritual saludable.', price: 320, image:'img/art2.webp' },
+      { id:'p4', name:'Playera “Belén Worship”', desc:'Diseño minimalista, ideal para jóvenes y equipo de alabanza.', price: 390, image:'img/alabanza2.webp' },
+      { id:'p5', name:'Devocional 40 días', desc:'Plan de lectura y reflexión para fortalecer tu fe.', price: 260, image:'img/art6.webp' },
+      { id:'p6', name:'Taza oficial Belén', desc:'Cerámica premium con diseño exclusivo.', price: 210, image:'img/iglesia.webp' }
     ];
 
-    // ── Recursos de descarga ──────────────────────────────────
     const DOWNLOADS = [
-      { type:'pdf', icon:'📄', name:'Sermón "La fe que mueve montañas"', size:'2.3 MB', date:'Sep 2025', link:'files/Sermon_Fe_Montanas.pdf'},
-      { type:'pdf', icon:'📋', name:'Plan de Lectura Bíblica 2025', size:'1.1 MB', date:'Ene 2025' },
-      { type:'pdf', icon:'📖', name:'Guía de Estudio: Libro de Juan', size:'3.7 MB', date:'Ago 2025' },
-      { type:'pdf', icon:'📅', name:'Calendario Ministerial 2025', size:'1.8 MB', date:'Ene 2025' },
-      { type:'pdf', icon:'🎓', name:'Material Escuela Bíblica — Módulo 1', size:'5.2 MB', date:'Ago 2025' },
-      { type:'img', icon:'🖼️', name:'Pack de Gráficas para Redes Sociales', size:'12 MB', date:'Sep 2025' },
+      { title:'Manual de nuevos creyentes', desc:'Fundamentos básicos para tus primeros pasos en la fe.', icon:'📘', file:'files/Sermon_Fe_Montanas.pdf' },
+      { title:'Guía de oración 21 días', desc:'Estructura diaria para profundizar tu relación con Dios.', icon:'🙏', file:'files/Sermon_Fe_Montanas.pdf' },
+      { title:'Sermón: Fe que mueve montañas', desc:'Mensaje en PDF para estudiar y compartir en grupos.', icon:'🎤', file:'files/Sermon_Fe_Montanas.pdf' }
     ];
 
     /* ============================================================
-       ESTADO DE LA APP
+       ESTADO
        ============================================================ */
-    let cart = JSON.parse(localStorage.getItem('vn_cart') || '[]');
     let currentSlide = 0;
     let sliderInterval;
-    const TOTAL_SLIDES = 4;
+    let cart = [];
 
     /* ============================================================
-       RENDERIZADO INICIAL
+       UTILIDADES UI
        ============================================================ */
-    document.addEventListener('DOMContentLoaded', () => {
-      renderBlog();
-      renderShop();
-      renderDownloads();
-      initSlider();
-      initNavbar();
-      initScrollReveal();
-      initScrollAnimations();
-      updateCartUI();
-    });
+    const $ = id => document.getElementById(id);
+    function fmtCurrency(n){ return `$${n.toLocaleString('es-MX', {minimumFractionDigits:2, maximumFractionDigits:2})}`; }
+
+    function toast(msg){
+      const t = $('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(()=> t.classList.remove('show'), 2100);
+    }
+
+    function closeAllOverlays(){
+      $('overlay').classList.remove('show');
+      $('blog-modal').classList.remove('show');
+      toggleCart(false);
+    }
 
     /* ============================================================
-       BLOG — Renderizado
+       NAV / MOBILE
        ============================================================ */
-    function renderBlog() {
-      const grid = document.getElementById('blog-grid');
+    (function initNav(){
+      const navbar = $('navbar');
+      const hamburger = $('hamburger');
+      const mobile = $('mobile-menu');
+      const links = document.querySelectorAll('#nav-links a');
+
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 24);
+      }, { passive: true });
+
+      hamburger.addEventListener('click', () => {
+        const open = mobile.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      mobile.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', ()=> {
+          mobile.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Active link on scroll
+      const sectionIds = [...links].map(l => l.getAttribute('href')).filter(h => h.startsWith('#'));
+      const sections = sectionIds.map(id => document.querySelector(id)).filter(Boolean);
+      window.addEventListener('scroll', () => {
+        let current = '#inicio';
+        sections.forEach(sec => {
+          if (window.scrollY >= sec.offsetTop - 120) current = `#${sec.id}`;
+        });
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === current));
+      }, { passive: true });
+    })();
+
+    /* ============================================================
+       HERO SLIDER
+       ============================================================ */
+    (function initSlider(){
+      const slides = document.querySelectorAll('.slide');
+      const dotsContainer = $('slider-dots');
+
+      slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dot' + (i===0 ? ' active' : '');
+        d.setAttribute('aria-label', `Ir al slide ${i+1}`);
+        d.addEventListener('click', ()=> goToSlide(i));
+        dotsContainer.appendChild(d);
+      });
+
+      $('arrow-left').addEventListener('click', prevSlide);
+      $('arrow-right').addEventListener('click', nextSlide);
+
+      function updateSlider(){
+        slides.forEach(s => s.classList.remove('active'));
+        slides[currentSlide].classList.add('active');
+        $('slider-track').style.transform = `translateX(-${currentSlide * 20}%)`;
+        document.querySelectorAll('.dot').forEach((d,i)=> d.classList.toggle('active', i===currentSlide));
+      }
+
+      function goToSlide(i){
+        currentSlide = (i + slides.length) % slides.length;
+        updateSlider();
+        restartAuto();
+      }
+      function nextSlide(){ goToSlide(currentSlide + 1); }
+      function prevSlide(){ goToSlide(currentSlide - 1); }
+
+      function startAuto(){ sliderInterval = setInterval(nextSlide, 5500); }
+      function stopAuto(){ clearInterval(sliderInterval); }
+      function restartAuto(){ stopAuto(); startAuto(); }
+
+      $('hero').addEventListener('mouseenter', stopAuto);
+      $('hero').addEventListener('mouseleave', startAuto);
+
+      updateSlider();
+      startAuto();
+
+      // Expose if needed
+      window.nextSlide = nextSlide;
+      window.prevSlide = prevSlide;
+    })();
+
+    /* ============================================================
+       CONTADORES STATS
+       ============================================================ */
+    (function initStatsCounters(){
+      const nums = document.querySelectorAll('.stat-num[data-count]');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const el = e.target;
+          const target = +el.dataset.count;
+          const dur = 1200;
+          const start = performance.now();
+          function tick(now){
+            const p = Math.min(1, (now - start) / dur);
+            const v = Math.floor(target * (1 - Math.pow(1-p, 3)));
+            el.textContent = v.toLocaleString('es-MX');
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+          obs.unobserve(el);
+        });
+      }, { threshold: .45 });
+      nums.forEach(n => obs.observe(n));
+    })();
+
+    /* ============================================================
+       BLOG
+       ============================================================ */
+    function renderBlog(){
+      const grid = $('blog-grid');
       grid.innerHTML = ARTICLES.map(a => `
-        <article class="blog-card reveal" onclick="abrirArticulo(${a.id})" role="button" tabindex="0" aria-label="Leer: ${a.title}">
-          <div class="blog-img">
-            <img src="${a.image}" alt="${a.title}" class="blog-image">
-          </div>
+        <article class="blog-card reveal" onclick="openBlogModal('${encodeURIComponent(a.title)}')">
+          <img src="${a.image}" alt="${a.title}" class="blog-image">
           <div class="blog-body">
-            <div class="blog-meta">
-              <span class="blog-tag">${a.tag}</span>
-              <span class="blog-date">${a.date}</span>
-            </div>
+            <div class="blog-meta">${a.category}</div>
             <h3 class="blog-title">${a.title}</h3>
             <p class="blog-excerpt">${a.excerpt}</p>
             <span class="blog-read">Leer artículo →</span>
           </div>
         </article>
       `).join('');
-
-      // Accesibilidad teclado
-      grid.querySelectorAll('.blog-card').forEach(c => {
-        c.addEventListener('keypress', e => { if(e.key==='Enter') c.click(); });
-      });
     }
 
-    /* ============================================================
-       ARTÍCULO MODAL
-       ============================================================ */
-    function abrirArticulo(id) {
-      const a = ARTICLES.find(x => x.id === id);
+    window.openBlogModal = function(encodedTitle){
+      const title = decodeURIComponent(encodedTitle);
+      const a = ARTICLES.find(x => x.title === title);
       if (!a) return;
-      document.getElementById('modal-header-img').innerHTML =
-        `<img src="${a.image}" alt="${a.title}" class="modal-img">`;
-      document.getElementById('modal-body').innerHTML = `
+      $('modal-header-img').innerHTML = `<img src="${a.image}" alt="${a.title}" class="modal-header-img">`;
+      $('modal-body').innerHTML = `
         <h2>${a.title}</h2>
-        <div class="modal-meta">
-          <span class="blog-tag">${a.tag}</span>
-          <span>📅 ${a.date}</span>
-          <span>⏱️ 5 min de lectura</span>
-        </div>
-        ${a.content}
+        <p><strong>Categoría:</strong> ${a.category}</p>
+        <p>${a.content.replace(/\n/g,'<br>')}</p>
       `;
-      const modal = document.getElementById('article-modal');
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      $('overlay').classList.add('show');
+      $('blog-modal').classList.add('show');
     }
-
-    function cerrarModal() {
-      document.getElementById('article-modal').classList.remove('open');
-      document.body.style.overflow = '';
+    window.closeBlogModal = function(){
+      $('overlay').classList.remove('show');
+      $('blog-modal').classList.remove('show');
     }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        cerrarModal();
-        cerrarCarrito();
-      }
-    });
 
     /* ============================================================
-       TIENDA — Renderizado
+       SHOP + CART
        ============================================================ */
-    function renderShop() {
-      const grid = document.getElementById('shop-grid');
+    function renderShop(){
+      const grid = $('shop-grid');
       grid.innerHTML = PRODUCTS.map(p => `
-        <div class="product-card reveal">
-          <div class="product-img">
-            <div class="img-placeholder" style="background:${p.color};height:100%;font-size:4rem">${p.icon}</div>
-            ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
-          </div>
+        <article class="product-card reveal">
+          <img src="${p.image}" alt="${p.name}" class="product-img">
           <div class="product-body">
-            <div class="product-category">${p.cat}</div>
-            <div class="product-name">${p.name}</div>
-            <div class="product-desc">${p.desc}</div>
-            <div class="product-footer">
-              <div class="product-price">
-                $${p.price.toLocaleString('es-MX')}
-                <small> MXN</small>
-              </div>
-              <button class="btn-add-cart" onclick="agregarAlCarrito(${p.id})" aria-label="Agregar ${p.name} al carrito">
-                🛒 Agregar
-              </button>
+            <h3 class="product-name">${p.name}</h3>
+            <p class="product-desc">${p.desc}</p>
+            <div class="product-bottom">
+              <span class="product-price">${fmtCurrency(p.price)}</span>
+              <button class="btn btn-navy" style="padding:8px 14px;font-size:.75rem" onclick="addToCart('${p.id}')">Agregar</button>
             </div>
           </div>
-        </div>
+        </article>
       `).join('');
     }
 
-    /* ============================================================
-       CARRITO — Lógica
-       ============================================================ */
-    function agregarAlCarrito(productId) {
-      const product = PRODUCTS.find(p => p.id === productId);
-      if (!product) return;
-      const existing = cart.find(i => i.id === productId);
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        cart.push({ ...product, qty: 1 });
-      }
-      saveCart();
-      updateCartUI();
-      showToast(`✅ "${product.name}" agregado al carrito`);
+    function getProduct(id){ return PRODUCTS.find(p => p.id === id); }
+
+    window.addToCart = function(id){
+      const p = getProduct(id); if (!p) return;
+      const item = cart.find(i => i.id === id);
+      if (item) item.qty++;
+      else cart.push({ id, qty:1 });
+      renderCart();
+      toast('Producto agregado al carrito');
     }
 
-    function cambiarCantidad(id, delta) {
+    window.toggleCart = function(open=true){
+      $('cart-drawer').classList.toggle('open', open);
+      $('overlay').classList.toggle('show', open || $('blog-modal').classList.contains('show'));
+    }
+
+    function renderCart(){
+      const container = $('cart-items');
+      if (!cart.length){
+        container.innerHTML = `
+          <p style="font-size:.9rem;color:var(--gray-500);padding:16px 4px;line-height:1.6">
+            Tu carrito está vacío.<br>Explora la tienda y agrega productos.
+          </p>`;
+        $('cart-total').textContent = fmtCurrency(0);
+        $('order-items').innerHTML = '';
+        $('order-total').innerHTML = `<span>Total</span><strong>${fmtCurrency(0)}</strong>`;
+        return;
+      }
+
+      container.innerHTML = cart.map(item => {
+        const p = getProduct(item.id);
+        const subtotal = p.price * item.qty;
+        return `
+          <div class="cart-item">
+            <img src="${p.image}" alt="${p.name}">
+            <div>
+              <h5>${p.name}</h5>
+              <small>${item.qty} × ${fmtCurrency(p.price)} = <strong>${fmtCurrency(subtotal)}</strong></small>
+              <div class="qty-picker" style="margin-top:6px;width:max-content">
+                <button onclick="changeQty('${p.id}', -1)">−</button>
+                <span>${item.qty}</span>
+                <button onclick="changeQty('${p.id}', 1)">+</button>
+              </div>
+            </div>
+            <button onclick="removeCartItem('${p.id}')">Eliminar</button>
+          </div>
+        `;
+      }).join('');
+
+      const total = cart.reduce((acc, i) => acc + getProduct(i.id).price * i.qty, 0);
+      $('cart-total').textContent = fmtCurrency(total);
+
+      // Checkout summary
+      $('order-items').innerHTML = cart.map(i => {
+        const p = getProduct(i.id);
+        return `<div class="order-item"><span>${i.qty} × ${p.name}</span><strong>${fmtCurrency(p.price * i.qty)}</strong></div>`;
+      }).join('');
+      $('order-total').innerHTML = `<span>Total</span><strong>${fmtCurrency(total)}</strong>`;
+    }
+
+    window.changeQty = function(id, delta){
       const item = cart.find(i => i.id === id);
       if (!item) return;
       item.qty += delta;
-      if (item.qty <= 0) {
-        cart = cart.filter(i => i.id !== id);
-      }
-      saveCart();
-      updateCartUI();
-      renderDrawerItems();
+      if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+      renderCart();
     }
 
-    function eliminarDelCarrito(id) {
+    window.removeCartItem = function(id){
       cart = cart.filter(i => i.id !== id);
-      saveCart();
-      updateCartUI();
-      renderDrawerItems();
+      renderCart();
+      toast('Producto eliminado');
     }
 
-    function saveCart() {
-      localStorage.setItem('vn_cart', JSON.stringify(cart));
+    window.irCheckout = function(){
+      toggleCart(false);
+      document.querySelector('#checkout').scrollIntoView({ behavior:'smooth', block:'start' });
     }
 
-    function getTotal() {
-      return cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-    }
-
-    function updateCartUI() {
-      const count = cart.reduce((s, i) => s + i.qty, 0);
-      document.getElementById('cart-badge').textContent = count;
-      document.getElementById('cart-total-price').textContent =
-        `$${getTotal().toLocaleString('es-MX', {minimumFractionDigits:2})} MXN`;
-    }
-
-    function renderDrawerItems() {
-      const container = document.getElementById('drawer-items');
-      const empty = document.getElementById('cart-empty');
-      if (cart.length === 0) {
-        container.innerHTML = `
-          <div class="cart-empty" id="cart-empty">
-            <div style="font-size:3rem">🛒</div>
-            <p>Tu carrito está vacío.<br>Explora nuestra tienda.</p>
-          </div>`;
+    window.finalizarPedido = function(){
+      if (!cart.length){
+        toast('Tu carrito está vacío');
         return;
       }
-      container.innerHTML = cart.map(item => `
-        <div class="cart-item">
-          <div class="cart-item-img">
-            <div class="img-placeholder" style="background:${item.color};height:100%;font-size:1.5rem">${item.icon}</div>
-          </div>
-          <div class="cart-item-info">
-            <div class="cart-item-name">${item.name}</div>
-            <div class="cart-item-price">$${item.price.toLocaleString('es-MX')} MXN c/u</div>
-            <div class="cart-item-qty">
-              <button class="qty-btn" onclick="cambiarCantidad(${item.id},-1)" aria-label="Reducir cantidad">−</button>
-              <span class="qty-num">${item.qty}</span>
-              <button class="qty-btn" onclick="cambiarCantidad(${item.id},1)" aria-label="Aumentar cantidad">+</button>
-            </div>
-          </div>
-          <button class="cart-item-remove" onclick="eliminarDelCarrito(${item.id})" aria-label="Eliminar ${item.name}">🗑️</button>
-        </div>
-      `).join('');
-      updateCartUI();
-    }
-
-    function abrirCarrito() {
-      renderDrawerItems();
-      document.getElementById('cart-drawer').classList.add('open');
-      document.getElementById('drawer-overlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function cerrarCarrito() {
-      document.getElementById('cart-drawer').classList.remove('open');
-      document.getElementById('drawer-overlay').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    function irACheckout() {
-      if (cart.length === 0) {
-        showToast('⚠️ Tu carrito está vacío');
+      const nombre = $('checkout-nombre').value.trim();
+      const tel = $('checkout-tel').value.trim();
+      if (!nombre || !tel){
+        toast('Completa nombre y teléfono');
         return;
       }
-      cerrarCarrito();
-      // Renderizar resumen en checkout
-      const orderItems = document.getElementById('order-items');
-      orderItems.innerHTML = cart.map(i => `
-        <div class="order-item">
-          <span>${i.name} ×${i.qty}</span>
-          <span>$${(i.price * i.qty).toLocaleString('es-MX')} MXN</span>
-        </div>
-      `).join('');
-      document.getElementById('order-total').innerHTML = `
-        <span>Total</span>
-        <strong>$${getTotal().toLocaleString('es-MX', {minimumFractionDigits:2})} MXN</strong>
-      `;
-      const checkout = document.getElementById('checkout');
-      checkout.classList.add('visible');
-      checkout.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+      const total = cart.reduce((acc, i) => acc + getProduct(i.id).price * i.qty, 0);
+      const items = cart.map(i => {
+        const p = getProduct(i.id);
+        return `• ${i.qty}x ${p.name} (${fmtCurrency(p.price * i.qty)})`;
+      }).join('%0A');
+      const msg = `Hola, quiero finalizar mi pedido:%0A%0A${items}%0A%0ATotal: ${fmtCurrency(total)}%0ANombre: ${encodeURIComponent(nombre)}%0ATel: ${encodeURIComponent(tel)}`;
+      window.open(`https://wa.me/528717975096?text=${msg}`, '_blank', 'noopener');
 
-    function finalizarPedido() {
-      const nombre = document.getElementById('checkout-nombre').value.trim();
-      const email  = document.getElementById('checkout-email').value.trim();
-      const tel    = document.getElementById('checkout-tel').value.trim();
-      const dir    = document.getElementById('checkout-dir').value.trim();
-
-      if (!nombre || !email || !tel || !dir) {
-        showToast('⚠️ Por favor completa todos los campos');
-        return;
-      }
-
-      // Simulación de pedido completado
-      const orderNum = 'VN-' + Date.now().toString().slice(-6);
-      cart = [];
-      saveCart();
-      updateCartUI();
-
-      document.getElementById('checkout').innerHTML = `
-        <div class="container" style="text-align:center;padding:60px 0">
-          <div style="font-size:4rem;margin-bottom:20px">🎉</div>
+      $('checkout').innerHTML = `
+        <div class="container" style="text-align:center;padding:48px 0">
           <h2 style="font-family:var(--ff-display);font-size:2rem;color:var(--navy);margin-bottom:12px">
-            ¡Pedido confirmado!
+            ¡Gracias por tu pedido! 🙌
           </h2>
-          <p style="color:var(--gray-500);margin-bottom:8px">
-            Gracias, <strong>${nombre}</strong>. Tu pedido <strong>${orderNum}</strong> ha sido recibido.
+          <p style="color:var(--gray-700);max-width:520px;margin:0 auto 20px;line-height:1.7">
+            Hemos abierto WhatsApp con el resumen. En breve te atenderemos para confirmar entrega y pago.
           </p>
-          <p style="color:var(--gray-500);margin-bottom:32px">
-            Te contactaremos al ${tel} para coordinar el envío a ${dir}.
-          </p>
-          <a href="#tienda" class="btn btn-gold" onclick="document.getElementById('checkout').classList.remove('visible')">
-            Seguir comprando
-          </a>
+          <a href="#tienda" class="btn btn-gold">Seguir comprando</a>
         </div>
       `;
-
-      // Enviar por WA (opcional)
-      const msg = encodeURIComponent(`¡Hola! Acabo de hacer un pedido en la tienda de Iglesia Belén.\n*Pedido:* ${orderNum}\n*Nombre:* ${nombre}\n*Total:* $${getTotal().toLocaleString('es-MX')} MXN`);
-      showToast(`✅ ¡Pedido ${orderNum} realizado exitosamente!`);
+      cart = [];
+      renderCart();
     }
 
     /* ============================================================
-       DESCARGAS — Renderizado
+       DONATIVOS
        ============================================================ */
-    function renderDownloads() {
-      const typeClass = { pdf:'pdf', doc:'doc', xls:'xls', img:'img' };
-      document.getElementById('downloads-grid').innerHTML = DOWNLOADS.map((d, i) => `
-        <div class="download-item reveal delay-${(i%5)+1}" onclick="simularDescarga('${d.name}')" role="button" tabindex="0" aria-label="Descargar ${d.name}">
-          <div class="download-icon ${typeClass[d.type]}">${d.icon}</div>
-          <div class="download-info">
-            <h4>${d.name}</h4>
-            <small>${d.size} · Actualizado ${d.date}</small>
-          </div>
-          <div class="download-btn" aria-hidden="true">⬇</div>
-        </div>
+    window.abrirPaypal = function(){
+      window.open('https://www.paypal.com/donate', '_blank', 'noopener');
+    }
+    window.mostrarBanco = function(){
+      document.getElementById('bank-box').scrollIntoView({ behavior:'smooth', block:'center' });
+      toast('Datos bancarios visibles');
+    }
+    window.abrirWA = function(){
+      window.open('https://wa.me/528717975096?text=Hola%2C%20quiero%20donar%20a%20Iglesia%20Bel%C3%A9n', '_blank', 'noopener');
+    }
+    window.copiarBanco = function(){
+      const txt = document.getElementById('bank-box').innerText;
+      navigator.clipboard.writeText(txt).then(() => toast('Datos copiados'));
+    }
+
+    /* ============================================================
+       DESCARGAS
+       ============================================================ */
+    function renderDownloads(){
+      $('downloads-grid').innerHTML = DOWNLOADS.map((d, i) => `
+        <article class="download-card reveal delay-${(i%3)+1}">
+          <div class="download-icon">${d.icon}</div>
+          <h3 class="download-title">${d.title}</h3>
+          <p class="download-desc">${d.desc}</p>
+          <a class="btn btn-outline-navy" href="${d.file}" download>Descargar PDF</a>
+        </article>
       `).join('');
-
-      document.querySelectorAll('.download-item').forEach(el => {
-        el.addEventListener('keypress', e => { if(e.key==='Enter') el.click(); });
-      });
-    }
-
-    function simularDescarga(nombre) {
-      showToast(`⬇️ Descargando "${nombre}"...`);
-      // En producción aquí iría el href real del PDF
     }
 
     /* ============================================================
-       SLIDER AUTOMÁTICO
+       REVEAL ON SCROLL
        ============================================================ */
-    function initSlider() {
-      // Crear dots
-      const dotsContainer = document.getElementById('slider-dots');
-      for (let i = 0; i < TOTAL_SLIDES; i++) {
-        const dot = document.createElement('button');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', `Slide ${i + 1}`);
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-      }
-
-      // Flechas
-      document.getElementById('arrow-left').addEventListener('click', prevSlide);
-      document.getElementById('arrow-right').addEventListener('click', nextSlide);
-
-      // Auto play
-      startAutoPlay();
-
-      // Pausar en hover
-      document.getElementById('hero').addEventListener('mouseenter', stopAutoPlay);
-      document.getElementById('hero').addEventListener('mouseleave', startAutoPlay);
-
-      // Touch swipe
-      let touchStartX = 0;
-      document.getElementById('hero').addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
-      document.getElementById('hero').addEventListener('touchend', e => {
-        const diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
-      }, {passive:true});
-    }
-
-    function goToSlide(index) {
-      const slides = document.querySelectorAll('.slide');
-      const dots   = document.querySelectorAll('.dot');
-      slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
-      currentSlide = (index + TOTAL_SLIDES) % TOTAL_SLIDES;
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-      document.getElementById('slider-track').style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
-    function nextSlide() { goToSlide(currentSlide + 1); }
-    function prevSlide() { goToSlide(currentSlide - 1); }
-    function startAutoPlay() { sliderInterval = setInterval(nextSlide, 5500); }
-    function stopAutoPlay()  { clearInterval(sliderInterval); }
-
-    /* ============================================================
-       NAVBAR — Scroll & Menú Móvil
-       ============================================================ */
-    function initNavbar() {
-      const navbar = document.getElementById('navbar');
-      const hamburger = document.getElementById('hamburger');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      // Efecto scroll
-      window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 60);
-        document.getElementById('back-top').classList.toggle('visible', window.scrollY > 400);
-      }, { passive: true });
-
-      // Hamburger toggle
-      hamburger.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        hamburger.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-      });
-
-      // Cerrar menú al hacer clic en un link
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          hamburger.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
+    (function initReveal(){
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('visible');
         });
+      }, { threshold: .12, rootMargin:'0px 0px -60px 0px' });
+
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
+    })();
+
+    /* ============================================================
+       PERFORMANCE TOUCHES
+       ============================================================ */
+    window.addEventListener('load', () => {
+      // Optional: preload next slide bg softly after load
+      const heroBgs = document.querySelectorAll('.slide-bg');
+      heroBgs.forEach((el, i) => {
+        const style = getComputedStyle(el).backgroundImage;
+        const match = style.match(/url\("?(.*?)"?\)/);
+        if (match && match[1] && i > 0) {
+          const img = new Image();
+          img.src = match[1];
+        }
       });
-
-      // Active link según scroll
-      const sections = document.querySelectorAll('section[id], div[id="stats-bar"]');
-      window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(sec => {
-          if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
-        });
-        document.querySelectorAll('.nav-links a').forEach(a => {
-          a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
-        });
-      }, { passive: true });
-    }
-
-    /* ============================================================
-       SCROLL REVEAL — Intersection Observer
-       ============================================================ */
-    function initScrollReveal() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Animar contadores en stats-bar
-            if (entry.target.querySelector && entry.target.querySelector('.stat-num')) {
-              animateCounters(entry.target);
-            }
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-        observer.observe(el);
-      });
-
-      // Observar stats-bar para contadores
-      const statsBar = document.getElementById('stats-bar');
-      if (statsBar) observer.observe(statsBar);
-    }
-
-    /* ============================================================
-       SCROLL ANIMATIONS (parallax suave)
-       ============================================================ */
-    function initScrollAnimations() {
-      window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        // Parallax en hero
-        const heroBgs = document.querySelectorAll('.slide-bg');
-        heroBgs.forEach(bg => {
-          bg.style.transform = `scale(1.06) translateY(${scrolled * 0.12}px)`;
-        });
-      }, { passive: true });
-    }
-
-    /* ============================================================
-       CONTADORES ANIMADOS
-       ============================================================ */
-    function animateCounters(container) {
-      const counters = document.querySelectorAll('.stat-num[data-target]');
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const suffix = target >= 1000 ? '+' : '+';
-        let current = 0;
-        const increment = target / 60;
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          counter.textContent = Math.floor(current).toLocaleString('es-MX') + suffix;
-        }, 25);
-        counter.removeAttribute('data-target'); // Evitar re-animación
-      });
-    }
-
-    /* ============================================================
-       BACK TO TOP
-       ============================================================ */
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    /* ============================================================
-       DONATIVOS — Acciones
-       ============================================================ */
-    function abrirPaypal() {
-      // Reemplazar con link real de PayPal.me
-      window.open('https://www.paypal.me/iglesiavidanueva', '_blank', 'noopener');
-    }
-
-    function mostrarBanco() {
-      document.getElementById('donativos').querySelector('.bank-card').scrollIntoView({ behavior:'smooth', block:'center' });
-      showToast('📋 Datos bancarios mostrados abajo');
-    }
-
-    function abrirWA() {
-      const msg = encodeURIComponent('Hola, deseo hacer un donativo a Iglesia Belén. ¿Pueden indicarme cómo hacerlo?');
-      window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank', 'noopener');
-    }
-
-    /* ============================================================
-       TOAST DE NOTIFICACIÓN
-       ============================================================ */
-    let toastTimeout;
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.textContent = msg;
-      toast.classList.add('show');
-      clearTimeout(toastTimeout);
-      toastTimeout = setTimeout(() => toast.classList.remove('show'), 3200);
-    }
-
-    /* ============================================================
-       ACCESIBILIDAD — Trap focus en modal/drawer
-       ============================================================ */
-    document.getElementById('article-modal').addEventListener('keydown', function(e) {
-      if (e.key !== 'Tab') return;
-      const focusables = this.querySelectorAll('button, a, input, textarea, select, [tabindex]:not([tabindex="-1"])');
-      const first = focusables[0];
-      const last  = focusables[focusables.length - 1];
-      if (e.shiftKey) { if (document.activeElement === first) { last.focus(); e.preventDefault(); } }
-      else            { if (document.activeElement === last)  { first.focus(); e.preventDefault(); } }
     });
 
+    /* ============================================================
+       INIT
+       ============================================================ */
+    renderBlog();
+    renderShop();
+    renderCart();
+    renderDownloads();
+
+    // Keyboard UX
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeAllOverlays();
+    });
   </script>
 </body>
 </html>
