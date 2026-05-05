@@ -1,2654 +1,1230 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
-  <!-- ============================================================
-       IGLESIA CRISTIANA BELÉN — index.html
-       Desarrollado con HTML5, CSS3 y JavaScript puro (Vanilla JS)
-       Sin frameworks externos. Listo para producción (HTTPS).
-       ============================================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- SEO Básico -->
-  <title>Iglesia Belén | Fe · Esperanza · Comunidad</title>
-  <meta name="description" content="Iglesia Belén — una comunidad de Fe en el corazón de México. Únete a nosotros cada domingo. Eventos, pastores, tienda y recursos." />
-  <meta name="keywords" content="iglesia cristiana, iglesia México, fe, esperanza, comunidad cristiana, Belén, culto, servicios" />
-  <meta name="author" content="Iglesia Belén" />
-  <meta name="robots" content="index, follow" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Iglesia Belén" />
-  <meta property="og:description" content="Una comunidad de fe, esperanza y amor. Únete a nosotros." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.beleniglesia.com" />
-  <meta property="og:image" content="https://www.beleniglesia.com/img/iglesia2.webp" />
-  <meta property="og:locale" content="es_MX" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Iglesia Belén | Fe · Esperanza · Comunidad" />
-  <meta name="twitter:description" content="Una comunidad de fe, esperanza y amor. Únete a nosotros cada domingo." />
-  <meta name="twitter:image" content="https://www.beleniglesia.com/img/iglesia2.webp" />
-  <meta name="theme-color" content="#0A1628" />
-  <link rel="canonical" href="https://www.beleniglesia.com/" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Church",
-    "name": "Iglesia Belén",
-    "url": "https://www.beleniglesia.com/",
-    "image": "https://www.beleniglesia.com/img/iglesia2.webp",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "MX"
-    }
-  }
-  </script>
-  <!-- Fuentes de Google (las únicas dependencias externas, CDN seguro) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Favicon simple inline SVG -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Iglesia Belén: una experiencia de fe real para personas reales. Planea tu primera visita y encuentra comunidad, dirección y esperanza.">
+  <meta name="theme-color" content="#0A1628">
+  <meta property="og:title" content="Iglesia Belén | No llegaste aquí por accidente">
+  <meta property="og:description" content="No tienes que tener tu vida resuelta. Aquí nadie camina solo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.beleniglesia.com/">
+  <meta property="og:image" content="https://www.beleniglesia.com/img/iglesia2.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Iglesia Belén | No llegaste aquí por accidente">
+  <meta name="twitter:description" content="No tienes que tener tu vida resuelta. Aquí nadie camina solo.">
+  <meta name="twitter:image" content="https://www.beleniglesia.com/img/iglesia2.webp">
+  <link rel="canonical" href="https://www.beleniglesia.com/">
+  <title>Iglesia Belén | No llegaste aquí por accidente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
   <style>
-    /* ============================================================
-       VARIABLES CSS GLOBALES — Sistema de diseño
-       ============================================================ */
     :root {
-      --navy:       #0A1628;
-      --navy-mid:   #0F2040;
-      --navy-light: #1A3560;
-      --gold:       #C9A84C;
-      --gold-light: #E4C76B;
-      --gold-pale:  #F5E6B8;
-      --white:      #FFFFFF;
-      --off-white:  #F7F6F2;
-      --gray-100:   #F0EEE8;
-      --gray-300:   #D4CEBC;
-      --gray-500:   #8E8472;
-      --gray-700:   #4A4438;
-      --text-dark:  #1A1612;
-      --text-mid:   #3D3830;
-      --shadow-sm:  0 2px 12px rgba(10,22,40,.10);
-      --shadow-md:  0 8px 32px rgba(10,22,40,.16);
-      --shadow-lg:  0 20px 60px rgba(10,22,40,.22);
-      --shadow-gold:0 8px 32px rgba(201,168,76,.25);
-      --radius-sm:  6px;
-      --radius-md:  12px;
-      --radius-lg:  20px;
-      --radius-xl:  32px;
-      --ff-display: 'Playfair Display', Georgia, serif;
-      --ff-body:    'Raleway', 'Segoe UI', sans-serif;
-      --transition: all .35s cubic-bezier(.4,0,.2,1);
-      --navbar-h:   72px;
+      --bg: #081224;
+      --bg-2: #0d1d39;
+      --gold: #d5b35b;
+      --gold-2: #f0d483;
+      --text: #f7f9ff;
+      --text-soft: rgba(255,255,255,.78);
+      --ink: #101418;
+      --ink-soft: #4d5562;
+      --card: #ffffff;
+      --line: #e8ebf2;
+      --radius: 18px;
+      --shadow: 0 20px 50px rgba(5,12,24,.2);
+      --max: 1180px;
+      --nav-h: 74px;
     }
-    /* ============================================================
-       RESET & BASE
-       ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: var(--ff-body);
-      color: var(--text-dark);
-      background: var(--white);
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: #fff;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
+
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
-    /* ============================================================
-       UTILIDADES
-       ============================================================ */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .section-tag {
+    button { font: inherit; border: none; background: none; cursor: pointer; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 110px 0; }
+
+    .tag {
       display: inline-block;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .18em;
+      letter-spacing: .16em;
       text-transform: uppercase;
+      font-size: .72rem;
+      font-weight: 800;
       color: var(--gold);
       margin-bottom: 12px;
     }
-    .section-title {
-      font-family: var(--ff-display);
-      font-size: clamp(2rem, 4vw, 3.2rem);
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.3vw, 3.45rem);
+      line-height: 1.08;
+      color: #101826;
       font-weight: 900;
-      line-height: 1.12;
-      color: var(--navy);
     }
-    .section-title.light { color: var(--white); }
-    .section-sub {
-      font-size: 1.05rem;
-      color: var(--gray-500);
+
+    .sub {
       margin-top: 14px;
-      max-width: 560px;
-      line-height: 1.7;
+      color: #606b79;
+      line-height: 1.75;
+      font-size: 1.02rem;
+      max-width: 640px;
     }
-    .section-sub.light { color: rgba(255,255,255,.7); }
-    .section-header { margin-bottom: 52px; }
-    .section-header.center { text-align: center; }
-    .section-header.center .section-sub { margin: 14px auto 0; }
+
+    .center { text-align: center; }
+    .center .sub { margin-left: auto; margin-right: auto; }
+
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 14px 32px;
-      border-radius: 50px;
-      font-family: var(--ff-body);
-      font-size: .9rem;
+      padding: 14px 28px;
+      border-radius: 999px;
       font-weight: 700;
-      letter-spacing: .06em;
-      transition: var(--transition);
-      cursor: pointer;
+      letter-spacing: .02em;
+      transition: all .35s cubic-bezier(.22,1,.36,1);
+      white-space: nowrap;
     }
-    .btn-gold {
-      background: var(--gold);
-      color: var(--navy);
-    }
-    .btn-gold:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-gold);
-    }
-    .btn-outline-white {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid rgba(255,255,255,.5);
-    }
-    .btn-outline-white:hover {
-      background: rgba(255,255,255,.12);
-      border-color: var(--white);
-      transform: translateY(-2px);
-    }
-    .btn-navy {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .btn-navy:hover {
-      background: var(--navy-light);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    .btn-outline-navy {
-      background: transparent;
-      color: var(--navy);
-      border: 2px solid var(--navy);
-    }
-    .btn-outline-navy:hover {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .funnel-hidden { display: none !important; }
-    .social-proof, .first-visit, .radio-digital, .final-cta { padding: 96px 0; }
-    .social-proof { background: var(--off-white); }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
-    .testimonial-card {
-      background: var(--white);
-      border: 1px solid rgba(10,22,40,.08);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-    }
-    .testimonial-card p { line-height: 1.7; color: var(--text-mid); margin-bottom: 12px; }
-    .testimonial-card strong { color: var(--navy); }
-    .first-visit { background: linear-gradient(180deg, #fff, #f7f6f2); }
-    .first-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:24px; }
-    .first-steps, .visit-card {
-      background: var(--white);
-      border-radius: 16px;
-      border: 1px solid rgba(10,22,40,.08);
-      padding: 28px;
-      box-shadow: var(--shadow-sm);
-    }
-    .first-steps li { margin-bottom: 14px; color: var(--text-mid); line-height: 1.65; }
-    .radio-digital { background: var(--navy); }
-    .radio-digital .section-title, .radio-digital p { color: var(--white); }
-    .final-cta { background: linear-gradient(135deg, var(--navy), var(--navy-light)); text-align: center; }
-    .final-cta .section-title, .final-cta p { color: var(--white); margin-left:auto; margin-right:auto; }
 
-    /* Reveal on scroll */
+    .btn-gold { background: var(--gold); color: #11213d; }
+    .btn-gold:hover { transform: translateY(-2px); background: var(--gold-2); }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,.56);
+      color: #fff;
+      background: rgba(255,255,255,.04);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.12); }
+    .btn-dark { background: #11213d; color: #fff; }
+    .btn-dark:hover { transform: translateY(-2px); background: #19345f; }
+    .btn-light-outline {
+      border: 1.5px solid #12233f;
+      color: #12233f;
+      background: #fff;
+    }
+
     .reveal {
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
+      transform: translateY(26px);
+      transition: opacity .9s ease, transform .9s cubic-bezier(.22,1,.36,1);
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-left  { opacity:0; transform:translateX(-50px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal-right { opacity:0; transform:translateX(50px);  transition: opacity .7s ease, transform .7s ease; }
-    .reveal-left.visible, .reveal-right.visible { opacity:1; transform:translateX(0); }
-    .delay-1 { transition-delay: .1s !important; }
-    .delay-2 { transition-delay: .2s !important; }
-    .delay-3 { transition-delay: .3s !important; }
-    .delay-4 { transition-delay: .4s !important; }
-    .delay-5 { transition-delay: .5s !important; }
-    /* Gold divider */
-    .gold-line {
-      width: 56px; height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      border-radius: 2px;
-      margin: 16px 0;
-    }
-    .gold-line.center { margin: 16px auto; }
-    /* ============================================================
-       NAVBAR
-       ============================================================ */
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .08s; }
+    .d2 { transition-delay: .16s; }
+    .d3 { transition-delay: .24s; }
+    .d4 { transition-delay: .32s; }
+
     #navbar {
       position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--navbar-h);
-      z-index: 1000;
-      transition: var(--transition);
+      inset: 0 0 auto 0;
+      height: var(--nav-h);
+      z-index: 1100;
+      transition: .35s ease;
       background: transparent;
     }
+
     #navbar.scrolled {
-      background: rgba(10,22,40,.96);
+      background: rgba(7,16,31,.88);
       backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 2px 24px rgba(0,0,0,.25);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
+
     .nav-inner {
+      height: var(--nav-h);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: var(--navbar-h);
+      gap: 16px;
     }
-    .nav-logo {
+
+    .brand {
       display: flex;
       align-items: center;
       gap: 10px;
-      color: var(--white);
-      font-family: var(--ff-display);
+      color: #fff;
     }
-    .nav-logo-icon {
-      width: 38px; height: 38px;
+
+    .brand-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
       background: var(--gold);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-      color: var(--navy);
-      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      color: #132444;
+      font-weight: 900;
     }
-    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
-    .nav-logo-text strong { font-size: 1.1rem; font-weight: 900; letter-spacing: .02em; }
-    .nav-logo-text span { font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; opacity: .7; font-family: var(--ff-body); font-weight: 600; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
+
+    .brand-text strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem;
     }
-    .nav-links a {
-      padding: 6px 12px;
-      color: rgba(255,255,255,.85);
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: .04em;
+
+    .brand-text span {
+      font-size: .65rem;
+      letter-spacing: .16em;
+      opacity: .72;
       text-transform: uppercase;
-      border-radius: 6px;
-      transition: var(--transition);
+      font-weight: 700;
     }
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--gold-light);
-      background: rgba(255,255,255,.07);
+
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+
+    .nav-links a {
+      color: rgba(255,255,255,.86);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-weight: 700;
     }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255,255,255,.1);
+      color: #fff;
+    }
+
     .nav-cta {
       background: var(--gold);
-      color: var(--navy) !important;
+      color: #11213d !important;
       padding: 8px 18px !important;
-      border-radius: 50px !important;
+      border-radius: 999px !important;
     }
-    .nav-cta:hover { background: var(--gold-light) !important; }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      padding: 8px;
-      cursor: pointer;
-    }
-    .nav-radio {
-      color: #ffd700;
-      font-weight: 600;
-    }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 22px; height: 2px; background: #fff; }
 
     #mobile-menu {
       position: fixed;
-      top: var(--navbar-h);
+      top: var(--nav-h);
       left: 0;
       right: 0;
-      background: rgba(10,22,40,.98);
-      backdrop-filter: blur(10px);
+      z-index: 1099;
+      background: rgba(9,18,34,.98);
       transform: translateY(-120%);
-      transition: var(--transition);
-      z-index: 999;
-      padding: 20px 24px;
+      transition: .35s ease;
+      padding: 16px 24px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
-    #mobile-menu.open { transform: translateY(0); }
+
+    #mobile-menu.open { transform: none; }
+
     #mobile-menu a {
-      color: rgba(255,255,255,.9);
-      padding: 10px 8px;
+      color: #fff;
+      padding: 10px;
       border-radius: 8px;
       font-weight: 600;
-      font-size: .95rem;
     }
-    #mobile-menu a:hover { background: rgba(255,255,255,.08); color: var(--gold-light); }
 
-    /* ============================================================
-       HERO / SLIDER
-       ============================================================ */
+    #mobile-menu a:hover { background: rgba(255,255,255,.08); }
+
     #hero {
       position: relative;
+      min-height: 100vh;
       height: 100vh;
-      min-height: 740px;
       overflow: hidden;
-      background: var(--navy);
+      background: #000;
     }
+
     .slider-track {
       display: flex;
-      width: 500%;
       height: 100%;
-      transition: transform .95s cubic-bezier(.4,0,.2,1);
+      width: 300%;
+      transition: transform 1.2s cubic-bezier(.22,1,.36,1);
     }
+
     .slide {
       position: relative;
-      width: 20%;
+      width: 33.3333%;
       height: 100%;
       flex-shrink: 0;
-      overflow: hidden;
     }
+
     .slide-bg {
       position: absolute;
       inset: 0;
       background-size: cover;
       background-position: center;
-      transform: scale(1.08);
-      transition: transform 8s ease;
+      transform: scale(1.04);
+      transition: transform 7s ease;
     }
+
     .slide.active .slide-bg { transform: scale(1); }
+
     .slide-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, rgba(10,22,40,.78) 0%, rgba(10,22,40,.58) 45%, rgba(10,22,40,.88) 100%);
+      background:
+        linear-gradient(95deg, rgba(4,9,18,.84) 0%, rgba(7,14,28,.78) 42%, rgba(8,16,31,.68) 70%, rgba(8,16,31,.82) 100%),
+        radial-gradient(circle at 20% 20%, rgba(213,179,91,.18), transparent 36%);
     }
-    .slide-content {
+
+    .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       height: 100%;
+      display: flex;
+      align-items: center;
+      padding-top: var(--nav-h);
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      text-align: left;
+    }
+
+    .hero-copy .hero-tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--gold-2);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .hero-copy h1,
+    .hero-copy h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text);
+      line-height: 1.03;
+      font-size: clamp(2.2rem, 5.2vw, 4.9rem);
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .hero-copy h1 em {
+      font-style: normal;
+      color: var(--gold-2);
+    }
+
+    .hero-copy p {
+      color: var(--text-soft);
+      font-size: 1.08rem;
+      line-height: 1.72;
+      margin-bottom: 24px;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .hero-proof {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-proof .chip {
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 700;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+
+    .dots {
+      position: absolute;
+      left: 24px;
+      bottom: 22px;
+      z-index: 4;
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.35);
+      transition: .35s ease;
+    }
+
+    .dot.active {
+      width: 28px;
+      background: var(--gold);
+    }
+
+    #prueba-social { background: #f7f9fc; }
+
+    .proof-grid {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+
+    .proof-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(16,24,38,.05);
+    }
+
+    .proof-card p {
+      line-height: 1.75;
+      color: #4d5867;
+      margin-bottom: 12px;
+    }
+
+    .proof-card strong { color: #11213d; }
+
+    .stars {
+      color: #e3b750;
+      font-size: .95rem;
+      letter-spacing: .08em;
+      margin-bottom: 10px;
+    }
+
+    #primera-vez { background: #fff; }
+
+    .first-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .first-box,
+    .visit-box {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 28px;
+      box-shadow: 0 10px 25px rgba(9,20,39,.05);
+    }
+
+    .steps {
+      margin-top: 14px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.7;
+      color: #4e5a69;
+    }
+
+    .step b { color: #12233f; }
+
+    .step i {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: #f1f4fa;
+      color: #11213d;
+      font-style: normal;
+      font-weight: 800;
+      font-size: .72rem;
+    }
+
+    .visit-box {
+      background: linear-gradient(160deg,#ffffff,#f8fbff);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-top: 52px;
-      color: var(--white);
-      max-width: 760px;
-    }
-    .slide-tag {
-      display: inline-block;
-      align-self: flex-start;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.24);
-      color: var(--gold-pale);
-      padding: 8px 14px;
-      border-radius: 50px;
-      font-size: .72rem;
-      letter-spacing: .12em;
-      font-weight: 700;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-    }
-    .slide-title {
-      font-family: var(--ff-display);
-      font-size: clamp(2.4rem, 5.4vw, 4.6rem);
-      line-height: 1.06;
-      margin-bottom: 20px;
-      font-weight: 900;
-    }
-    .slide-title em { color: var(--gold-light); font-style: normal; }
-    .slide-desc {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,.78);
-      max-width: 480px;
-      line-height: 1.7;
-      margin-bottom: 36px;
-    }
-    .slide-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-proof{
-      margin-top:22px;
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:12px;
-    }
-    .hero-proof div{
-      border:1px solid rgba(255,255,255,.22);
-      background:rgba(10,22,40,.35);
-      backdrop-filter:blur(6px);
-      border-radius:12px;
-      padding:10px 12px;
-    }
-    .hero-proof strong{display:block;color:var(--gold-pale);font-size:.9rem}
-    .hero-proof span{font-size:.72rem;color:rgba(255,255,255,.8)}
-    /* Slider dots */
-    .slider-dots {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 10;
-    }
-    .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.35);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .dot.active {
-      width: 24px; border-radius: 20px;
-      background: var(--gold);
-    }
-    .slider-arrow {
-      position: absolute;
-      top: 50%; transform: translateY(-50%);
-      z-index: 10;
-      width: 46px; height: 46px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.35);
-      color: var(--white);
-      font-size: 1.4rem;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(10,22,40,.35);
-      transition: var(--transition);
-    }
-    .slider-arrow:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
-    .arrow-left  { left: 24px; }
-    .arrow-right { right: 24px; }
-    .scroll-indicator {
-      position: absolute;
-      bottom: 20px;
-      right: 24px;
-      font-size: .72rem;
-      letter-spacing: .1em;
-      color: rgba(255,255,255,.56);
-      text-transform: uppercase;
-      writing-mode: vertical-rl;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .scroll-indicator::after {
-      content:'';
-      width: 2px; height: 52px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      margin-top: 8px;
-      animation: scrollPulse 2s ease infinite;
-    }
-    @keyframes scrollPulse {
-      0%,100% { opacity:.4; transform: scaleY(.85); }
-      50% { opacity:1; transform: scaleY(1); }
     }
 
-    /* ============================================================
-       ABOUT
-       ============================================================ */
-    #about { padding: 110px 0; background: var(--off-white); }
-    .about-grid {
+    .visit-box h3 {
+      font-family: 'Playfair Display', serif;
+      color: #12233f;
+      font-size: 1.8rem;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .visit-box p {
+      color: #546173;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    #horarios { background: #f9fbff; }
+
+    .schedule-grid {
+      margin-top: 30px;
       display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 72px;
-      align-items: center;
-    }
-    .about-visual {
-      position: relative;
-    }
-    .about-img-main {
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      isolation: isolate;
-    }
-    .about-img-main::after {
-      content:'';
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, transparent 40%, rgba(10,22,40,.45) 100%);
-      z-index:1;
-    }
-    .about-badge {
-      position: absolute;
-      bottom: -24px;
-      right: 24px;
-      background: var(--white);
-      border-radius: 16px;
-      box-shadow: var(--shadow-md);
-      padding: 16px 18px;
-      min-width: 120px;
-      text-align: center;
-      font-weight: 800;
-      color: var(--navy);
-    }
-    .about-badge small { display:block; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-500); margin-bottom:4px; }
-    .about-cards {
-      margin-top: 26px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 14px;
     }
-    .about-card {
-      background: var(--white);
-      border-radius: 14px;
-      padding: 16px 15px;
-      border: 1px solid rgba(10,22,40,.06);
-      transition: var(--transition);
-      box-shadow: var(--shadow-sm);
-    }
-    .about-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-    .about-card-icon {
-      width: 32px; height: 32px;
-      border-radius: 9px;
-      background: var(--gray-100);
-      display: flex; align-items:center; justify-content:center;
-      font-size: 1rem;
-      margin-bottom: 9px;
-    }
-    .about-card h4 {
-      font-size: .9rem;
-      color: var(--navy);
-      margin-bottom: 6px;
-      font-weight: 800;
-    }
-    .about-card p {
-      font-size: .82rem;
-      color: var(--gray-700);
-      line-height: 1.55;
+
+    .schedule-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+      text-align: left;
     }
 
-    /* ============================================================
-       STATS STRIP
-       ============================================================ */
-    #stats {
-      background: var(--white);
-      border-top: 1px solid var(--gray-100);
-      border-bottom: 1px solid var(--gray-100);
+    .schedule-card .day {
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #cf9f35;
+      font-weight: 800;
+      margin-bottom: 8px;
     }
-    .stats-inner {
+
+    .schedule-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: #11213d;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    .schedule-card p {
+      color: #556171;
+      line-height: 1.7;
+      font-size: .95rem;
+    }
+
+    .quick-actions {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #eventos { background: #fff; }
+
+    .events-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 16px;
+    }
+
+    .event {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-media {
+      height: 180px;
+      background: #11213d;
+      position: relative;
+    }
+
+    .event-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .event-body { padding: 20px; }
+
+    .event-body .kicker {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #cf9f35;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .event-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: #11213d;
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .event-body p {
+      color: #546173;
+      line-height: 1.72;
+    }
+
+    .event-meta {
+      margin-top: 12px;
+      font-size: .86rem;
+      color: #6a7482;
+      font-weight: 600;
+    }
+
+    #equipo {
+      background: #0b1528;
+      color: #fff;
+    }
+
+    #equipo .title,
+    #equipo .sub { color: #fff; }
+
+    #equipo .sub { color: rgba(255,255,255,.78); }
+
+    .team-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+
+    .story {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .story img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .story .body { padding: 18px; }
+
+    .story .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold-2);
+      margin-bottom: 8px;
+    }
+
+    .story p {
+      color: rgba(255,255,255,.84);
+      line-height: 1.72;
+      font-size: .94rem;
+    }
+
+    #radio {
+      background: linear-gradient(140deg,#0f203e,#0a1628);
+    }
+
+    #radio .title,
+    #radio .sub { color: #fff; }
+
+    #radio .sub { color: rgba(255,255,255,.8); }
+
+    .radio-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .radio-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .radio-card p {
+      color: rgba(255,255,255,.82);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    #cta-final {
+      background: linear-gradient(140deg,#081224,#122b52);
+      text-align: center;
+      color: #fff;
+    }
+
+    #cta-final .title { color: #fff; }
+
+    #cta-final .sub {
+      color: rgba(255,255,255,.8);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      background: #070f1d;
+      color: rgba(255,255,255,.78);
+      padding: 56px 0 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 26px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding-bottom: 22px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: .82rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,.78);
+      font-size: .92rem;
+    }
+
+    .footer-col a:hover { color: var(--gold-2); }
+
+    .footer-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .foot-bottom {
       display: flex;
       justify-content: space-between;
-      align-items: stretch;
-    }
-    .stat-item {
-      flex: 1;
-      text-align: center;
-      padding: 30px 16px;
-      border-right: 1px solid var(--gray-100);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-num {
-      display:block;
-      font-family: var(--ff-display);
-      font-size: clamp(1.8rem, 3.6vw, 2.6rem);
-      color: var(--navy);
-      font-weight: 900;
-    }
-    .stat-label {
-      font-size: .78rem;
-      letter-spacing: .12em;
-      color: var(--gray-500);
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-top: 6px;
-    }
-
-    /* ============================================================
-       SERVICIOS
-       ============================================================ */
-    #servicios { padding: 110px 0 96px; background: var(--white); }
-    .servicios-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 18px;
-    }
-    .servicio-card {
-      background: linear-gradient(160deg, #fff 0%, #fbfaf8 100%);
-      border: 1px solid var(--gray-100);
-      border-radius: 16px;
-      padding: 24px 18px;
-      text-align: center;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .servicio-card::before {
-      content:'';
-      position:absolute;
-      top:0; left:0; right:0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: var(--transition);
-    }
-    .servicio-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(201,168,76,.35);
-    }
-    .servicio-card:hover::before { transform: scaleX(1); }
-    .servicio-icon {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-    .servicio-day {
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-    .servicio-name {
-      font-family: var(--ff-display);
-      font-size: 1.16rem;
-      color: var(--navy);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 8px;
-    }
-    .servicio-time {
-      font-size: .85rem;
-      color: var(--gray-700);
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
-    /* ============================================================
-       PASTORES
-       ============================================================ */
-    #pastores {
-      padding: 110px 0;
-      background: linear-gradient(130deg, var(--navy) 0%, var(--navy-mid) 45%, #1D355F 100%);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-    #pastores::before {
-      content:'';
-      position:absolute; inset:0;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(201,168,76,.18), transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(201,168,76,.14), transparent 38%);
-      pointer-events:none;
-    }
-    .pastores-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 22px;
-    }
-    .pastor-card {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
-      overflow: hidden;
-      transition: var(--transition);
-      backdrop-filter: blur(7px);
-    }
-    .pastor-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 14px 34px rgba(0,0,0,.35);
-      border-color: rgba(228,199,107,.55);
-    }
-    .pastor-photo {
-      height: 260px;
-      overflow: hidden;
-      position: relative;
-    }
-    .pastor-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform .8s ease;
-    }
-    .pastor-card:hover .pastor-photo img { transform: scale(1.08); }
-    .pastor-info { padding: 18px 18px 20px; }
-    .pastor-name {
-      font-family: var(--ff-display);
-      font-size: 1.3rem;
-      margin-bottom: 3px;
-      color: var(--gold-light);
-      font-weight: 700;
-    }
-    .pastor-role {
-      font-size: .72rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.68);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .pastor-desc {
-      font-size: .88rem;
-      color: rgba(255,255,255,.82);
-      line-height: 1.62;
-      margin-bottom: 14px;
-    }
-    .pastor-social { display: flex; gap: 8px; }
-    .pastor-social a {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      display:flex; align-items:center; justify-content:center;
-      border: 1px solid rgba(255,255,255,.26);
-      color: var(--white);
-      font-size: .75rem;
-      transition: var(--transition);
-    }
-    .pastor-social a:hover {
-      background: var(--gold);
-      color: var(--navy);
-      border-color: var(--gold);
-    }
-
-    /* ============================================================
-       EVENTOS
-       ============================================================ */
-    #eventos { padding: 110px 0; background: var(--off-white); }
-    .eventos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 20px;
-    }
-    .evento-card {
-      background: var(--white);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--gray-100);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      display:flex;
-      flex-direction:column;
-    }
-    .evento-card:hover {
-      transform: translateY(-7px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(201,168,76,.35);
-    }
-    .evento-img {
-      position: relative;
-      height: 180px;
-      background: linear-gradient(130deg, #c8d2e6, #f2ede0);
-    }
-    .evento-img .img-placeholder {
-      width:100%; height:100%;
-      display:flex; align-items:center; justify-content:center;
-      font-size:2rem;
-      color:#fff;
-      font-weight:700;
-    }
-    .evento-date-badge {
-      position:absolute;
-      top:12px; left:12px;
-      background: var(--gold);
-      color: var(--navy);
-      border-radius: 10px;
-      min-width:56px;
-      text-align:center;
-      padding:8px 8px;
-      font-weight:800;
-      font-size:.75rem;
-      box-shadow: var(--shadow-sm);
-      line-height:1.05;
-    }
-    .evento-date-badge span { display:block; font-size:1.05rem; }
-    .evento-body { padding: 18px; flex:1; display:flex; flex-direction:column; }
-    .evento-category {
-      font-size: .68rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .evento-title {
-      font-family: var(--ff-display);
-      font-size: 1.26rem;
-      color: var(--navy);
-      margin-bottom: 10px;
-      line-height: 1.25;
-    }
-    .evento-desc {
-      font-size: .88rem;
-      color: var(--gray-700);
-      line-height: 1.62;
-      margin-bottom: 14px;
-      flex:1;
-    }
-    .evento-meta {
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      font-size:.76rem;
-      color:var(--gray-500);
-      font-weight:600;
-    }
-
-    /* ============================================================
-       BLOG
-       ============================================================ */
-    #blog { padding: 110px 0; background: var(--white); }
-    .blog-grid {
-      display:grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 20px;
-    }
-    .blog-card {
-      background: var(--white);
-      border-radius: 16px;
-      overflow: hidden;
-      border:1px solid var(--gray-100);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      cursor:pointer;
-      display:flex;
-      flex-direction:column;
-    }
-    .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-    .blog-image {
-      width:100%; height: 190px;
-      object-fit: cover;
-    }
-    .blog-body { padding: 18px; flex:1; display:flex; flex-direction:column; }
-    .blog-meta {
-      font-size:.68rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--gold);
-      font-weight:700;
-      margin-bottom:8px;
-    }
-    .blog-title {
-      font-family: var(--ff-display);
-      font-size:1.2rem;
-      color:var(--navy);
-      line-height:1.25;
-      margin-bottom:10px;
-    }
-    .blog-excerpt {
-      font-size:.88rem;
-      color:var(--gray-700);
-      line-height:1.65;
-      margin-bottom:14px;
-      flex:1;
-    }
-    .blog-read {
-      font-size:.78rem;
-      color:var(--navy);
-      font-weight:700;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-    }
-
-    /* ============================================================
-       SHOP
-       ============================================================ */
-    #tienda { padding: 110px 0; background: var(--off-white); }
-    .shop-grid {
-      display:grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 20px;
-    }
-    .product-card {
-      background: var(--white);
-      border-radius: 16px;
-      overflow: hidden;
-      border:1px solid var(--gray-100);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      display:flex; flex-direction:column;
-    }
-    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-    .product-img {
-      width:100%; height: 210px;
-      object-fit: cover;
-    }
-    .product-body { padding: 18px; display:flex; flex-direction:column; flex:1; }
-    .product-name {
-      font-family: var(--ff-display);
-      color: var(--navy);
-      font-size:1.2rem;
-      margin-bottom: 8px;
-      line-height:1.25;
-    }
-    .product-desc {
-      font-size:.86rem;
-      color: var(--gray-700);
-      line-height:1.6;
-      margin-bottom: 14px;
-      flex:1;
-    }
-    .product-bottom {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap: 10px;
-    }
-    .product-price {
-      font-size:1.1rem;
-      font-weight:800;
-      color: var(--navy);
-    }
-    .qty-picker {
-      display:flex; align-items:center;
-      border:1px solid var(--gray-300);
-      border-radius: 40px;
-      overflow:hidden;
-    }
-    .qty-picker button {
-      width: 30px; height: 30px;
-      font-weight:700;
-      color: var(--navy);
-      background: var(--gray-100);
-    }
-    .qty-picker span {
-      width: 34px; text-align:center;
-      font-size:.85rem; font-weight:700;
-      color: var(--navy);
-      background:#fff;
-    }
-
-    /* ============================================================
-       CHECKOUT
-       ============================================================ */
-    #checkout { padding: 110px 0; background: var(--white); }
-    .checkout-grid {
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 28px;
-      align-items:start;
-    }
-    .form-group { margin-bottom: 14px; }
-    .form-group label {
-      display:block;
-      font-size:.78rem;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      color: var(--gray-500);
-      font-weight:700;
-      margin-bottom: 6px;
-    }
-    .form-group input, .form-group textarea, .form-group select {
-      width:100%;
-      border:1px solid var(--gray-300);
-      border-radius: 10px;
-      padding: 12px 13px;
-      font-family: var(--ff-body);
-      font-size: .92rem;
-      color: var(--text-dark);
-      outline:none;
-      transition: var(--transition);
-      background:#fff;
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(201,168,76,.15);
-    }
-    .order-summary {
-      background: var(--off-white);
-      border-radius: 16px;
-      padding: 20px;
-      border:1px solid var(--gray-100);
-      position: sticky;
-      top: calc(var(--navbar-h) + 16px);
-    }
-    .order-summary h3 {
-      font-family: var(--ff-display);
-      color: var(--navy);
-      margin-bottom: 14px;
-      font-size:1.3rem;
-    }
-    .order-item {
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      font-size:.86rem;
-      color:var(--gray-700);
-      margin-bottom: 8px;
-    }
-    .order-total {
-      margin-top: 14px;
-      padding-top: 14px;
-      border-top:1px dashed var(--gray-300);
-      display:flex;
-      justify-content:space-between;
-      font-weight:800;
-      color:var(--navy);
-    }
-
-    /* ============================================================
-       DONATIVOS
-       ============================================================ */
-    #donativos {
-      padding: 110px 0;
-      background: linear-gradient(130deg, var(--navy), var(--navy-mid));
-      color: var(--white);
-    }
-    .donativo-grid {
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 28px;
-      align-items:center;
-    }
-    .donativo-options {
-      display:grid;
       gap: 12px;
-      margin-top: 20px;
-    }
-    .donativo-btn {
-      background: rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.16);
-      color:#fff;
-      border-radius: 12px;
-      padding: 14px 16px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      text-align:left;
-      transition: var(--transition);
-      font-size:.9rem;
-    }
-    .donativo-btn:hover {
-      background: rgba(255,255,255,.14);
-      border-color: rgba(228,199,107,.45);
-      transform: translateY(-2px);
-    }
-    .d-icon { font-size:1.2rem; flex-shrink:0; }
-    .d-text strong { display:block; font-size:.92rem; }
-    .d-text small { display:block; font-size:.74rem; color:rgba(255,255,255,.72); margin-top:3px; }
-    .donativo-card {
-      background: rgba(255,255,255,.1);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius: 16px;
-      padding: 20px;
-    }
-    .donativo-card h4 {
-      font-family: var(--ff-display);
-      font-size:1.4rem;
-      margin-bottom: 10px;
-      color:var(--gold-light);
-    }
-    .bank-box {
-      margin-top: 12px;
-      background: rgba(0,0,0,.2);
-      border-radius: 10px;
-      padding: 12px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size:.78rem;
-      line-height:1.6;
-      color: rgba(255,255,255,.86);
-    }
-
-    /* ============================================================
-       DESCARGAS
-       ============================================================ */
-    #descargas { padding: 110px 0; background: var(--off-white); }
-    .downloads-grid {
-      display:grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 20px;
-    }
-    .download-card {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 20px;
-      border:1px solid var(--gray-100);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      display:flex; flex-direction:column;
-    }
-    .download-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-    .download-icon {
-      width: 42px; height: 42px;
-      border-radius: 12px;
-      background: var(--gray-100);
-      display:flex; align-items:center; justify-content:center;
-      font-size:1.25rem;
-      margin-bottom: 12px;
-    }
-    .download-title {
-      font-family: var(--ff-display);
-      color: var(--navy);
-      font-size:1.2rem;
-      margin-bottom: 8px;
-      line-height:1.2;
-    }
-    .download-desc {
-      font-size:.85rem;
-      color:var(--gray-700);
-      line-height:1.6;
-      margin-bottom: 16px;
-      flex:1;
-    }
-
-    /* ============================================================
-       UBICACIÓN
-       ============================================================ */
-    #ubicacion { padding: 110px 0; background: var(--white); }
-    .ubicacion-grid {
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 28px;
-      align-items:stretch;
-    }
-    .map-wrap {
-      border-radius: 18px;
-      overflow:hidden;
-      border:1px solid var(--gray-100);
-      box-shadow: var(--shadow-sm);
-      min-height: 420px;
-    }
-    .map-wrap iframe {
-      width:100%; height:100%;
-      border:0;
-    }
-    .ubicacion-card {
-      background: var(--off-white);
-      border-radius: 18px;
-      border:1px solid var(--gray-100);
-      padding: 24px;
-      display:flex;
-      flex-direction:column;
-    }
-    .ubicacion-list {
-      margin-top: 12px;
-      display:grid;
-      gap: 11px;
-    }
-    .ubicacion-list li {
-      display:flex;
-      gap:9px;
-      font-size:.9rem;
-      color:var(--gray-700);
-      line-height:1.55;
-    }
-    .ubicacion-actions {
-      margin-top:auto;
-      display:flex; flex-wrap:wrap; gap:10px;
-      padding-top: 18px;
-    }
-
-    /* ============================================================
-       FOOTER
-       ============================================================ */
-    footer {
-      background: #070F1D;
-      color: rgba(255,255,255,.85);
-      padding: 70px 0 24px;
-      position: relative;
-    }
-    .footer-grid {
-      display:grid;
-      grid-template-columns: 1.3fr .9fr .9fr .9fr;
-      gap: 30px;
-      margin-bottom: 38px;
-    }
-    .footer-logo {
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-bottom: 12px;
-      color:#fff;
-      font-family: var(--ff-display);
-    }
-    .footer-logo .nav-logo-icon { width:34px; height:34px; font-size:1rem; }
-    .footer-col h4 {
-      font-size:.74rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--gold-light);
-      margin-bottom: 12px;
-      font-weight:700;
-    }
-    .footer-col ul { display:grid; gap:8px; }
-    .footer-col a {
-      font-size:.84rem;
-      color:rgba(255,255,255,.72);
-      transition:var(--transition);
-    }
-    .footer-col a:hover { color: var(--gold-light); }
-    .footer-social { display:flex; gap:8px; margin-top: 12px; }
-    .social-btn {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      border:1px solid rgba(255,255,255,.2);
-      display:flex; align-items:center; justify-content:center;
-      font-size:.78rem;
-      color:#fff;
-      transition:var(--transition);
-    }
-    .social-btn:hover { background:var(--gold); color:var(--navy); border-color:var(--gold); }
-    .footer-schedule {
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius: 12px;
-      padding: 10px 12px;
-    }
-    .schedule-row {
-      display:flex; justify-content:space-between;
-      font-size:.78rem;
-      padding:6px 0;
-      border-bottom:1px dashed rgba(255,255,255,.12);
-    }
-    .schedule-row:last-child { border-bottom:none; }
-    .footer-bottom {
-      border-top:1px solid rgba(255,255,255,.1);
+      flex-wrap: wrap;
       padding-top: 14px;
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:space-between;
-      gap:10px;
-      font-size:.76rem;
-      color:rgba(255,255,255,.55);
+      margin-top: 14px;
+      font-size: .82rem;
     }
 
-    /* ============================================================
-       WHATSAPP FAB
-       ============================================================ */
-    #whatsapp-fab {
-      position: fixed;
-      right: 18px;
-      bottom: 20px;
-      width: 58px; height:58px;
-      border-radius:50%;
-      z-index: 1100;
-      background: #25D366;
-      display:flex; align-items:center; justify-content:center;
-      box-shadow: 0 10px 30px rgba(37,211,102,.4);
-      transition: var(--transition);
-    }
-    #whatsapp-fab:hover { transform: translateY(-3px) scale(1.05); }
-    #whatsapp-fab svg { width:28px; height:28px; fill:#fff; }
+    @media (max-width: 1024px) {
+      .proof-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
 
-    /* ============================================================
-       CART DRAWER
-       ============================================================ */
-    #cart-drawer {
-      position: fixed;
-      right: -420px;
-      top: 0;
-      width: 390px;
-      max-width: 100%;
-      height: 100vh;
-      background: #fff;
-      z-index: 1400;
-      box-shadow: -12px 0 34px rgba(0,0,0,.22);
-      transition: var(--transition);
-      display:flex; flex-direction:column;
-    }
-    #cart-drawer.open { right: 0; }
-    .drawer-head {
-      height: var(--navbar-h);
-      border-bottom:1px solid var(--gray-100);
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 0 16px;
-    }
-    .drawer-close {
-      width:36px; height:36px;
-      border-radius:50%;
-      background:var(--gray-100);
-      font-size:1.05rem;
-      color:var(--navy);
-    }
-    .drawer-body {
-      flex:1;
-      overflow:auto;
-      padding: 14px 16px 18px;
-    }
-    .cart-item {
-      display:grid;
-      grid-template-columns: 60px 1fr auto;
-      gap:10px;
-      align-items:center;
-      padding: 10px 0;
-      border-bottom:1px solid var(--gray-100);
-    }
-    .cart-item img {
-      width:60px; height:60px;
-      object-fit:cover; border-radius:8px;
-    }
-    .cart-item h5 {
-      font-size:.88rem; color:var(--navy);
-      margin-bottom:4px;
-    }
-    .cart-item small { color:var(--gray-500); font-size:.75rem; }
-    .cart-item button {
-      color:#c44343; font-size:.78rem; font-weight:700;
-    }
-    .drawer-foot {
-      border-top:1px solid var(--gray-100);
-      padding: 14px 16px;
-      display:grid; gap:10px;
-      background:#fff;
-    }
-    .cart-total {
-      display:flex; justify-content:space-between;
-      font-weight:800; color:var(--navy);
+      .first-grid,
+      .radio-wrap,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .schedule-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    /* ============================================================
-       OVERLAY + MODALS
-       ============================================================ */
-    #overlay {
-      position: fixed;
-      inset:0;
-      background: rgba(10,22,40,.55);
-      opacity:0; visibility:hidden;
-      transition: var(--transition);
-      z-index:1300;
-    }
-    #overlay.show { opacity:1; visibility:visible; }
+    @media (max-width: 760px) {
+      :root { --nav-h: 66px; }
 
-    .modal {
-      position: fixed;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      z-index: 1500;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-    }
-    .modal.show { opacity:1; visibility:visible; }
-    .modal-card {
-      width: min(760px, 100%);
-      max-height: 86vh;
-      overflow: auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 24px 70px rgba(0,0,0,.35);
-      position:relative;
-    }
-    .modal-close {
-      position:absolute;
-      top: 12px; right: 12px;
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      background: rgba(10,22,40,.08);
-      color: var(--navy);
-      font-size: 1rem;
-      z-index:2;
-    }
-    .modal-header-img {
-      width:100%; height: 280px;
-      object-fit: cover;
-      border-radius: 20px 20px 0 0;
-    }
-    .modal-body { padding: 28px 30px 30px; }
-    .modal-body h2 {
-      font-family: var(--ff-display);
-      color: var(--navy);
-      margin-bottom: 10px;
-      line-height:1.2;
-      font-size: 2rem;
-    }
-    .modal-body p {
-      color: var(--gray-700);
-      line-height:1.85;
-      margin-bottom: 14px;
-      font-size: .97rem;
-    }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
 
-    /* ============================================================
-       TOAST
-       ============================================================ */
-    #toast {
-      position:fixed; bottom:100px; left:50%; transform:translateX(-50%) translateY(20px);
-      background:var(--navy); color:white;
-      padding:12px 24px; border-radius:50px;
-      font-size:.85rem; font-weight:600;
-      opacity:0; transition:all .3s ease; z-index:3000;
-      pointer-events:none; white-space:nowrap;
-    }
-    #toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+      .hero-copy p { font-size: 1rem; }
 
-    /* ============================================================
-       RESPONSIVE
-       ============================================================ */
-    @media (max-width:1024px) {
-      .footer-grid { grid-template-columns:1fr 1fr; }
-      .about-grid { gap:48px; }
-      .donativo-grid { grid-template-columns:1fr; }
-      .checkout-grid { grid-template-columns:1fr; }
-      .testimonials-grid { grid-template-columns:1fr; }
-      .first-grid { grid-template-columns:1fr; }
-    }
-    @media (max-width:768px) {
-      :root { --navbar-h:64px; }
-      .nav-links { display:none; }
-      .hamburger { display:flex; }
-      .about-grid { grid-template-columns:1fr; }
-      .about-badge { bottom:-16px; right:16px; }
-      .footer-grid { grid-template-columns:1fr 1fr; }
-      .ubicacion-grid { grid-template-columns:1fr; }
-      .stats-inner { flex-wrap:wrap; }
-      .stat-item { flex:0 0 50%; border-bottom:1px solid rgba(10,22,40,.1); }
-      .slide-title { font-size:2rem; }
-      .modal-body { padding:24px; }
-      #cart-drawer { width:100%; right:-100%; }
-    }
-    @media (max-width:480px) {
-      .footer-grid { grid-template-columns:1fr; }
-      .stat-item { flex:0 0 100%; }
-      .slide-actions { flex-direction:column; }
-      .hero-proof { grid-template-columns:1fr; }
-      .btn { width:100%; justify-content:center; }
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section { padding: 84px 0; }
+      .dots { left: 16px; }
+
+      .schedule-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- ============================================================
-       NAVBAR FIJO
-       ============================================================ -->
-  <nav id="navbar" role="navigation" aria-label="Navegación principal">
-    <div class="container">
-      <div class="nav-inner">
-        <!-- Logo -->
-        <a href="#inicio" class="nav-logo">
-          <div class="nav-logo-icon">✝</div>
-          <div class="nav-logo-text">
+  <header>
+    <nav id="navbar" aria-label="Navegación principal">
+      <div class="container nav-inner">
+        <a href="#inicio" class="brand" aria-label="Iglesia Belén inicio">
+          <span class="brand-badge">✝</span>
+          <span class="brand-text">
             <strong>Belén</strong>
             <span>Iglesia Cristiana</span>
-          </div>
+          </span>
         </a>
 
-        <!-- Links de escritorio -->
         <ul class="nav-links" id="nav-links">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#prueba-social">Historias</a></li>
           <li><a href="#primera-vez">Primera vez</a></li>
-          <li><a href="#servicios">Horarios</a></li>
+          <li><a href="#horarios">Horarios</a></li>
           <li><a href="#eventos">Eventos</a></li>
-          <li><a href="#radio-digital" class="nav-radio">Radio</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#radio">Radio</a></li>
           <li><a href="#cta-final" class="nav-cta">Planear visita</a></li>
         </ul>
 
-        <!-- Hamburger móvil -->
-        <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
+    </nav>
+
+    <div id="mobile-menu" role="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#prueba-social">Historias</a>
+      <a href="#primera-vez">Primera vez</a>
+      <a href="#horarios">Horarios</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#radio">Radio</a>
+      <a href="#cta-final">Planear visita</a>
+      <hr style="border-color: rgba(255,255,255,.15); margin: 8px 0">
+      <a href="/nosotros.html">Sobre nosotros</a>
+      <a href="/articulos.html">Artículos</a>
+      <a href="/tienda.html">Tienda</a>
+      <a href="/descargas.html">Descargas</a>
     </div>
-  </nav>
+  </header>
 
-  <!-- Menú móvil -->
-  <div id="mobile-menu" role="menu">
-    <a href="#inicio">🏠 Inicio</a>
-    <a href="#prueba-social">💬 Historias</a>
-    <a href="#primera-vez">🧭 Primera vez</a>
-    <a href="#servicios">⏰ Horarios</a>
-    <a href="#eventos">📅 Eventos</a>
-    <a href="#radio-digital">📻 Radio</a>
-    <a href="#cta-final">✅ Planear visita</a>
-  </div>
-  <!-- ============================================================
-       HERO PRINCIPAL CON SLIDER
-       ============================================================ -->
-  <section id="inicio" aria-label="Presentación de la iglesia">
-    <div id="hero">
-      <div class="slider-track" id="slider-track">
+  <main>
+    <section id="inicio" aria-label="Presentación principal">
+      <div id="hero">
+        <div class="slider-track" id="slider-track">
+          <article class="slide active">
+            <div class="slide-bg" style="background-image: url('img/Slider1.webp')"></div>
+            <div class="slide-overlay"></div>
+            <div class="container hero-content">
+              <div class="hero-copy reveal visible">
+                <span class="hero-tag">No llegaste aquí por accidente</span>
+                <h1>No tienes que tener tu vida resuelta.<br><em>Aquí nadie camina solo.</em></h1>
+                <p>Una comunidad para volver a empezar, sanar por dentro y construir un futuro con propósito.</p>
+                <div class="hero-actions">
+                  <a href="#primera-vez" class="btn btn-gold">Planear mi primera visita</a>
+                  <a href="https://wa.me/528717975096?text=Hola%2C%20quiero%20visitar%20Iglesia%20Bel%C3%A9n%20por%20primera%20vez" target="_blank" rel="noopener" class="btn btn-outline">Hablar con alguien</a>
+                </div>
+                <div class="hero-proof">
+                  <span class="chip">Domingos 12:00 PM</span>
+                  <span class="chip">Un lugar donde puedes empezar de nuevo</span>
+                  <span class="chip">+17 años sirviendo</span>
+                </div>
+              </div>
+            </div>
+          </article>
 
-        <!-- Slide 1 -->
-        <div class="slide active" data-index="0">
-          <div class="slide-bg" style="background-image:url('img/Slider1.webp')"></div>
-          <div class="slide-overlay"></div>
-          <div class="container slide-content">
-            <span class="slide-tag">BIENVENIDO A CASA</span>
-            <h1 class="slide-title">No llegaste aquí por accidente.<br><em>Dios todavía escribe tu historia.</em></h1>
-            <p class="slide-desc">Una iglesia para personas reales: familias con preguntas, jóvenes con hambre de propósito y corazones listos para comenzar de nuevo.</p>
-            <div class="slide-actions">
-              <a href="#servicios" class="btn btn-gold">Quiero asistir este domingo</a>
-              <a href="https://wa.me/528717975096?text=Hola%2C%20quiero%20asistir%20por%20primera%20vez%20a%20Iglesia%20Bel%C3%A9n" target="_blank" rel="noopener" class="btn btn-outline-white">Hablar con un líder</a>
+          <article class="slide">
+            <div class="slide-bg" style="background-image: url('img/Slider2.webp')"></div>
+            <div class="slide-overlay"></div>
+            <div class="container hero-content">
+              <div class="hero-copy reveal visible">
+                <span class="hero-tag">Cuando todo pesa</span>
+                <h2>Respira. Hay esperanza para tu historia.</h2>
+                <p>No se trata de perfección. Se trata de encontrar un lugar seguro para crecer.</p>
+                <div class="hero-actions">
+                  <a href="#prueba-social" class="btn btn-gold">Ver historias reales</a>
+                  <a href="#horarios" class="btn btn-outline">Ver horarios</a>
+                </div>
+              </div>
             </div>
-            <div class="hero-proof">
-              <div><strong>+17 años</strong><span>sirviendo a familias</span></div>
-              <div><strong>Domingos · 12:00 PM</strong><span>experiencia principal</span></div>
-              <div><strong>Torreón, Coahuila</strong><span>te esperamos en casa</span></div>
+          </article>
+
+          <article class="slide">
+            <div class="slide-bg" style="background-image: url('img/Slider3.webp')"></div>
+            <div class="slide-overlay"></div>
+            <div class="container hero-content">
+              <div class="hero-copy reveal visible">
+                <span class="hero-tag">Tu próximo paso</span>
+                <h2>Este domingo puede cambiar tu semana.</h2>
+                <p>Ven como estás. Sal con claridad, fe y una comunidad que camina contigo.</p>
+                <div class="hero-actions">
+                  <a href="#cta-final" class="btn btn-gold">Sí, quiero dar el paso</a>
+                  <a href="#ubicacion" class="btn btn-outline">Cómo llegar</a>
+                </div>
+              </div>
             </div>
-          </div>
+          </article>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="slide" data-index="1">
-          <div class="slide-bg" style="background-image:url('img/Slider2.webp')"></div>
-          <div class="slide-overlay"></div>
-          <div class="container slide-content">
-            <span class="slide-tag">PRÓXIMO ENCUENTRO</span>
-            <h2 class="slide-title">Conferencia Aviva 2026:<br><em>tres días que pueden marcar tu año</em></h2>
-            <p class="slide-desc">Adoración intensa, palabra práctica y una comunidad que camina contigo. Del 20 al 22 de septiembre.</p>
-            <div class="slide-actions">
-              <a href="#eventos" class="btn btn-gold">Reservar mi lugar</a>
-              <a href="#ubicacion" class="btn btn-outline-white">Ver ubicación</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="slide" data-index="2">
-          <div class="slide-bg" style="background-image:url('img/Slider3.webp')"></div>
-          <div class="slide-overlay"></div>
-          <div class="container slide-content">
-            <span class="slide-tag">PRIMERA VEZ</span>
-            <h2 class="slide-title">Llega como estás.<br><em>Sal con fe para lo que viene.</em></h2>
-            <p class="slide-desc">Hemos diseñado una experiencia clara para ti: bienvenida, mensaje bíblico aplicable y oración personal.</p>
-            <div class="slide-actions">
-              <a href="#plan-visita" class="btn btn-gold">Planear mi visita</a>
-              <a href="/radio/" class="btn btn-outline-white">Escuchar radio en vivo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="slide" data-index="3">
-          <div class="slide-bg" style="background-image:url('img/Merch.webp')"></div>
-          <div class="slide-overlay"></div>
-          <div class="container slide-content">
-            <span class="slide-tag">🛍️ Tienda ministerial</span>
-            <h2 class="slide-title">Recursos que<br><em>edifican tu fe</em></h2>
-            <p class="slide-desc">Libros, Biblias, ropa y material ministerial para fortalecer tu vida espiritual y la de tu familia.</p>
-            <div class="slide-actions">
-              <a href="#tienda" class="btn btn-gold">Ver tienda ↓</a>
-              <a href="#donativos" class="btn btn-outline-white">Apoya la obra</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide RADIO -->
-        <div class="slide" data-index="1">
-          <div class="slide-bg" style="background-image:url('img/radio-bg.webp')"></div>
-          <div class="slide-overlay"></div>
-          <div class="container slide-content">
-            <span class="slide-tag">📻 Radio en Vivo</span>
-            <h2 class="slide-title">Escucha nuestra<br><em>Radio Cristiana 24/7</em></h2>
-            <p class="slide-desc">Música de alabanza, prédicas y devocionales en vivo desde Radio Belén.</p>
-            <div class="slide-actions">
-              <a href="/radio/" class="btn btn-gold">🎧 Escuchar ahora</a>
-              <a href="/radio/#programacion" class="btn btn-outline-white">Ver programación</a>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /slider-track -->
-
-      <!-- Controles -->
-      <button class="slider-arrow arrow-left" id="arrow-left" aria-label="Anterior">‹</button>
-      <button class="slider-arrow arrow-right" id="arrow-right" aria-label="Siguiente">›</button>
-      <div class="slider-dots" id="slider-dots"></div>
-      <div class="scroll-indicator">Scroll</div>
-    </div>
-  </section>
-  <section id="prueba-social" class="social-proof" aria-labelledby="prueba-social-title">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-tag">✦ HISTORIAS REALES</span>
-        <h2 class="section-title" id="prueba-social-title">Lo que pasa cuando una persona decide dar el paso</h2>
-        <p class="section-sub">Testimonios recientes de personas que llegaron por primera vez y encontraron dirección, paz y comunidad.</p>
+        <div class="dots" id="dots"></div>
       </div>
-      <div class="testimonials-grid">
-        <article class="testimonial-card reveal"><p>“Llegué con ansiedad y salí con esperanza. Me escucharon, oraron por mí y hoy no camino sola.”</p><strong>— Andrea, 29 años</strong></article>
-        <article class="testimonial-card reveal delay-1"><p>“Mi familia no asistía a una iglesia desde hace años. En Belén nos sentimos en casa desde el primer domingo.”</p><strong>— Familia R.</strong></article>
-        <article class="testimonial-card reveal delay-2"><p>“Pensé que sería una reunión más, pero el mensaje fue exactamente lo que necesitaba para volver a empezar.”</p><strong>— Carlos, emprendedor</strong></article>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="primera-vez" class="first-visit" aria-labelledby="primera-vez-title">
-    <div class="container">
-      <div class="first-grid">
-        <div class="first-steps reveal-left">
-          <span class="section-tag">✦ PRIMERA VEZ AQUÍ</span>
-          <h2 class="section-title" id="primera-vez-title">Te explicamos todo en 60 segundos</h2>
-          <ul>
-            <li><strong>Qué esperar:</strong> una bienvenida cálida, música en vivo, mensaje bíblico claro y oración personal.</li>
-            <li><strong>Cómo llegar:</strong> estamos en Praxedis 7, Palmas San Isidro, Torreón. Hay acceso rápido y apoyo al llegar.</li>
-            <li><strong>Qué hacer al llegar:</strong> busca el módulo “Primera Vez”; un anfitrión te acompañará en cada paso.</li>
-          </ul>
-          <a href="https://wa.me/528717975096?text=Hola%2C%20quiero%20planear%20mi%20primera%20visita%20a%20Iglesia%20Bel%C3%A9n" target="_blank" rel="noopener" class="btn btn-gold">Planear mi visita ahora</a>
-        </div>
-        <aside class="visit-card reveal-right">
-          <h3 style="font-family:var(--ff-display);font-size:1.8rem;color:var(--navy);margin-bottom:8px;">Este domingo puede ser tu nuevo inicio</h3>
-          <p style="color:var(--text-mid);line-height:1.7;margin-bottom:16px;">No tienes que tenerlo todo resuelto para venir. Solo da el primer paso y nosotros te ayudamos con el resto.</p>
-          <a href="#ubicacion" class="btn btn-outline-navy" style="margin-bottom:10px;">Ver ubicación</a>
-          <a href="#servicios" class="btn btn-navy">Ver horarios</a>
-        </aside>
-      </div>
-    </div>
-  </section>
-  <!-- ============================================================
-       SOBRE LA IGLESIA
-       ============================================================ -->
-  <section id="about" class="funnel-hidden" aria-labelledby="about-title">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-visual reveal-left">
-          <div class="about-img-main">
-            <img src="img/iglesia2.webp" alt="Iglesia Belén">
-          </div>
-          <div class="about-badge">
-            <small>Fundada en</small>
-            2007
-          </div>
+    <section id="prueba-social" class="section" aria-labelledby="prueba-social-title">
+      <div class="container">
+        <div class="center reveal">
+          <span class="tag">Confianza</span>
+          <h2 class="title" id="prueba-social-title">Personas reales. Historias reales.</h2>
+          <p class="sub">No son frases bonitas. Son vidas que llegaron rotas y hoy avanzan con esperanza.</p>
         </div>
 
-        <div class="reveal-right">
-          <span class="section-tag">✦ NUESTRA ESENCIA</span>
-          <h2 class="section-title" id="about-title">No somos un evento.<br>Somos una familia en misión.</h2>
-          <div class="gold-line"></div>
-          <p class="section-sub">Desde 2007 acompañamos procesos reales: matrimonios restaurados, jóvenes con propósito y familias reconciliadas con Dios.</p>
-
-          <div class="about-cards">
-            <div class="about-card reveal delay-1">
-              <div class="about-card-icon">🧭</div>
-              <h4>Dirección clara</h4>
-              <p>Cada domingo compartimos una palabra bíblica aplicable a tu semana, tu hogar y tus decisiones.</p>
-            </div>
-            <div class="about-card reveal delay-2">
-              <div class="about-card-icon">🤝</div>
-              <h4>Comunidad real</h4>
-              <p>No caminas solo. Encontrarás personas que oran contigo y te ayudan a dar tu siguiente paso.</p>
-            </div>
-            <div class="about-card reveal delay-3">
-              <div class="about-card-icon">🔥</div>
-              <h4>Fe en acción</h4>
-              <p>Servimos nuestra ciudad con excelencia, compasión y una convicción: Jesús transforma vidas hoy.</p>
-            </div>
-            <div class="about-card reveal delay-4">
-              <div class="about-card-icon">✅</div>
-              <h4>Siguiente paso</h4>
-              <p id="plan-visita">Si vienes por primera vez, te acompañamos desde tu llegada hasta tu integración.</p>
-            </div>
-          </div>
+        <div class="proof-grid">
+          <article class="proof-card reveal d1">
+            <div class="stars">★★★★★</div>
+            <p>“Llegué con ansiedad. Nadie me juzgó. Me escucharon y oraron conmigo. Hoy duermo en paz.”</p>
+            <strong>— Andrea, 29</strong>
+          </article>
+          <article class="proof-card reveal d2">
+            <div class="stars">★★★★★</div>
+            <p>“Pensé que era una reunión más. Fue el primer lugar en años donde mi familia se sintió en casa.”</p>
+            <strong>— Familia R.</strong>
+          </article>
+          <article class="proof-card reveal d3">
+            <div class="stars">★★★★★</div>
+            <p>“No tenía respuestas, solo cansancio. Salí con dirección y ganas de volver a empezar.”</p>
+            <strong>— Carlos, 34</strong>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================================
-       HORARIOS DE SERVICIOS
-       ============================================================ -->
-  <section id="servicios" aria-labelledby="servicios-title">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-tag">✦ Horarios</span>
-        <h2 class="section-title" id="servicios-title">Únete a nuestros servicios</h2>
-        <div class="gold-line center"></div>
-        <p class="section-sub">Tenemos múltiples servicios para que puedas venir cuando mejor te quede. ¡Todos son bienvenidos!</p>
-        <div style="margin-top:16px;"><a href="#ubicacion" class="btn btn-outline-navy">Ver ubicación en 1 clic</a></div>
-      </div>
-      <div class="servicios-grid">
-        <div class="servicio-card reveal delay-2">
-          <div class="servicio-icon">☀️</div>
-          <div class="servicio-day">Domingo</div>
-          <div class="servicio-name">Servicio Principal</div>
-          <div class="servicio-time">12:00 PM</div>
-        </div>
-        <div class="servicio-card reveal delay-3">
-          <div class="servicio-icon">🌙</div>
-          <div class="servicio-day">Miércoles</div>
-          <div class="servicio-name">Noche de Victoria</div>
-          <div class="servicio-time">7:00 PM — 9:00 PM</div>
-        </div>
-        <div class="servicio-card reveal delay-4">
-          <div class="servicio-icon">👶</div>
-          <div class="servicio-day">Domingo</div>
-          <div class="servicio-name">Kids & Teens</div>
-          <div class="servicio-time">9:00 AM — 1:00 PM</div>
-        </div>
-        <div class="servicio-card reveal delay-5">
-          <div class="servicio-icon">🙏</div>
-          <div class="servicio-day">Viernes</div>
-          <div class="servicio-name">Oración & Milagros</div>
-          <div class="servicio-time">7:00 PM — 8:30 PM</div>
+    <section id="primera-vez" class="section" aria-labelledby="primera-vez-title">
+      <div class="container">
+        <div class="first-grid">
+          <article class="first-box reveal">
+            <span class="tag">Identificación</span>
+            <h2 class="title" id="primera-vez-title">Primera vez aquí</h2>
+            <p class="sub">Te lo ponemos fácil para que llegues con paz, no con dudas.</p>
+
+            <div class="steps">
+              <p class="step"><i>1</i><span><b>Qué esperar:</b> bienvenida cálida, música en vivo, mensaje claro y oración personal.</span></p>
+              <p class="step"><i>2</i><span><b>Cómo llegar:</b> toca “Abrir Google Maps” y sigue la ruta en segundos.</span></p>
+              <p class="step"><i>3</i><span><b>Qué hacer al llegar:</b> busca el módulo <b>Primera Vez</b>. Te acompañamos en todo.</span></p>
+            </div>
+
+            <div style="margin-top: 16px">
+              <a href="https://wa.me/528717975096?text=Hola%2C%20quiero%20planear%20mi%20primera%20visita" target="_blank" rel="noopener" class="btn btn-gold">Planear mi visita ahora</a>
+            </div>
+          </article>
+
+          <aside class="visit-box reveal d2">
+            <h3>No llegaste tarde.<br>Era el momento correcto.</h3>
+            <p>No necesitas respuestas para venir. Solo valentía para dar un paso. Lo demás lo caminamos contigo.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap">
+              <a href="#horarios" class="btn btn-dark">Ver horarios</a>
+              <a href="#ubicacion" class="btn btn-light-outline">Ver ubicación</a>
+            </div>
+          </aside>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="stats" aria-label="Estadísticas del ministerio">
-    <div class="container">
-      <div class="stats-inner">
-        <div class="stat-item reveal delay-1">
-          <span class="stat-num" data-count="17">0</span>
-          <span class="stat-label">Años de ministerio</span>
+    <section id="horarios" class="section" aria-labelledby="horarios-title">
+      <div class="container">
+        <div class="center reveal">
+          <span class="tag">Acción</span>
+          <h2 class="title" id="horarios-title">Elige tu próximo domingo</h2>
+          <p class="sub">Horarios claros. Ubicación clara. Próximo paso claro.</p>
         </div>
-        <div class="stat-item reveal delay-2">
-          <span class="stat-num" data-count="1200">0</span>
-          <span class="stat-label">Familias impactadas</span>
+
+        <div class="schedule-grid">
+          <article class="schedule-card reveal d1">
+            <div class="day">Domingo</div>
+            <h3>Experiencia principal</h3>
+            <p>12:00 PM · Mensaje central + oración + comunidad.</p>
+          </article>
+          <article class="schedule-card reveal d2">
+            <div class="day">Miércoles</div>
+            <h3>Noche de fe</h3>
+            <p>7:00 PM · Enseñanza bíblica práctica para tu semana.</p>
+          </article>
+          <article class="schedule-card reveal d3">
+            <div class="day">Viernes</div>
+            <h3>Oración y restauración</h3>
+            <p>7:00 PM · Intercesión, sanidad interior y acompañamiento.</p>
+          </article>
         </div>
-        <div class="stat-item reveal delay-3">
-          <span class="stat-num" data-count="52">0</span>
-          <span class="stat-label">Semanas de servicios</span>
-        </div>
-        <div class="stat-item reveal delay-4">
-          <span class="stat-num" data-count="24">0</span>
-          <span class="stat-label">Horas de radio activa</span>
+
+        <div class="quick-actions reveal d4">
+          <a href="#ubicacion" class="btn btn-dark">Cómo llegar</a>
+          <a href="https://maps.app.goo.gl/CRzkRXvoWRT4RJLu9" target="_blank" rel="noopener" class="btn btn-light-outline">Abrir Google Maps</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================================
-       PASTORES
-       ============================================================ -->
-  <section id="pastores" class="funnel-hidden" aria-labelledby="pastores-title">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-tag" style="color:var(--gold-light)">✦ Liderazgo</span>
-        <h2 class="section-title light" id="pastores-title">Nuestros pastores</h2>
-        <div class="gold-line center"></div>
-        <p class="section-sub light">Líderes apasionados por Dios y su pueblo, comprometidos con tu crecimiento espiritual.</p>
+    <section id="eventos" class="section" aria-labelledby="eventos-title">
+      <div class="container">
+        <div class="center reveal">
+          <span class="tag">Momentum</span>
+          <h2 class="title" id="eventos-title">Eventos clave para tu crecimiento</h2>
+          <p class="sub">Solo lo esencial. Lo más importante para que no te pierdas tu próximo paso.</p>
+        </div>
+
+        <div class="events-grid">
+          <article class="event reveal d1">
+            <div class="event-media">
+              <img src="img/Slider2.webp" alt="Conferencia Aviva 2026" loading="lazy" decoding="async">
+            </div>
+            <div class="event-body">
+              <div class="kicker">Conferencia</div>
+              <h3>Conferencia Aviva 2026</h3>
+              <p>Tres días de adoración, dirección y enfoque para cerrar tu año con propósito.</p>
+              <div class="event-meta">20–22 Sep · 6:00 PM · Auditorio Principal</div>
+            </div>
+          </article>
+
+          <article class="event reveal d2">
+            <div class="event-media">
+              <img src="img/iglesia.webp" alt="Día de la Familia Belén" loading="lazy" decoding="async">
+            </div>
+            <div class="event-body">
+              <div class="kicker">Familia</div>
+              <h3>Día de la Familia Belén</h3>
+              <p>Un espacio para reconectar, sanar vínculos y construir un hogar con fundamentos firmes.</p>
+              <div class="event-meta">5 Oct · 10:00 AM · Explanada Iglesia</div>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="pastores-grid">
+    </section>
 
-        <div class="pastor-card reveal delay-1">
-          <div class="pastor-photo">
-            <img src="img/PastorJGCS.webp" alt="Pastor" loading="lazy" decoding="async">
-          </div>
-          <div class="pastor-info">
-            <div class="pastor-name">Pastor Gerardo Cruz S</div>
-            <div class="pastor-role">Pastor Principal</div>
-            <div class="pastor-desc">Con 20 años de ministerio, el Pastor Gerardo es una voz profética que inspira a miles cada semana con su predicación fresca y transformadora.</div>
-            <div class="pastor-social">
-              <a href="#" aria-label="Facebook">𝐟</a>
-              <a href="#" aria-label="Instagram">📸</a>
-              <a href="#" aria-label="YouTube">▶</a>
+    <section id="equipo" class="section" aria-labelledby="equipo-title">
+      <div class="container">
+        <div class="center reveal">
+          <span class="tag" style="color: var(--gold-2)">Comunidad</span>
+          <h2 class="title" id="equipo-title">Rostros que sostienen historias</h2>
+          <p class="sub">No somos títulos. Somos personas que también tuvimos procesos… y no caminamos solos.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="story reveal d1">
+            <img src="img/PastorJGCS.webp" alt="Historia de Gerardo" loading="lazy" decoding="async">
+            <div class="body">
+              <h3 class="name">Gerardo</h3>
+              <p>Pasó de vivir para rendir a vivir para servir. Hoy acompaña a personas que llegan agotadas y necesitan volver a creer.</p>
+            </div>
+          </article>
+          <article class="story reveal d2">
+            <img src="img/alabanza2.webp" alt="Historia de Leticia" loading="lazy" decoding="async">
+            <div class="body">
+              <h3 class="name">Leticia</h3>
+              <p>Convirtió su dolor en empatía. Su misión: que nadie se sienta invisible cuando cruza la puerta por primera vez.</p>
+            </div>
+          </article>
+          <article class="story reveal d3">
+            <img src="img/adoracion.webp" alt="Historia de Damaris" loading="lazy" decoding="async">
+            <div class="body">
+              <h3 class="name">Damaris</h3>
+              <p>Aprendió que sanar toma tiempo. Hoy crea espacios donde puedes respirar, llorar, cantar y volver a empezar.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="radio" class="section" aria-labelledby="radio-title">
+      <div class="container">
+        <div class="radio-wrap">
+          <div class="reveal">
+            <span class="tag" style="color: var(--gold-2)">Contenido digital</span>
+            <h2 class="title" id="radio-title">Tu fe no termina al salir del servicio</h2>
+            <p class="sub">Radio Belén 24/7: mensajes, música y devocionales para sostenerte en la semana real.</p>
+            <div style="margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap">
+              <a href="/radio/" class="btn btn-gold">Entrar a Radio Belén</a>
+              <a href="/descargas.html" class="btn btn-light-outline">Ver recursos</a>
             </div>
           </div>
+          <aside class="radio-card reveal d2">
+            <p>Cuando el día pesa, escucha una palabra que te vuelva a centrar. Cuando todo va bien, fortalece tu corazón para sostenerlo.</p>
+            <a href="/radio/#programacion" class="btn btn-outline">Ver programación</a>
+          </aside>
         </div>
-        
-        <div class="pastor-card reveal delay-3">
-          <div class="pastor-photo">
-            <img src="img/alabanza2.webp" alt="adoracion" loading="lazy" decoding="async">
-          </div>
-          <div class="pastor-info">
-            <div class="pastor-name">Leticia Cruz</div>
-            <div class="pastor-role">Alabanza&Adoracion</div>
-            <div class="pastor-desc">líder de adoración lleva a la congregacion a la presencia de Dios con música original y poderosa.</div>
-            <div class="pastor-social">
-              <a href="#" aria-label="Facebook">𝐟</a>
-              <a href="#" aria-label="Instagram">📸</a>
-              <a href="#" aria-label="YouTube">▶</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="pastor-card reveal delay-5">
-          <div class="pastor-photo">
-            <img src="img/adoracion.webp" alt="adoracion" loading="lazy" decoding="async">
-          </div>
-          <div class="pastor-info">
-            <div class="pastor-name">Damaris Cruz</div>
-            <div class="pastor-role">Alabanza&Adoracion</div>
-            <div class="pastor-desc">líder de alabanza lleva a la congregacion a la presencia de Dios con música original y poderosa.</div>
-            <div class="pastor-social">
-              <a href="#" aria-label="Facebook">𝐟</a>
-              <a href="#" aria-label="Instagram">📸</a>
-              <a href="#" aria-label="YouTube">▶</a>
-            </div>
+      </div>
+    </section>
+
+    <section id="cta-final" class="section" aria-labelledby="cta-final-title">
+      <div class="container">
+        <div class="reveal">
+          <span class="tag" style="color: var(--gold-2)">Decisión</span>
+          <h2 class="title" id="cta-final-title">Este puede ser el domingo que recuerdes por años</h2>
+          <p class="sub">No prometemos perfección. Sí prometemos verdad, acompañamiento y una comunidad para caminar contigo.</p>
+          <div class="final-actions">
+            <a href="https://wa.me/528717975096?text=Hola%2C%20quiero%20planear%20mi%20visita%20este%20domingo" target="_blank" rel="noopener" class="btn btn-gold">Sí, quiero planear mi visita</a>
+            <a href="/tienda.html" class="btn btn-outline">Explorar tienda</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================================
-       EVENTOS PRÓXIMOS
-       ============================================================ -->
-  <section id="eventos" aria-labelledby="eventos-title">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">✦ Agenda</span>
-        <h2 class="section-title" id="eventos-title">Próximos eventos</h2>
-        <div class="gold-line"></div>
-        <p class="section-sub">No te pierdas lo que Dios está preparando. Agenda estos encuentros especiales con tu familia.</p>
-      </div>
-      <div class="eventos-grid">
-
-        <div class="evento-card reveal delay-1">
-          <div class="evento-img">
-            <div class="img-placeholder" style="background:linear-gradient(135deg,#1A3560,#0A1628)">🎤</div>
-            <div class="evento-date-badge"><span>20</span>Sep</div>
-          </div>
-          <div class="evento-body">
-            <div class="evento-category">Conferencia</div>
-            <h3 class="evento-title">Conferencia Aviva 2026</h3>
-            <p class="evento-desc">Tres días de adoración, enseñanza y encuentro con Dios. Conferencistas internacionales y una atmósfera de gloria.</p>
-            <div class="evento-meta">
-              <span>📅 20-22 Sep</span>
-              <span>🕐 6:00 PM</span>
-              <span>📍 Auditorio Principal</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="evento-card reveal delay-2">
-          <div class="evento-img">
-            <div class="img-placeholder" style="background:linear-gradient(135deg,#2D1A0A,#1A2840)">👨‍👩‍👧‍👦</div>
-            <div class="evento-date-badge"><span>05</span>Oct</div>
-          </div>
-          <div class="evento-body">
-            <div class="evento-category">Familia</div>
-            <h3 class="evento-title">Día de la Familia Belén </h3>
-            <p class="evento-desc">Un día especial con actividades, picnic, talleres para parejas y un hermoso servicio familiar al aire libre.</p>
-            <div class="evento-meta">
-              <span>📅 5 Oct</span>
-              <span>🕐 10:00 AM</span>
-              <span>📍 Área exterior</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="evento-card reveal delay-1">
-          <div class="evento-img">
-            <div class="img-placeholder" style="background:linear-gradient(135deg,#0A2818,#1A4030)">🌙</div>
-            <div class="evento-date-badge"><span>25</span>Oct</div>
-          </div>
-          <div class="evento-body">
-            <div class="evento-category">Oración</div>
-            <h3 class="evento-title">Noche de Oración</h3>
-            <p class="evento-desc">Una Noche de intercesión por México y las naciones. Cada hora un equipo diferente. Únete en cualquier momento.</p>
-            <div class="evento-meta">
-              <span>📅 25-26 Oct</span>
-              <span>🕐 Todo el día</span>
-              <span>📍 Capilla de Oración</span>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <section id="radio-digital" class="radio-digital" aria-labelledby="radio-digital-title">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" style="color:var(--gold-light)">✦ CONTENIDO DIGITAL</span>
-        <h2 class="section-title light" id="radio-digital-title">Tu fe también se fortalece entre semana</h2>
-        <p class="section-sub light">Escucha Radio Belén 24/7 con música, mensajes y devocionales que te acompañan todos los días.</p>
-        <a href="/radio/" class="btn btn-gold">Entrar a Radio Belén</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="cta-final" class="final-cta" aria-labelledby="cta-final-title">
-    <div class="container">
-      <span class="section-tag" style="color:var(--gold-light)">✦ DECISIÓN</span>
-      <h2 class="section-title light" id="cta-final-title">Tu próximo domingo puede ser el inicio de una nueva etapa</h2>
-      <p class="section-sub light">Da el paso hoy. Te esperamos con una iglesia lista para caminar contigo.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px;">
-        <a href="https://wa.me/528717975096?text=Hola%2C%20quiero%20planear%20mi%20visita%20a%20Iglesia%20Bel%C3%A9n" target="_blank" rel="noopener" class="btn btn-gold">Sí, quiero planear mi visita</a>
-        <a href="#ubicacion" class="btn btn-outline-white">Ver ubicación</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       BLOG / ARTÍCULOS
-       ============================================================ -->
-  <section id="blog" class="funnel-hidden" aria-labelledby="blog-title">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-tag">✦ Recursos</span>
-        <h2 class="section-title" id="blog-title">Artículos y devocionales</h2>
-        <div class="gold-line center"></div>
-        <p class="section-sub">Contenido que alimenta tu espíritu. Nuevos artículos cada semana.</p>
-      </div>
-      <div class="blog-grid" id="blog-grid">
-        <!-- Generado por JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TIENDA (ECOMMERCE)
-       ============================================================ -->
-  <section id="tienda" class="funnel-hidden" aria-labelledby="tienda-title">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-tag">✦ Ministerio</span>
-        <h2 class="section-title" id="tienda-title">Tienda oficial</h2>
-        <div class="gold-line center"></div>
-        <p class="section-sub">Productos del ministerio diseñados para edificar tu fe y la de tu familia.</p>
-      </div>
-      <div class="shop-grid" id="shop-grid">
-        <!-- Generado por JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CHECKOUT (se muestra al finalizar pedido)
-       ============================================================ -->
-  <section id="checkout" class="funnel-hidden" aria-labelledby="checkout-title">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">✦ Pedido</span>
-        <h2 class="section-title" id="checkout-title">Finalizar compra</h2>
-        <div class="gold-line"></div>
-      </div>
-      <div class="checkout-grid">
-        <div>
-          <div class="form-group">
-            <label>Nombre completo</label>
-            <input type="text" id="checkout-nombre" placeholder="Ej. Juan García López" />
-          </div>
-          <div class="form-group">
-            <label>Correo electrónico</label>
-            <input type="email" id="checkout-email" placeholder="correo@ejemplo.com" />
-          </div>
-          <div class="form-group">
-            <label>Teléfono / WhatsApp</label>
-            <input type="tel" id="checkout-tel" placeholder="+52 55 0000 0000" />
-          </div>
-          <div class="form-group">
-            <label>Dirección de envío</label>
-            <textarea id="checkout-dir" rows="3" placeholder="Calle, número, colonia, ciudad, CP..."></textarea>
-          </div>
-          <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="finalizarPedido()">
-            ✅ Finalizar pedido
-          </button>
-        </div>
-        <div>
-          <div class="order-summary">
-            <h3>Resumen de tu pedido</h3>
-            <div id="order-items"><!-- JS --></div>
-            <div class="order-total" id="order-total">
-              <span>Total</span>
-              <strong>$0.00</strong>
-            </div>
-            <p style="font-size:.75rem;color:var(--gray-500);margin-top:14px;line-height:1.6">
-              💳 Pago contra entrega o transferencia bancaria.<br>
-              📦 Entrega en CDMX y área metropolitana 3-5 días.<br>
-              📞 Te contactaremos para confirmar tu pedido.
-            </p>
+    <section id="ubicacion" class="section" style="padding-top: 0; background: #fff">
+      <div class="container">
+        <div class="center reveal">
+          <span class="tag">Ubicación</span>
+          <h2 class="title">Te esperamos en casa</h2>
+          <p class="sub">Praxedis 7, Palmas San Isidro, Torreón, Coahuila.</p>
+          <div style="margin-top: 16px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap">
+            <a href="https://maps.app.goo.gl/CRzkRXvoWRT4RJLu9" target="_blank" rel="noopener" class="btn btn-dark">Abrir Google Maps</a>
+            <a href="https://wa.me/528717975096" target="_blank" rel="noopener" class="btn btn-light-outline">Escribir por WhatsApp</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ============================================================
-       DONATIVOS
-       ============================================================ -->
-  <section id="donativos" class="funnel-hidden" aria-labelledby="donativos-title">
-    <div class="container">
-      <div class="donativo-grid">
-        <div>
-          <span class="section-tag" style="color:var(--gold-light)">✦ Apoya la obra</span>
-          <h2 class="section-title light" id="donativos-title">Tu ofrenda<br>hace la diferencia</h2>
-          <div class="gold-line"></div>
-          <p class="section-sub light">Cada donativo fortalece el ministerio, apoya a familias en necesidad y extiende el evangelio a más comunidades.</p>
-
-          <div class="donativo-options">
-            <button class="donativo-btn reveal delay-1" onclick="abrirPaypal()">
-              <span class="d-icon">💳</span>
-              <span class="d-text">
-                <strong>Donar con PayPal</strong>
-                <small>Rápido y seguro con tarjeta o cuenta PayPal</small>
-              </span>
-              <span>→</span>
-            </button>
-            <button class="donativo-btn reveal delay-2" onclick="mostrarBanco()">
-              <span class="d-icon">🏦</span>
-              <span class="d-text">
-                <strong>Transferencia bancaria</strong>
-                <small>SPEI o depósito a nuestra cuenta</small>
-              </span>
-              <span>→</span>
-            </button>
-            <button class="donativo-btn reveal delay-3" onclick="abrirWA()">
-              <span class="d-icon">📱</span>
-              <span class="d-text">
-                <strong>Donar por WhatsApp</strong>
-                <small>Te ayudamos paso a paso</small>
-              </span>
-              <span>→</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="donativo-card reveal-right">
-          <h4>Cuenta para transferencias</h4>
-          <p style="font-size:.9rem;color:rgba(255,255,255,.82);line-height:1.7">
-            Si prefieres donar por transferencia, usa los siguientes datos:
-          </p>
-          <div class="bank-box" id="bank-box">
-            Banco: BBVA México<br>
-            Titular: Iglesia Cristiana Belén A.R.<br>
-            CLABE: 012345678901234567<br>
-            Cuenta: 1234567890<br>
-            Referencia: DONATIVO
-          </div>
-          <button class="btn btn-outline-white" style="margin-top:14px" onclick="copiarBanco()">
-            Copiar datos
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       DESCARGAS
-       ============================================================ -->
-  <section id="descargas" class="funnel-hidden" aria-labelledby="descargas-title">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-tag">✦ Recursos PDF</span>
-        <h2 class="section-title" id="descargas-title">Centro de descargas</h2>
-        <div class="gold-line center"></div>
-        <p class="section-sub">Material gratuito para fortalecer tu caminar con Dios.</p>
-      </div>
-      <div class="downloads-grid" id="downloads-grid">
-        <!-- JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       UBICACIÓN
-       ============================================================ -->
-  <section id="ubicacion" aria-labelledby="ubicacion-title">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">✦ Visítanos</span>
-        <h2 class="section-title" id="ubicacion-title">¿Cómo llegar?</h2>
-        <div class="gold-line"></div>
-        <p class="section-sub">Estamos en una ubicación céntrica y accesible. Te esperamos con los brazos abiertos.</p>
-      </div>
-
-      <div class="ubicacion-grid">
-        <div class="map-wrap reveal-left">
-          <iframe
-            title="Mapa de ubicación Iglesia Belén"
-            src="https://www.google.com/maps?q=Av.%20Praxedis%20Guerrero%207%2C%20Palmas%20San%20Isidro%2C%20Torre%C3%B3n%2C%20Coahuila&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-
-        <div class="ubicacion-card reveal-right">
-          <h3 style="font-family:var(--ff-display);font-size:1.6rem;color:var(--navy);margin-bottom:8px">Iglesia Cristiana Belén</h3>
-          <div class="ubicacion-list">
-            <li><span>📍</span><span>Praxedis 7, Palmas San Isidro, Torreón, Coahuila, México</span></li>
-            <li><span>🕐</span><span>Domingos 12:00 PM · Miércoles 7:00 PM · Viernes 7:00 PM</span></li>
-            <li><span>📞</span><span>+52 871 797 5096</span></li>
-            <li><span>✉️</span><span>hola@beleniglesia.com</span></li>
-          </div>
-
-          <div class="ubicacion-actions">
-            <a href="https://maps.app.goo.gl/CRzkRXvoWRT4RJLu9" target="_blank" rel="noopener" class="btn btn-gold">
-              Abrir en Google Maps
-            </a>
-            <a href="https://wa.me/528717975096" target="_blank" rel="noopener" class="btn btn-outline-navy">
-              Escribir por WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <!-- Marca -->
-        <div class="footer-col">
-          <a href="#inicio" class="nav-logo">
-            <div class="nav-logo-icon">✝</div>
-            <div class="nav-logo-text">
-              <strong> Belén </strong>
-              <span>Iglesia Cristiana</span>
-            </div>
-          </a>
-          <p>Una comunidad de fe, esperanza y amor. Cambiando vidas desde 2007 en el corazón de México.</p>
-          <div class="footer-social">
-            <a href="#" class="social-btn" aria-label="Facebook">𝐟</a>
-            <a href="#" class="social-btn" aria-label="Instagram">📷</a>
-            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
-            <a href="https://wa.me/528717975096" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
-          </div>
-        </div>
-
-        <!-- Navegación -->
         <div class="footer-col">
           <h4>Navegación</h4>
           <ul>
-            <li><a href="#about">Sobre nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#primera-vez">Primera vez</a></li>
+            <li><a href="#horarios">Horarios</a></li>
             <li><a href="#eventos">Eventos</a></li>
-            <li><a href="#pastores">Pastores</a></li>
-            <li><a href="#blog">Artículos</a></li>
-            <li><a href="#tienda">Tienda</a></li>
-            <li><a href="#descargas">Descargas</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li><a href="#radio">Radio</a></li>
           </ul>
         </div>
 
-        <!-- Servicios -->
         <div class="footer-col">
-          <h4>Servicios</h4>
-          <div class="footer-schedule">
-            <div class="schedule-row"><strong>Domingo</strong><span>12:00 PM</span></div>
-            <div class="schedule-row"><strong>Miércoles</strong><span>7:00 PM</span></div>
-            <div class="schedule-row"><strong>Viernes</strong><span>7:00 PM</span></div>
-            <div class="schedule-row"><strong>Sábado</strong><span>Grupos</span></div>
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="/nosotros.html">Sobre nosotros</a></li>
+            <li><a href="/articulos.html">Artículos</a></li>
+            <li><a href="/tienda.html">Tienda</a></li>
+            <li><a href="/descargas.html">Descargas</a></li>
+          </ul>
+          <div class="footer-cta">
+            <a href="/descargas.html" class="btn btn-gold" style="padding: 10px 18px; font-size: .86rem">Ver recursos</a>
+            <a href="/tienda.html" class="btn btn-light-outline" style="padding: 10px 18px; font-size: .86rem">Explorar tienda</a>
           </div>
         </div>
 
-        <!-- Contacto -->
         <div class="footer-col">
           <h4>Contacto</h4>
           <ul>
-            <li><a href="tel:+5215512345678">📞 +52 8717975096</a></li>
-            <li><a href="mailto:hola@beleniglesia.com">✉️ hola@beleniglesia.com</a></li>
-            <li><a href="#ubicacion">📍 Praxedis 7, Palmas San Isidro TRC, COAH.</a></li>
+            <li><a href="tel:+528717975096">📞 +52 871 797 5096</a></li>
+            <li><a href="mailto:hola@beleniglesia.com">✉ hola@beleniglesia.com</a></li>
             <li><a href="https://wa.me/528717975096" target="_blank" rel="noopener">💬 WhatsApp</a></li>
+            <li><a href="/radio/">📻 Escuchar Radio Belén</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 Iglesia Belén. Todos los derechos reservados. | <a href="#">Aviso de Privacidad</a></p>
-        <p style="color:var(--gold)">Hecho con ❤️ para la gloria de Dios</p>
+      <div class="foot-bottom">
+        <span>© 2026 Iglesia Belén. Todos los derechos reservados.</span>
+        <span>No llegaste aquí por accidente.</span>
       </div>
     </div>
   </footer>
 
-  <!-- ============================================================
-       BOTÓN WHATSAPP FLOTANTE
-       Cambia el número: 521XXXXXXXXXX por el número real
-       ============================================================ -->
-  <a id="whatsapp-fab"
-     href="https://wa.me/528717975096?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20la%20iglesia"
-     target="_blank"
-     rel="noopener"
-     aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
+  <script defer>
+    (() => {
+      const navbar = document.getElementById("navbar");
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navLinks = document.querySelectorAll("#nav-links a");
+      const sections = [...navLinks]
+        .map((a) => document.querySelector(a.getAttribute("href")))
+        .filter(Boolean);
 
-  <!-- ============================================================
-       CART DRAWER
-       ============================================================ -->
-  <aside id="cart-drawer" aria-label="Carrito de compras">
-    <div class="drawer-head">
-      <h3>🛒 Tu carrito</h3>
-      <button class="drawer-close" onclick="toggleCart(false)" aria-label="Cerrar carrito">✕</button>
-    </div>
-    <div class="drawer-body" id="cart-items">
-      <!-- JS -->
-    </div>
-    <div class="drawer-foot">
-      <div class="cart-total">
-        <span>Total</span>
-        <strong id="cart-total">$0.00</strong>
-      </div>
-      <button class="btn btn-gold" style="justify-content:center" onclick="irCheckout()">Ir a pagar</button>
-      <button class="btn btn-outline-navy" style="justify-content:center" onclick="toggleCart(false)">Seguir comprando</button>
-    </div>
-  </aside>
+      window.addEventListener(
+        "scroll",
+        () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 24);
+          let current = "#inicio";
+          sections.forEach((sec) => {
+            if (window.scrollY >= sec.offsetTop - 120) current = "#" + sec.id;
+          });
+          navLinks.forEach((a) =>
+            a.classList.toggle("active", a.getAttribute("href") === current)
+          );
+        },
+        { passive: true }
+      );
 
-  <div id="overlay" onclick="closeAllOverlays()"></div>
-
-  <!-- Modal Artículo -->
-  <div class="modal" id="blog-modal" role="dialog" aria-modal="true" aria-label="Detalle del artículo">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeBlogModal()" aria-label="Cerrar">✕</button>
-      <div id="modal-header-img"></div>
-      <div class="modal-body" id="modal-body"></div>
-    </div>
-  </div>
-
-  <div id="toast" role="status" aria-live="polite"></div>
-
-  <script>
-    'use strict';
-
-    /* ============================================================
-       DATOS MOCK — Puedes convertir esto en API/JSON real
-       ============================================================ */
-    const ARTICLES = [
-      {
-        title: 'Cómo mantener la fe en tiempos difíciles',
-        excerpt: 'Descubre 5 principios bíblicos para permanecer firme cuando todo parece derrumbarse.',
-        content: `La fe no niega la realidad, la interpreta desde el cielo. En momentos de presión, recuerda:
-        1) Dios sigue siendo bueno.
-        2) Su Palabra sigue siendo verdad.
-        3) No estás solo.
-        Toma tiempo para orar, adorar y rodearte de comunidad.`,
-        category: 'Devocional',
-        image: 'img/art1.webp'
-      },
-      {
-        title: 'Familias restauradas por el amor de Cristo',
-        excerpt: 'Historias reales de matrimonios y hogares transformados por el evangelio.',
-        content: `La restauración empieza cuando rendimos el orgullo y abrimos espacio para la gracia.
-        El amor de Cristo sana heridas profundas, reconstruye confianza y enciende esperanza.`,
-        category: 'Testimonio',
-        image: 'img/art2.webp'
-      },
-      {
-        title: '7 hábitos espirituales para crecer cada semana',
-        excerpt: 'Una guía práctica para fortalecer tu vida espiritual en lo cotidiano.',
-        content: `No necesitas complicarlo: oración diaria, lectura bíblica, congregarte, servir y dar.
-        La constancia, más que la intensidad, forma un corazón maduro.`,
-        category: 'Crecimiento',
-        image: 'img/art6.webp'
-      }
-    ];
-
-    const PRODUCTS = [
-      { id:'p1', name:'Biblia de estudio RVR60', desc:'Edición premium con referencias, mapas y concordancia.', price: 899, image:'img/art1.webp' },
-      { id:'p2', name:'Sudadera “Fe y Esperanza”', desc:'Sudadera oficial del ministerio. Tela suave y corte unisex.', price: 650, image:'img/Merch.webp' },
-      { id:'p3', name:'Libro “Renovados”', desc:'Guía práctica para una vida espiritual saludable.', price: 320, image:'img/art2.webp' },
-      { id:'p4', name:'Playera “Belén Worship”', desc:'Diseño minimalista, ideal para jóvenes y equipo de alabanza.', price: 390, image:'img/alabanza2.webp' },
-      { id:'p5', name:'Devocional 40 días', desc:'Plan de lectura y reflexión para fortalecer tu fe.', price: 260, image:'img/art6.webp' },
-      { id:'p6', name:'Taza oficial Belén', desc:'Cerámica premium con diseño exclusivo.', price: 210, image:'img/iglesia.webp' }
-    ];
-
-    const DOWNLOADS = [
-      { title:'Manual de nuevos creyentes', desc:'Fundamentos básicos para tus primeros pasos en la fe.', icon:'📘', file:'files/Sermon_Fe_Montanas.pdf' },
-      { title:'Guía de oración 21 días', desc:'Estructura diaria para profundizar tu relación con Dios.', icon:'🙏', file:'files/Sermon_Fe_Montanas.pdf' },
-      { title:'Sermón: Fe que mueve montañas', desc:'Mensaje en PDF para estudiar y compartir en grupos.', icon:'🎤', file:'files/Sermon_Fe_Montanas.pdf' }
-    ];
-
-    /* ============================================================
-       ESTADO
-       ============================================================ */
-    let currentSlide = 0;
-    let sliderInterval;
-    let cart = [];
-
-    /* ============================================================
-       UTILIDADES UI
-       ============================================================ */
-    const $ = id => document.getElementById(id);
-    function fmtCurrency(n){ return `$${n.toLocaleString('es-MX', {minimumFractionDigits:2, maximumFractionDigits:2})}`; }
-
-    function toast(msg){
-      const t = $('toast');
-      t.textContent = msg;
-      t.classList.add('show');
-      setTimeout(()=> t.classList.remove('show'), 2100);
-    }
-
-    function closeAllOverlays(){
-      $('overlay').classList.remove('show');
-      $('blog-modal').classList.remove('show');
-      toggleCart(false);
-    }
-
-    /* ============================================================
-       NAV / MOBILE
-       ============================================================ */
-    (function initNav(){
-      const navbar = $('navbar');
-      const hamburger = $('hamburger');
-      const mobile = $('mobile-menu');
-      const links = document.querySelectorAll('#nav-links a');
-
-      window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 24);
-      }, { passive: true });
-
-      hamburger.addEventListener('click', () => {
-        const open = mobile.classList.toggle('open');
-        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      hamburger?.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("open");
+        hamburger.setAttribute("aria-expanded", open ? "true" : "false");
       });
 
-      mobile.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', ()=> {
-          mobile.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          hamburger.setAttribute("aria-expanded", "false");
+        })
+      );
+
+      const track = document.getElementById("slider-track");
+      const slides = document.querySelectorAll(".slide");
+      const dotsWrap = document.getElementById("dots");
+      let current = 0;
+      let timer;
+
+      function renderDots() {
+        dotsWrap.innerHTML = "";
+        slides.forEach((_, i) => {
+          const b = document.createElement("button");
+          b.className = "dot" + (i === current ? " active" : "");
+          b.setAttribute("aria-label", `Slide ${i + 1}`);
+          b.addEventListener("click", () => go(i));
+          dotsWrap.appendChild(b);
         });
-      });
+      }
 
-      // Active link on scroll
-      const sectionIds = [...links].map(l => l.getAttribute('href')).filter(h => h.startsWith('#'));
-      const sections = sectionIds.map(id => document.querySelector(id)).filter(Boolean);
-      window.addEventListener('scroll', () => {
-        let current = '#inicio';
-        sections.forEach(sec => {
-          if (window.scrollY >= sec.offsetTop - 120) current = `#${sec.id}`;
-        });
-        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === current));
-      }, { passive: true });
+      function go(i) {
+        current = (i + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * (100 / slides.length)}%)`;
+        slides.forEach((s, idx) => s.classList.toggle("active", idx === current));
+        renderDots();
+      }
+
+      function next() {
+        go(current + 1);
+      }
+
+      function start() {
+        timer = setInterval(next, 8200);
+      }
+
+      function stop() {
+        clearInterval(timer);
+      }
+
+      document.getElementById("hero").addEventListener("mouseenter", stop);
+      document.getElementById("hero").addEventListener("mouseleave", start);
+      go(0);
+      start();
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     })();
-
-    /* ============================================================
-       HERO SLIDER
-       ============================================================ */
-    (function initSlider(){
-      const slides = document.querySelectorAll('.slide');
-      const dotsContainer = $('slider-dots');
-
-      slides.forEach((_, i) => {
-        const d = document.createElement('button');
-        d.className = 'dot' + (i===0 ? ' active' : '');
-        d.setAttribute('aria-label', `Ir al slide ${i+1}`);
-        d.addEventListener('click', ()=> goToSlide(i));
-        dotsContainer.appendChild(d);
-      });
-
-      $('arrow-left').addEventListener('click', prevSlide);
-      $('arrow-right').addEventListener('click', nextSlide);
-
-      function updateSlider(){
-        slides.forEach(s => s.classList.remove('active'));
-        slides[currentSlide].classList.add('active');
-        $('slider-track').style.transform = `translateX(-${currentSlide * 20}%)`;
-        document.querySelectorAll('.dot').forEach((d,i)=> d.classList.toggle('active', i===currentSlide));
-      }
-
-      function goToSlide(i){
-        currentSlide = (i + slides.length) % slides.length;
-        updateSlider();
-        restartAuto();
-      }
-      function nextSlide(){ goToSlide(currentSlide + 1); }
-      function prevSlide(){ goToSlide(currentSlide - 1); }
-
-      function startAuto(){ sliderInterval = setInterval(nextSlide, 5500); }
-      function stopAuto(){ clearInterval(sliderInterval); }
-      function restartAuto(){ stopAuto(); startAuto(); }
-
-      $('hero').addEventListener('mouseenter', stopAuto);
-      $('hero').addEventListener('mouseleave', startAuto);
-
-      updateSlider();
-      startAuto();
-
-      // Expose if needed
-      window.nextSlide = nextSlide;
-      window.prevSlide = prevSlide;
-    })();
-
-    /* ============================================================
-       CONTADORES STATS
-       ============================================================ */
-    (function initStatsCounters(){
-      const nums = document.querySelectorAll('.stat-num[data-count]');
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (!e.isIntersecting) return;
-          const el = e.target;
-          const target = +el.dataset.count;
-          const dur = 1200;
-          const start = performance.now();
-          function tick(now){
-            const p = Math.min(1, (now - start) / dur);
-            const v = Math.floor(target * (1 - Math.pow(1-p, 3)));
-            el.textContent = v.toLocaleString('es-MX');
-            if (p < 1) requestAnimationFrame(tick);
-          }
-          requestAnimationFrame(tick);
-          obs.unobserve(el);
-        });
-      }, { threshold: .45 });
-      nums.forEach(n => obs.observe(n));
-    })();
-
-    /* ============================================================
-       BLOG
-       ============================================================ */
-    function renderBlog(){
-      const grid = $('blog-grid');
-      grid.innerHTML = ARTICLES.map(a => `
-        <article class="blog-card reveal" onclick="openBlogModal('${encodeURIComponent(a.title)}')">
-          <img src="${a.image}" alt="${a.title}" class="blog-image">
-          <div class="blog-body">
-            <div class="blog-meta">${a.category}</div>
-            <h3 class="blog-title">${a.title}</h3>
-            <p class="blog-excerpt">${a.excerpt}</p>
-            <span class="blog-read">Leer artículo →</span>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    window.openBlogModal = function(encodedTitle){
-      const title = decodeURIComponent(encodedTitle);
-      const a = ARTICLES.find(x => x.title === title);
-      if (!a) return;
-      $('modal-header-img').innerHTML = `<img src="${a.image}" alt="${a.title}" class="modal-header-img">`;
-      $('modal-body').innerHTML = `
-        <h2>${a.title}</h2>
-        <p><strong>Categoría:</strong> ${a.category}</p>
-        <p>${a.content.replace(/\n/g,'<br>')}</p>
-      `;
-      $('overlay').classList.add('show');
-      $('blog-modal').classList.add('show');
-    }
-    window.closeBlogModal = function(){
-      $('overlay').classList.remove('show');
-      $('blog-modal').classList.remove('show');
-    }
-
-    /* ============================================================
-       SHOP + CART
-       ============================================================ */
-    function renderShop(){
-      const grid = $('shop-grid');
-      grid.innerHTML = PRODUCTS.map(p => `
-        <article class="product-card reveal">
-          <img src="${p.image}" alt="${p.name}" class="product-img">
-          <div class="product-body">
-            <h3 class="product-name">${p.name}</h3>
-            <p class="product-desc">${p.desc}</p>
-            <div class="product-bottom">
-              <span class="product-price">${fmtCurrency(p.price)}</span>
-              <button class="btn btn-navy" style="padding:8px 14px;font-size:.75rem" onclick="addToCart('${p.id}')">Agregar</button>
-            </div>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    function getProduct(id){ return PRODUCTS.find(p => p.id === id); }
-
-    window.addToCart = function(id){
-      const p = getProduct(id); if (!p) return;
-      const item = cart.find(i => i.id === id);
-      if (item) item.qty++;
-      else cart.push({ id, qty:1 });
-      renderCart();
-      toast('Producto agregado al carrito');
-    }
-
-    window.toggleCart = function(open=true){
-      $('cart-drawer').classList.toggle('open', open);
-      $('overlay').classList.toggle('show', open || $('blog-modal').classList.contains('show'));
-    }
-
-    function renderCart(){
-      const container = $('cart-items');
-      if (!cart.length){
-        container.innerHTML = `
-          <p style="font-size:.9rem;color:var(--gray-500);padding:16px 4px;line-height:1.6">
-            Tu carrito está vacío.<br>Explora la tienda y agrega productos.
-          </p>`;
-        $('cart-total').textContent = fmtCurrency(0);
-        $('order-items').innerHTML = '';
-        $('order-total').innerHTML = `<span>Total</span><strong>${fmtCurrency(0)}</strong>`;
-        return;
-      }
-
-      container.innerHTML = cart.map(item => {
-        const p = getProduct(item.id);
-        const subtotal = p.price * item.qty;
-        return `
-          <div class="cart-item">
-            <img src="${p.image}" alt="${p.name}">
-            <div>
-              <h5>${p.name}</h5>
-              <small>${item.qty} × ${fmtCurrency(p.price)} = <strong>${fmtCurrency(subtotal)}</strong></small>
-              <div class="qty-picker" style="margin-top:6px;width:max-content">
-                <button onclick="changeQty('${p.id}', -1)">−</button>
-                <span>${item.qty}</span>
-                <button onclick="changeQty('${p.id}', 1)">+</button>
-              </div>
-            </div>
-            <button onclick="removeCartItem('${p.id}')">Eliminar</button>
-          </div>
-        `;
-      }).join('');
-
-      const total = cart.reduce((acc, i) => acc + getProduct(i.id).price * i.qty, 0);
-      $('cart-total').textContent = fmtCurrency(total);
-
-      // Checkout summary
-      $('order-items').innerHTML = cart.map(i => {
-        const p = getProduct(i.id);
-        return `<div class="order-item"><span>${i.qty} × ${p.name}</span><strong>${fmtCurrency(p.price * i.qty)}</strong></div>`;
-      }).join('');
-      $('order-total').innerHTML = `<span>Total</span><strong>${fmtCurrency(total)}</strong>`;
-    }
-
-    window.changeQty = function(id, delta){
-      const item = cart.find(i => i.id === id);
-      if (!item) return;
-      item.qty += delta;
-      if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
-      renderCart();
-    }
-
-    window.removeCartItem = function(id){
-      cart = cart.filter(i => i.id !== id);
-      renderCart();
-      toast('Producto eliminado');
-    }
-
-    window.irCheckout = function(){
-      toggleCart(false);
-      document.querySelector('#checkout').scrollIntoView({ behavior:'smooth', block:'start' });
-    }
-
-    window.finalizarPedido = function(){
-      if (!cart.length){
-        toast('Tu carrito está vacío');
-        return;
-      }
-      const nombre = $('checkout-nombre').value.trim();
-      const tel = $('checkout-tel').value.trim();
-      if (!nombre || !tel){
-        toast('Completa nombre y teléfono');
-        return;
-      }
-      const total = cart.reduce((acc, i) => acc + getProduct(i.id).price * i.qty, 0);
-      const items = cart.map(i => {
-        const p = getProduct(i.id);
-        return `• ${i.qty}x ${p.name} (${fmtCurrency(p.price * i.qty)})`;
-      }).join('%0A');
-      const msg = `Hola, quiero finalizar mi pedido:%0A%0A${items}%0A%0ATotal: ${fmtCurrency(total)}%0ANombre: ${encodeURIComponent(nombre)}%0ATel: ${encodeURIComponent(tel)}`;
-      window.open(`https://wa.me/528717975096?text=${msg}`, '_blank', 'noopener');
-
-      $('checkout').innerHTML = `
-        <div class="container" style="text-align:center;padding:48px 0">
-          <h2 style="font-family:var(--ff-display);font-size:2rem;color:var(--navy);margin-bottom:12px">
-            ¡Gracias por tu pedido! 🙌
-          </h2>
-          <p style="color:var(--gray-700);max-width:520px;margin:0 auto 20px;line-height:1.7">
-            Hemos abierto WhatsApp con el resumen. En breve te atenderemos para confirmar entrega y pago.
-          </p>
-          <a href="#tienda" class="btn btn-gold">Seguir comprando</a>
-        </div>
-      `;
-      cart = [];
-      renderCart();
-    }
-
-    /* ============================================================
-       DONATIVOS
-       ============================================================ */
-    window.abrirPaypal = function(){
-      window.open('https://www.paypal.com/donate', '_blank', 'noopener');
-    }
-    window.mostrarBanco = function(){
-      document.getElementById('bank-box').scrollIntoView({ behavior:'smooth', block:'center' });
-      toast('Datos bancarios visibles');
-    }
-    window.abrirWA = function(){
-      window.open('https://wa.me/528717975096?text=Hola%2C%20quiero%20donar%20a%20Iglesia%20Bel%C3%A9n', '_blank', 'noopener');
-    }
-    window.copiarBanco = function(){
-      const txt = document.getElementById('bank-box').innerText;
-      navigator.clipboard.writeText(txt).then(() => toast('Datos copiados'));
-    }
-
-    /* ============================================================
-       DESCARGAS
-       ============================================================ */
-    function renderDownloads(){
-      $('downloads-grid').innerHTML = DOWNLOADS.map((d, i) => `
-        <article class="download-card reveal delay-${(i%3)+1}">
-          <div class="download-icon">${d.icon}</div>
-          <h3 class="download-title">${d.title}</h3>
-          <p class="download-desc">${d.desc}</p>
-          <a class="btn btn-outline-navy" href="${d.file}" download>Descargar PDF</a>
-        </article>
-      `).join('');
-    }
-
-    /* ============================================================
-       REVEAL ON SCROLL
-       ============================================================ */
-    (function initReveal(){
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) e.target.classList.add('visible');
-        });
-      }, { threshold: .12, rootMargin:'0px 0px -60px 0px' });
-
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
-    })();
-
-    /* ============================================================
-       PERFORMANCE TOUCHES
-       ============================================================ */
-    window.addEventListener('load', () => {
-      // Optional: preload next slide bg softly after load
-      const heroBgs = document.querySelectorAll('.slide-bg');
-      heroBgs.forEach((el, i) => {
-        const style = getComputedStyle(el).backgroundImage;
-        const match = style.match(/url\("?(.*?)"?\)/);
-        if (match && match[1] && i > 0) {
-          const img = new Image();
-          img.src = match[1];
-        }
-      });
-    });
-
-    /* ============================================================
-       INIT
-       ============================================================ */
-    renderBlog();
-    renderShop();
-    renderCart();
-    renderDownloads();
-
-    // Keyboard UX
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeAllOverlays();
-    });
   </script>
 </body>
 </html>
