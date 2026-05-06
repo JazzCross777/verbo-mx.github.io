@@ -156,7 +156,10 @@
       transform: translateY(26px);
       transition: opacity .9s ease, transform .9s cubic-bezier(.22,1,.36,1);
     }
-    .reveal.visible { opacity: 1; transform: none; }
+    .reveal.visible { 
+      opacity: 1; 
+      transform: none; 
+    }
     .d1 { transition-delay: .08s; }
     .d2 { transition-delay: .16s; }
     .d3 { transition-delay: .24s; }
@@ -972,6 +975,8 @@
             </svg>
           </button>
         </div>
+      </div>
+    </section>
 
     <section id="prueba-social" class="section" aria-labelledby="prueba-social-title">
       <div class="container">
@@ -1304,7 +1309,7 @@
       }
 
       function start() {
-        timer = setInterval(next, 8200);
+        timer = setInterval(next, 10000);
       }
 
       function stop() {
