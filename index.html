@@ -15,6 +15,29 @@
   <meta name="twitter:description" content="No tienes que tener tu vida resuelta. Aquí nadie camina solo.">
   <meta name="twitter:image" content="https://www.beleniglesia.com/img/iglesia2.webp">
   <link rel="canonical" href="https://www.beleniglesia.com/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Church",
+    "name": "Iglesia Belén",
+    "description": "Una experiencia de fe real para personas reales. Comunidad cristiana en Torreón, Coahuila.",
+    "url": "https://www.beleniglesia.com/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Praxedis Guerrero 7",
+      "addressLocality": "Torreón",
+      "addressRegion": "Coahuila",
+      "postalCode": "27110",
+      "addressCountry": "MX"
+    },
+    "telephone": "+52 871 797 5096",
+    "sameAs": [
+      "https://www.facebook.com/iglesiabelen",
+      "https://www.instagram.com/iglesiabelen"
+    ],
+    "image": "https://www.beleniglesia.com/img/iglesia2.webp"
+  }
+  </script>
   <title>Iglesia Belén | No llegaste aquí por accidente</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,6 +107,20 @@
 
     .center { text-align: center; }
     .center .sub { margin-left: auto; margin-right: auto; }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--gold);
+      color: #11213d;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 1000;
+      font-weight: 600;
+    }
+    .skip-link:focus { top: 6px; }
 
     .btn {
       display: inline-flex;
@@ -369,6 +406,50 @@
     .dot.active {
       width: 28px;
       background: var(--gold);
+    }
+
+    .arrows {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .arrow {
+      pointer-events: auto;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s ease;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    .arrow:hover {
+      background: rgba(255,255,255,.2);
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .arrow svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    #hero:hover .arrow {
+      opacity: 0.8;
     }
 
     #prueba-social { background: #f7f9fc; }
@@ -764,6 +845,8 @@
       .section { padding: 84px 0; }
       .dots { left: 16px; }
 
+      .arrows { display: none; }
+
       .schedule-grid {
         grid-template-columns: 1fr;
       }
@@ -771,6 +854,7 @@
   </style>
 </head>
 <body>
+  <a href="#inicio" class="skip-link">Saltar al contenido principal</a>
   <header>
     <nav id="navbar" aria-label="Navegación principal">
       <div class="container nav-inner">
@@ -875,8 +959,19 @@
         </div>
 
         <div class="dots" id="dots"></div>
-      </div>
-    </section>
+
+        <div class="arrows">
+          <button class="arrow arrow-left" id="arrow-left" aria-label="Slide anterior">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+          </button>
+          <button class="arrow arrow-right" id="arrow-right" aria-label="Slide siguiente">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+          </button>
+        </div>
 
     <section id="prueba-social" class="section" aria-labelledby="prueba-social-title">
       <div class="container">
@@ -1085,6 +1180,9 @@
             <a href="https://wa.me/528717975096" target="_blank" rel="noopener" class="btn btn-light-outline">Escribir por WhatsApp</a>
           </div>
         </div>
+        <div class="map-container reveal" style="margin-top: 40px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.1);">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.0!2d-103.4332364!3d25.5747415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fda3b102a4033%3A0xa93eae13e809ca10!2sAv%20Praxedis%20Guerrero%2C%20Torre%C3%B3n%2C%20Coah.!5e0!3m2!1ses!2smx!4v1700000000!5m2!1ses!2smx" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa de ubicación de Iglesia Belén"></iframe>
+        </div>
       </div>
     </section>
   </main>
@@ -1201,6 +1299,10 @@
         go(current + 1);
       }
 
+      function prev() {
+        go(current - 1);
+      }
+
       function start() {
         timer = setInterval(next, 8200);
       }
@@ -1211,6 +1313,8 @@
 
       document.getElementById("hero").addEventListener("mouseenter", stop);
       document.getElementById("hero").addEventListener("mouseleave", start);
+      document.getElementById("arrow-left").addEventListener("click", prev);
+      document.getElementById("arrow-right").addEventListener("click", next);
       go(0);
       start();
 
