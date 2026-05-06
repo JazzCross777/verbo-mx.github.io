@@ -3,43 +3,1113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Descargas gratuitas de Iglesia Belén - Sermones, estudios bíblicos y recursos para tu crecimiento espiritual.">
+  <meta name="description" content="Centro de recursos gratuitos Iglesia Belén - PDFs, guías, estudios bíblicos, wallpapers, prédicas, música y documentos cristianos.">
+  <meta name="theme-color" content="#0A1628">
+  <meta property="og:title" content="Descargas | Iglesia Belén">
+  <meta property="og:description" content="Descarga recursos gratuitos para tu crecimiento espiritual: estudios bíblicos, prédicas, música cristiana y más.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.beleniglesia.com/descargas.html">
+  <meta property="og:image" content="https://www.beleniglesia.com/img/iglesia2.webp">
   <title>Descargas | Iglesia Belén</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f9fc; color: #333; }
-    header { background: #0A1628; color: white; padding: 20px; text-align: center; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    .download { background: white; margin: 20px 0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    .download h3 { color: #d5b35b; }
-    .btn { background: #d5b35b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-    footer { background: #0A1628; color: white; text-align: center; padding: 10px; }
+    :root {
+      --bg: #081224;
+      --bg-2: #0d1d39;
+      --gold: #d5b35b;
+      --gold-2: #f0d483;
+      --text: #f7f9ff;
+      --text-soft: rgba(255,255,255,.78);
+      --ink: #101418;
+      --ink-soft: #4d5562;
+      --card: #ffffff;
+      --line: #e8ebf2;
+      --radius: 18px;
+      --shadow: 0 20px 50px rgba(5,12,24,.2);
+      --max: 1180px;
+      --nav-h: 74px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { font: inherit; border: none; background: none; cursor: pointer; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 110px 0; }
+
+    .tag {
+      display: inline-block;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.3vw, 3.45rem);
+      line-height: 1.08;
+      color: #101826;
+      font-weight: 900;
+    }
+
+    .sub {
+      margin-top: 14px;
+      color: #606b79;
+      line-height: 1.75;
+      font-size: 1.02rem;
+      max-width: 640px;
+    }
+
+    .center { text-align: center; }
+    .center .sub { margin-left: auto; margin-right: auto; }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--gold);
+      color: #11213d;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 1000;
+      font-weight: 600;
+    }
+    .skip-link:focus { top: 6px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      transition: all .35s cubic-bezier(.22,1,.36,1);
+      white-space: nowrap;
+    }
+
+    .btn-gold { background: var(--gold); color: #11213d; }
+    .btn-gold:hover { transform: translateY(-2px); background: var(--gold-2); }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,.56);
+      color: #fff;
+      background: rgba(255,255,255,.04);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.12); }
+    .btn-dark { background: #11213d; color: #fff; }
+    .btn-dark:hover { transform: translateY(-2px); background: #19345f; }
+    .btn-light-outline {
+      border: 2px solid #12233f;
+      color: #12233f;
+      background: #fff;
+      padding: 12px 24px;
+    }
+    .btn-light-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .9s ease, transform .9s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .d1 { transition-delay: .08s; }
+    .d2 { transition-delay: .16s; }
+    .d3 { transition-delay: .24s; }
+    .d4 { transition-delay: .32s; }
+
+    #navbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--nav-h);
+      z-index: 1100;
+      transition: .35s ease;
+      background: transparent;
+    }
+
+    #navbar.scrolled {
+      background: rgba(7,16,31,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-inner {
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+    }
+
+    .brand-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--gold);
+      display: grid;
+      place-items: center;
+      color: #132444;
+      font-weight: 900;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem;
+    }
+
+    .brand-text span {
+      font-size: .65rem;
+      letter-spacing: .16em;
+      opacity: .72;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+
+    .nav-links a {
+      color: rgba(255,255,255,.86);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255,255,255,.1);
+      color: #fff;
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: #11213d !important;
+      padding: 8px 18px !important;
+      border-radius: 999px !important;
+    }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 22px; height: 2px; background: #fff; }
+
+    #mobile-menu {
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      z-index: 1099;
+      background: rgba(9,18,34,.98);
+      transform: translateY(-120%);
+      transition: .35s ease;
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    #mobile-menu.open { transform: none; }
+
+    #mobile-menu a {
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    #mobile-menu a:hover { background: rgba(255,255,255,.08); }
+
+    footer {
+      background: #070f1d;
+      color: rgba(255,255,255,.78);
+      padding: 56px 0 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 26px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding-bottom: 22px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: .82rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,.78);
+      font-size: .92rem;
+    }
+
+    .footer-col a:hover { color: var(--gold-2); }
+
+    .footer-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .foot-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 14px;
+      margin-top: 14px;
+      font-size: .82rem;
+    }
+
+    @media (max-width: 1024px) {
+      .proof-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .first-grid,
+      .radio-wrap,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .schedule-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root { --nav-h: 66px; }
+
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-copy p { font-size: 1rem; }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section { padding: 84px 0; }
+      .dots { left: 16px; }
+
+      .arrows { display: none; }
+
+      .schedule-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Estilos específicos para descargas */
+    .hero-descargas {
+      position: relative;
+      min-height: 50vh;
+      background: linear-gradient(135deg, #0a1628 0%, #12233f 100%);
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-descargas .container {
+      max-width: 800px;
+    }
+
+    .hero-descargas h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 20px;
+      color: var(--gold-2);
+    }
+
+    .hero-descargas p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 30px;
+    }
+
+    .search-bar {
+      max-width: 500px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 16px 50px 16px 20px;
+      border: 2px solid rgba(255,255,255,.2);
+      border-radius: 50px;
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      font-size: 1rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .search-bar input::placeholder {
+      color: rgba(255,255,255,.6);
+    }
+
+    .search-bar button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--gold);
+      color: #11213d;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border: 2px solid rgba(255,255,255,.2);
+      border-radius: 25px;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      transition: all .3s ease;
+      font-weight: 600;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #11213d;
+    }
+
+    .downloads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .download-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all .3s ease;
+      position: relative;
+    }
+
+    .download-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(5,12,24,.3);
+    }
+
+    .download-image {
+      height: 200px;
+      background: linear-gradient(135deg, #f0f2f8 0%, #e8ebf2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s ease;
+    }
+
+    .download-card:hover .download-image img {
+      transform: scale(1.05);
+    }
+
+    .download-icon {
+      font-size: 3rem;
+      color: var(--gold);
+      opacity: .8;
+    }
+
+    .download-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--gold);
+      color: #11213d;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .download-body {
+      padding: 20px;
+    }
+
+    .download-category {
+      font-size: .8rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .download-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #101826;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .download-description {
+      color: #606b79;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: .9rem;
+    }
+
+    .download-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: .8rem;
+      color: #606b79;
+    }
+
+    .download-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-download {
+      flex: 1;
+      background: var(--gold);
+      color: #11213d;
+      padding: 12px 16px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: all .3s ease;
+      text-align: center;
+    }
+
+    .btn-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(213,179,91,.3);
+    }
+
+    .btn-preview {
+      border: 2px solid #e8ebf2;
+      color: #12233f;
+      background: #fff;
+      padding: 12px 16px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: all .3s ease;
+    }
+
+    .btn-preview:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .stats-section {
+      background: #f8fafc;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      padding: 20px;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      color: #606b79;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: var(--gold);
+      color: #11213d;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(213,179,91,.3);
+      z-index: 1000;
+      transition: all .3s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(213,179,91,.4);
+    }
+
+    @media (max-width: 768px) {
+      .downloads-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .back-btn {
+        bottom: 20px;
+        left: 20px;
+        padding: 12px 16px;
+        font-size: .9rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
   <header>
-    <h1>Descargas Gratuitas</h1>
-    <p>Recursos para fortalecer tu fe</p>
+    <nav id="navbar" aria-label="Navegación principal">
+      <div class="container nav-inner">
+        <a href="index.html" class="brand" aria-label="Iglesia Belén inicio">
+          <span class="brand-badge">✝</span>
+          <span class="brand-text">
+            <strong>Belén</strong>
+            <span>Iglesia Cristiana</span>
+          </span>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#prueba-social">Historias</a></li>
+          <li><a href="index.html#primera-vez">Primera vez</a></li>
+          <li><a href="index.html#horarios">Horarios</a></li>
+          <li><a href="index.html#eventos">Eventos</a></li>
+          <li><a href="index.html#equipo">Equipo</a></li>
+          <li><a href="radio/index.html">Radio</a></li>
+          <li><a href="articulos.html">Artículos</a></li>
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="descargas.html" class="active">Descargas</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="index.html#cta-final" class="nav-cta">Planear visita</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" role="menu">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#prueba-social">Historias</a>
+      <a href="index.html#primera-vez">Primera vez</a>
+      <a href="index.html#horarios">Horarios</a>
+      <a href="index.html#eventos">Eventos</a>
+      <a href="index.html#equipo">Equipo</a>
+      <a href="radio/index.html">Radio</a>
+      <a href="articulos.html">Artículos</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="descargas.html">Descargas</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="index.html#cta-final">Planear visita</a>
+    </div>
   </header>
-  <div class="container">
-    <div class="download">
-      <h3>Sermón: Fe que mueve montañas</h3>
-      <p>Predicación sobre la fe inquebrantable.</p>
-      <a href="files/Sermon_Fe_Montanas.pdf" class="btn" download>Descargar PDF</a>
-    </div>
-    <div class="download">
-      <h3>Estudio Bíblico: Salmos</h3>
-      <p>Guía de estudio para los Salmos.</p>
-      <a href="#" class="btn">Descargar</a>
-    </div>
-    <div class="download">
-      <h3>Oración Guiada</h3>
-      <p>Audio de oración para meditación.</p>
-      <a href="#" class="btn">Descargar MP3</a>
-    </div>
-  </div>
+
+  <main id="main">
+    <section class="hero-descargas reveal">
+      <div class="container">
+        <h1>Centro de Recursos</h1>
+        <p>Descarga recursos gratuitos para tu crecimiento espiritual. PDFs, guías, estudios bíblicos y más.</p>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar recursos..." id="search-input">
+          <button type="button" id="search-btn">🔍</button>
+        </div>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="pdf">PDFs</button>
+          <button class="filter-btn" data-filter="audio">Audio</button>
+          <button class="filter-btn" data-filter="video">Video</button>
+          <button class="filter-btn" data-filter="imagen">Imágenes</button>
+          <button class="filter-btn" data-filter="musica">Música</button>
+          <button class="filter-btn" data-filter="estudio">Estudios</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="downloads-grid" id="downloads-grid">
+          <!-- PDFs -->
+          <article class="download-card reveal d1" data-category="pdf">
+            <div class="download-image">
+              <span class="download-icon">📄</span>
+              <span class="download-badge">PDF</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Estudios Bíblicos</div>
+              <h3 class="download-title">Guía de Oración Efectiva</h3>
+              <p class="download-description">Aprende técnicas bíblicas de oración que transformarán tu vida espiritual.</p>
+              <div class="download-meta">
+                <span>📏 2.3 MB</span>
+                <span>📥 1,247 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('oracion-efectiva')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('oracion-efectiva')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="download-card reveal d2" data-category="pdf">
+            <div class="download-image">
+              <span class="download-icon">📖</span>
+              <span class="download-badge">PDF</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Estudios Bíblicos</div>
+              <h3 class="download-title">Estudio: Las Bienaventuranzas</h3>
+              <p class="download-description">Análisis profundo del Sermón del Monte y su aplicación práctica.</p>
+              <div class="download-meta">
+                <span>📏 1.8 MB</span>
+                <span>📥 892 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('bienaventuranzas')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('bienaventuranzas')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="download-card reveal d3" data-category="pdf">
+            <div class="download-image">
+              <span class="download-icon">🙏</span>
+              <span class="download-badge">PDF</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Devocionales</div>
+              <h3 class="download-title">Devocional Diario 2026</h3>
+              <p class="download-description">Reflexiones diarias para caminar con Dios durante todo el año.</p>
+              <div class="download-meta">
+                <span>📏 4.1 MB</span>
+                <span>📥 2,156 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('devocional-2026')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('devocional-2026')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Audio -->
+          <article class="download-card reveal d1" data-category="audio">
+            <div class="download-image">
+              <span class="download-icon">🎧</span>
+              <span class="download-badge">Audio</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Prédicas</div>
+              <h3 class="download-title">Restauración Espiritual</h3>
+              <p class="download-description">Mensaje poderoso sobre sanidad y restauración en Cristo.</p>
+              <div class="download-meta">
+                <span>⏱️ 42 min</span>
+                <span>📥 756 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('predica-restauracion')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('predica-restauracion')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="download-card reveal d2" data-category="audio">
+            <div class="download-image">
+              <span class="download-icon">🎵</span>
+              <span class="download-badge">Audio</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Música</div>
+              <h3 class="download-title">Himnos Clásicos</h3>
+              <p class="download-description">Colección de himnos cristianos que han marcado generaciones.</p>
+              <div class="download-meta">
+                <span>⏱️ 35 min</span>
+                <span>📥 1,203 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('himnos-clasicos')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('himnos-clasicos')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Imágenes -->
+          <article class="download-card reveal d3" data-category="imagen">
+            <div class="download-image">
+              <span class="download-icon">🖼️</span>
+              <span class="download-badge">Imagen</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Wallpapers</div>
+              <h3 class="download-title">Versículos Inspiradores</h3>
+              <p class="download-description">Colección de wallpapers con versículos bíblicos para tu dispositivo.</p>
+              <div class="download-meta">
+                <span>📏 12 MB</span>
+                <span>📥 3,421 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('wallpapers')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('wallpapers')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="download-card reveal d1" data-category="imagen">
+            <div class="download-image">
+              <span class="download-icon">📸</span>
+              <span class="download-badge">Imagen</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Fondos</div>
+              <h3 class="download-title">Fondos de Escritorio</h3>
+              <p class="download-description">Imágenes premium para personalizar tu espacio de trabajo.</p>
+              <div class="download-meta">
+                <span>📏 8.5 MB</span>
+                <span>📥 1,892 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('fondos')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('fondos')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Estudios -->
+          <article class="download-card reveal d2" data-category="estudio">
+            <div class="download-image">
+              <span class="download-icon">📚</span>
+              <span class="download-badge">Estudio</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Estudios Bíblicos</div>
+              <h3 class="download-title">Estudio: Apocalipsis</h3>
+              <p class="download-description">Guía completa para entender el libro de Apocalipsis.</p>
+              <div class="download-meta">
+                <span>📏 3.2 MB</span>
+                <span>📥 645 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('estudio-apocalipsis')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('estudio-apocalipsis')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="download-card reveal d3" data-category="estudio">
+            <div class="download-image">
+              <span class="download-icon">🔍</span>
+              <span class="download-badge">Estudio</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Estudios Bíblicos</div>
+              <h3 class="download-title">Estudio: Salmos</h3>
+              <p class="download-description">Exploración profunda del libro de Salmos y su aplicación actual.</p>
+              <div class="download-meta">
+                <span>📏 2.7 MB</span>
+                <span>📥 934 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('estudio-salmos')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('estudio-salmos')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Música -->
+          <article class="download-card reveal d1" data-category="musica">
+            <div class="download-image">
+              <span class="download-icon">🎼</span>
+              <span class="download-badge">Música</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Alabanzas</div>
+              <h3 class="download-title">Alabanzas de Victoria</h3>
+              <p class="download-description">Canciones de alabanza que elevan el espíritu y glorifican a Dios.</p>
+              <div class="download-meta">
+                <span>⏱️ 28 min</span>
+                <span>📥 1,567 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('alabanzas-victoria')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('alabanzas-victoria')">Descargar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="download-card reveal d2" data-category="musica">
+            <div class="download-image">
+              <span class="download-icon">🎶</span>
+              <span class="download-badge">Música</span>
+            </div>
+            <div class="download-body">
+              <div class="download-category">Instrumental</div>
+              <h3 class="download-title">Música para Adoración</h3>
+              <p class="download-description">Pistas instrumentales perfectas para momentos de adoración personal.</p>
+              <div class="download-meta">
+                <span>⏱️ 45 min</span>
+                <span>📥 823 descargas</span>
+              </div>
+              <div class="download-actions">
+                <button class="btn-preview" onclick="previewResource('musica-adoracion')">Vista previa</button>
+                <button class="btn-download" onclick="downloadResource('musica-adoracion')">Descargar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container">
+        <div class="center">
+          <div class="tag">Impacto</div>
+          <h2 class="title">Nuestro alcance</h2>
+          <p class="sub">Estos recursos han bendecido a miles de personas alrededor del mundo</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">15,000+</div>
+            <div class="stat-label">Descargas totales</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Recursos disponibles</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">25</div>
+            <div class="stat-label">Países alcanzados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Gratuito</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="index.html" class="back-btn" aria-label="Volver al inicio">
+    ← Volver al inicio
+  </a>
+
   <footer>
-    <p>&copy; 2026 Iglesia Belén</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#primera-vez">Primera vez</a></li>
+            <li><a href="index.html#horarios">Horarios</a></li>
+            <li><a href="index.html#eventos">Eventos</a></li>
+            <li><a href="index.html#equipo">Equipo</a></li>
+            <li><a href="radio/index.html">Radio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="nosotros.html">Sobre nosotros</a></li>
+            <li><a href="articulos.html">Artículos</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="descargas.html">Descargas</a></li>
+          </ul>
+          <div class="footer-cta">
+            <a href="descargas.html" class="btn btn-gold" style="padding: 10px 18px; font-size: .86rem">Ver recursos</a>
+            <a href="tienda.html" class="btn btn-light-outline" style="padding: 10px 18px; font-size: .86rem">Explorar tienda</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="tel:+528717975096">📞 +52 871 797 5096</a></li>
+            <li><a href="mailto:hola@beleniglesia.com">✉ hola@beleniglesia.com</a></li>
+            <li><a href="https://wa.me/528717975096" target="_blank" rel="noopener">💬 WhatsApp</a></li>
+            <li><a href="radio/index.html">📻 Escuchar Radio Belén</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <span>© 2026 Iglesia Belén. Todos los derechos reservados.</span>
+        <span>No llegaste aquí por accidente.</span>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    (() => {
+      const navbar = document.getElementById("navbar");
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 24);
+        },
+        { passive: true }
+      );
+
+      hamburger?.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("open");
+        hamburger.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          hamburger.setAttribute("aria-expanded", "false");
+        })
+      );
+
+      // Funcionalidad del centro de descargas
+      const searchInput = document.getElementById('search-input');
+      const searchBtn = document.getElementById('search-btn');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const downloadCards = document.querySelectorAll('.download-card');
+
+      function filterResources(searchTerm = '', category = 'all') {
+        downloadCards.forEach(card => {
+          const title = card.querySelector('.download-title').textContent.toLowerCase();
+          const description = card.querySelector('.download-description').textContent.toLowerCase();
+          const cardCategory = card.dataset.category;
+
+          const matchesSearch = searchTerm === '' ||
+            title.includes(searchTerm) ||
+            description.includes(searchTerm);
+          const matchesCategory = category === 'all' || cardCategory === category;
+
+          if (matchesSearch && matchesCategory) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      searchInput.addEventListener('input', (e) => {
+        const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+        filterResources(e.target.value.toLowerCase(), activeFilter);
+      });
+
+      searchBtn.addEventListener('click', () => {
+        const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+        filterResources(searchInput.value.toLowerCase(), activeFilter);
+      });
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const category = btn.dataset.filter;
+          filterResources(searchInput.value.toLowerCase(), category);
+        });
+      });
+
+      // Funciones de descarga y vista previa
+      window.downloadResource = function(resourceId) {
+        // Simulación de descarga
+        alert(`Descargando recurso: ${resourceId}\n\nEn una implementación real, aquí se iniciaría la descarga del archivo.`);
+      };
+
+      window.previewResource = function(resourceId) {
+        // Simulación de vista previa
+        alert(`Vista previa del recurso: ${resourceId}\n\nEn una implementación real, aquí se abriría una vista previa del archivo.`);
+      };
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    })();
+  </script>
 </body>
 </html>
